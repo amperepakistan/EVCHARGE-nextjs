@@ -14,9 +14,10 @@ Supabase is used as **Postgres only**. Auth is custom JWT (`jose` + `bcryptjs`).
 cp .env.example .env.local
 ```
 
-2. In Supabase SQL Editor, run:
+2. In Supabase SQL Editor, run **in order**:
 
-`supabase/migrations/20260731120000_initial_schema.sql`
+- `supabase/migrations/20260731120000_initial_schema.sql`
+- `supabase/migrations/20260731140000_terminals_public_read_and_places.sql` (Google Places columns + public `SELECT` RLS for the Flutter anon key)
 
 > If you previously ran the Auth-linked schema (`profiles` / `auth.users`), drop those objects first or use a fresh project — this migration is custom-auth only.
 
@@ -27,13 +28,16 @@ npm install
 npm run dev
 ```
 
-4. Create a super admin (run once in a Node REPL or temporary script with your env loaded):
+4. Seed demo terminals (service_role, local only):
 
-```ts
-import bcrypt from 'bcryptjs';
-// hash = await bcrypt.hash('your-password', 12)
-// INSERT INTO users (email, password_hash, role, full_name)
-// VALUES ('admin@evcharge.pk', '<hash>', 'super_admin', 'Admin');
+```bash
+node --env-file=.env.local scripts/seed-terminals.mjs scripts/sample-terminals.json
+```
+
+5. Create a super admin:
+
+```bash
+node --env-file=.env.local scripts/create-admin.mjs admin@evcharge.pk 'YourPassword123'
 ```
 
 ## Scripts
@@ -44,6 +48,8 @@ import bcrypt from 'bcryptjs';
 | `npm run lint` | ESLint |
 | `npm test` | Vitest (lib validations) |
 | `npm run types:supabase` | Regenerate `types/database.types.ts` |
+| `node --env-file=.env.local scripts/seed-terminals.mjs <file.json>` | Upsert scraped/manual terminals |
+| `node --env-file=.env.local scripts/create-admin.mjs <email> <password>` | Create/update super admin |
 
 ## Auth contract
 
@@ -53,3 +59,7 @@ import bcrypt from 'bcryptjs';
 | Flutter | `flutter_secure_storage` | `Authorization: Bearer <token>` |
 
 Both use `POST /api/auth/login` → `{ data: { token, user }, error }`.
+
+## Flutter public reads
+
+The driver app reads `terminals` **directly from Supabase** with the `anon` key. RLS policy `Public can read public terminals` allows `SELECT` where `is_public = true`. Authenticated mutations still go through this Next.js API with `service_role`.

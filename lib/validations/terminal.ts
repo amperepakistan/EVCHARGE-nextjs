@@ -11,12 +11,23 @@ export const createTerminalSchema = z.object({
   powerKw: z.number().positive().optional(),
   pricePerKwh: z.number().nonnegative().optional(),
   operatingHours: z.string().optional(),
+  phoneNumber: z.string().optional(),
   connectivityTier: z
     .enum(['listed', 'sensor_augmented', 'connected_demo', 'connected_live'])
     .optional(),
+  verificationStatus: z.enum(['unverified', 'verified', 'flagged']).optional(),
   currentVendorId: z.string().uuid().nullable().optional(),
   currentOwnerId: z.string().uuid().nullable().optional(),
-  source: z.enum(['scraped', 'manual', 'vendor_submitted']).optional(),
+  googlePlaceId: z.string().optional(),
+  googleMapsUrl: z.string().url().optional(),
+  googleRating: z.number().min(0).max(5).optional(),
+  googleRatingCount: z.number().int().nonnegative().optional(),
+  googlePhotoUrls: z.array(z.string().url()).optional(),
+  source: z
+    .enum(['scraped', 'manual', 'vendor_submitted', 'google_places', 'open_charge_map'])
+    .optional(),
+  scrapedAt: z.string().datetime().optional(),
+  lastVerifiedAt: z.string().datetime().optional(),
   isPublic: z.boolean().optional(),
 });
 

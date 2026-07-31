@@ -136,11 +136,27 @@ export type Database = {
           power_kw: number | null;
           price_per_kwh: number | null;
           operating_hours: string | null;
+          phone_number: string | null;
           amenities: Json;
           connectivity_tier: ConnectivityTier;
+          verification_status: 'unverified' | 'verified' | 'flagged';
           current_vendor_id: string | null;
           current_owner_id: string | null;
-          source: 'scraped' | 'manual' | 'vendor_submitted' | null;
+          google_place_id: string | null;
+          google_maps_url: string | null;
+          google_rating: number | null;
+          google_rating_count: number | null;
+          google_photo_urls: string[] | null;
+          google_raw: Json | null;
+          source:
+            | 'scraped'
+            | 'manual'
+            | 'vendor_submitted'
+            | 'google_places'
+            | 'open_charge_map'
+            | null;
+          scraped_at: string | null;
+          last_verified_at: string | null;
           is_public: boolean;
           created_at: string;
           updated_at: string;
@@ -157,11 +173,27 @@ export type Database = {
           power_kw?: number | null;
           price_per_kwh?: number | null;
           operating_hours?: string | null;
+          phone_number?: string | null;
           amenities?: Json;
           connectivity_tier?: ConnectivityTier;
+          verification_status?: 'unverified' | 'verified' | 'flagged';
           current_vendor_id?: string | null;
           current_owner_id?: string | null;
-          source?: 'scraped' | 'manual' | 'vendor_submitted' | null;
+          google_place_id?: string | null;
+          google_maps_url?: string | null;
+          google_rating?: number | null;
+          google_rating_count?: number | null;
+          google_photo_urls?: string[] | null;
+          google_raw?: Json | null;
+          source?:
+            | 'scraped'
+            | 'manual'
+            | 'vendor_submitted'
+            | 'google_places'
+            | 'open_charge_map'
+            | null;
+          scraped_at?: string | null;
+          last_verified_at?: string | null;
           is_public?: boolean;
           created_at?: string;
           updated_at?: string;

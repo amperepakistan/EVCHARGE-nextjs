@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
     let query = supabaseServer()
       .from('terminals')
       .select(
-        'id, name, latitude, longitude, city, address, connector_type, charger_class, power_kw, price_per_kwh, operating_hours, connectivity_tier, is_public',
+        'id, name, latitude, longitude, city, address, connector_type, charger_class, power_kw, price_per_kwh, operating_hours, phone_number, connectivity_tier, verification_status, google_place_id, google_maps_url, google_rating, google_rating_count, google_photo_urls, is_public',
       )
       .eq('is_public', true)
       .order('name');

@@ -1,0 +1,49 @@
+[
+  {
+    "name": "EVCharge Demo — Karachi DHA",
+    "latitude": 24.8138,
+    "longitude": 67.0475,
+    "address": "Khayaban-e-Ittehad, DHA Phase 6, Karachi",
+    "city": "Karachi",
+    "charger_class": "DC",
+    "connector_type": "CCS2",
+    "power_kw": 60,
+    "price_per_kwh": 85,
+    "operating_hours": "24 hours",
+    "phone_number": "+9221111234567",
+    "google_rating": 4.3,
+    "google_rating_count": 28,
+    "source": "manual",
+    "verification_status": "verified"
+  },
+  {
+    "name": "EVCharge Demo — Lahore Gulberg",
+    "latitude": 31.5102,
+    "longitude": 74.3441,
+    "address": "Main Boulevard Gulberg, Lahore",
+    "city": "Lahore",
+    "charger_class": "DC",
+    "connector_type": "GB/T",
+    "power_kw": 120,
+    "price_per_kwh": 90,
+    "operating_hours": "08:00–22:00",
+    "phone_number": "+9242111234567",
+    "google_rating": 4.1,
+    "google_rating_count": 15,
+    "source": "manual",
+    "verification_status": "unverified"
+  },
+  {
+    "name": "EVCharge Demo — Islamabad F-7",
+    "latitude": 33.7215,
+    "longitude": 73.0573,
+    "address": "Jinnah Super Market, F-7 Markaz, Islamabad",
+    "city": "Islamabad",
+    "charger_class": "AC",
+    "connector_type": "Type 2",
+    "power_kw": 22,
+    "price_per_kwh": 70,
+    "operating_hours": "09:00–21:00",
+    "source": "manual"
+  }
+]
