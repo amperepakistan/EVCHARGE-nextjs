@@ -1,0 +1,123 @@
+/* Design System Tokens for EV Charging App */
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/GothamBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/GothamMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/GothamBook.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/GothamLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 1000;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* Color Palette */
+  --color-primary: #B6EF6D;          /* CTAs, active states, progress rings, highlights */
+  --color-primary-dark: #9BD854;     /* Pressed/hover state */
+  --color-primary-light: #E7F9CE;    /* Selected chips, subtle highlight backgrounds */
+  --color-on-primary: #1A1A1A;       /* Text/icon on primary - high contrast dark text */
+  
+  --color-text-primary: #1A1A1A;     /* Ink / Body text */
+  --color-text-secondary: #8A8A8A;   /* Labels, timestamps, subtext */
+  
+  --color-background: #FAFAFA;       /* App background */
+  --color-surface: #FFFFFF;          /* Cards, list rows */
+  --color-border: #ECECEC;           /* Card outlines, separators */
+  
+  --color-error: #E53935;            /* Failed charge, offline station */
+  --color-warning: #FFB300;          /* Low battery, fault alert */
+  --color-info: #2196F3;             /* Neutral notices */
+
+  /* Primary Ramp */
+  --color-primary-50: #F7FDEE;
+  --color-primary-100: #E7F9CE;
+  --color-primary-200: #D3F4A8;
+  --color-primary-300: #C4F088;
+  --color-primary-400: #B6EF6D;     /* 500 / base */
+  --color-primary-500: #9BD854;
+  --color-primary-600: #82BE3E;
+  --color-primary-700: #679B2E;
+  --color-primary-800: #4E7A21;
+  --color-primary-900: #365615;
+
+  /* Typography Rules:
+   * Heading font is strictly Gotham (GothamBold, GothamMedium, etc.).
+   */
+  --font-heading: 'Gotham', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Radii Rules:
+   * Buttons: Full pill/stadium — radius = height / 2 (stadium ends)
+   * Cards: ~16–20px moderate rounding
+   * Input fields: ~16–20px
+   *
+   * COMPONENT RULE:
+   * It is STRICTLY FORBIDDEN to use pill elements for section badges or status chips like 
+   * "Network Control Plane" on the main landing page or subheadings.
+   * Pills are strictly reserved for action buttons (CTAs).
+   */
+  --radius-card: 18px;               /* 16–20px moderate rounding */
+  --radius-input: 18px;              /* Same family as card radius */
+  --radius-pill: 9999px;             /* Reserved ONLY for Stadium Action Buttons */
+}
+
+/* Typography Utility Classes */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Button Radius Standard */
+.btn-pill {
+  border-radius: var(--radius-pill);
+}
+
+/* Card & Input Radius Standard */
+.card-rounded {
+  border-radius: var(--radius-card);
+}
+
+.input-rounded {
+  border-radius: var(--radius-input);
+}

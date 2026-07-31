@@ -1,25 +1,28 @@
+interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  label: string;
+}
+
 export function TextField({
   label,
   name,
   type = 'text',
   required,
   autoComplete,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  required?: boolean;
-  autoComplete?: string;
-}) {
+  className = '',
+  ...props
+}: TextFieldProps) {
   return (
     <label className="block text-sm">
-      <span className="mb-1.5 block font-medium text-black/80">{label}</span>
+      <span className="mb-2 block font-medium text-[var(--color-text-secondary)] text-xs uppercase tracking-wider">
+        {label}
+      </span>
       <input
         name={name}
         type={type}
         required={required}
         autoComplete={autoComplete}
-        className="w-full rounded-md border border-[var(--border)] bg-white px-3 py-2 outline-none focus:border-[var(--accent)]"
+        className={`input-rounded w-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3.5 text-sm text-[var(--color-text-primary)] outline-none transition-colors duration-150 focus:border-[var(--color-primary-dark)] focus:ring-2 focus:ring-[var(--color-primary-light)] ${className}`}
+        {...props}
       />
     </label>
   );

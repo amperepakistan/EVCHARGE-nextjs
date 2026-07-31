@@ -32,7 +32,7 @@ export function LoginForm() {
       };
 
       if (!res.ok || json.error || !json.data) {
-        setError(json.error ?? 'Login failed');
+        setError(json.error ?? 'Login failed. Please check your credentials.');
         return;
       }
 
@@ -51,18 +51,40 @@ export function LoginForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-4">
-      <TextField label="Email" name="email" type="email" required autoComplete="email" />
+    <form onSubmit={onSubmit} className="flex flex-col gap-5">
+      <TextField
+        label="Email address"
+        name="email"
+        type="email"
+        required
+        autoComplete="email"
+        placeholder="name@company.com"
+      />
       <TextField
         label="Password"
         name="password"
         type="password"
         required
         autoComplete="current-password"
+        placeholder="••••••••"
       />
-      {error ? <p className="text-sm text-red-700">{error}</p> : null}
-      <Button type="submit" disabled={pending}>
-        {pending ? 'Signing in…' : 'Sign in'}
+      {error ? (
+        <div className="rounded-xl border border-[var(--color-error)]/20 bg-[var(--color-error)]/5 p-3.5 text-xs font-medium text-[var(--color-error)]">
+          {error}
+        </div>
+      ) : null}
+      <Button type="submit" disabled={pending} className="mt-2 w-full">
+        {pending ? (
+          <span className="flex items-center gap-2">
+            <svg className="h-4 w-4 animate-spin text-current" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+            </svg>
+            Authenticating…
+          </span>
+        ) : (
+          'Sign in to Platform'
+        )}
       </Button>
     </form>
   );
