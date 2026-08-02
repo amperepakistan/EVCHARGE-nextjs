@@ -1,0 +1,454 @@
+[
+  {
+    "title": "BMW Destination Charging Station",
+    "subTitle": "BMW Destination چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "3-A Food St Rd, Lalazar Karachi, Pakistan",
+    "neighborhood": "Lalazar",
+    "street": "3-A Food St Rd",
+    "city": "Karachi",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "website": "https://www.bmw.de/",
+    "phone": "+92 301 8221311",
+    "phoneUnformatted": "+923018221311",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 24.8446835,
+      "lng": 66.9944594
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 3.7,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJv-MgI_4Vsz4R4sn7qxKE22Q",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x3eb315fe2320e3bf:0x64db8412abfbc9e2",
+    "cid": "7267547639422110178",
+    "reviewsCount": 3,
+    "imagesCount": 3,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:37:33.673Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Friday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=BMW%20Destination%20Charging%20Station&query_place_id=ChIJv-MgI_4Vsz4R4sn7qxKE22Q",
+    "searchPageUrl": "https://www.google.com/maps/search/electric%20vehicle%20charging%20station%20Karachi%20Pakistan/@24.837319278282145,66.99251357481508,16z?hl=en",
+    "searchString": "electric vehicle charging station Karachi Pakistan",
+    "language": "en",
+    "rank": 1,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlda7YHEiBzrEQvJpBNndJ3E-oYDp63Q2FTLKydXPh5TX8oFCcnwtGN81CDtt989pece6oVXtFELBUiCkLyZbBHQegEcuCEjfmMXMA_F1pdFgz05--pjulkkaUU7iaII4eOzPyLtDk3910=w408-h306-k-no",
+    "kgmid": "/g/11w_hhzp43"
+  },
+  {
+    "title": "BMW Destination Charging Station",
+    "subTitle": "BMW Destination چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "4 Club Rd, Civil Lines Karachi, Pakistan",
+    "neighborhood": "Civil Lines",
+    "street": "4 Club Rd",
+    "city": "Karachi",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "website": "https://www.bmw.de/",
+    "phone": "+92 301 8221311",
+    "phoneUnformatted": "+923018221311",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 24.84695,
+      "lng": 67.02604
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 4,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJE0zuBd89sz4RP7PWUw23HEo",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x3eb33ddf05ee4c13:0x4a1cb70d53d6b33f",
+    "cid": "5340344526023603007",
+    "reviewsCount": 4,
+    "imagesCount": 4,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:37:33.675Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Friday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=BMW%20Destination%20Charging%20Station&query_place_id=ChIJE0zuBd89sz4RP7PWUw23HEo",
+    "searchPageUrl": "https://www.google.com/maps/search/electric%20vehicle%20charging%20station%20Karachi%20Pakistan/@24.837319278282145,66.99251357481508,16z?hl=en",
+    "searchString": "electric vehicle charging station Karachi Pakistan",
+    "language": "en",
+    "rank": 2,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmUVAyfuq8fJkoxNf-kqL7cglyIAG9NWSwdGLVYA6VCTzhk8PNSAV0zqoDBBDK7QRLBEE38sWf6aPfHG3a3d3iZc6WcWK3MlxnWF3pxJGae4lBsgPwdc6KjhyujOZ7dXJUubZWpoAutkEDn=w408-h884-k-no",
+    "kgmid": "/g/11lzwjw9c8"
+  },
+  {
+    "title": "BMW Destination Charging Station",
+    "subTitle": "BMW Destination چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "4 Club Rd, Civil Lines, Karachi, Pakistan",
+    "neighborhood": "Civil Lines",
+    "street": "4 Club Rd",
+    "city": "Karachi",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "website": "https://www.bmw.de/",
+    "phone": "+92 314 2070036",
+    "phoneUnformatted": "+923142070036",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 24.84918,
+      "lng": 67.02808
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 4.5,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJh4voVt89sz4R2vKd2_2x3L0",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x3eb33ddf56e88b87:0xbddcb1fddb9df2da",
+    "cid": "13681005471914128090",
+    "reviewsCount": 2,
+    "imagesCount": 0,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:37:33.675Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Friday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=BMW%20Destination%20Charging%20Station&query_place_id=ChIJh4voVt89sz4R2vKd2_2x3L0",
+    "searchPageUrl": "https://www.google.com/maps/search/electric%20vehicle%20charging%20station%20Karachi%20Pakistan/@24.837319278282145,66.99251357481508,16z?hl=en",
+    "searchString": "electric vehicle charging station Karachi Pakistan",
+    "language": "en",
+    "rank": 3,
+    "isAdvertisement": false,
+    "imageUrl": null,
+    "kgmid": "/g/11lzwhfwm9"
+  },
+  {
+    "title": "GO Petroleum - Libra Autos",
+    "subTitle": null,
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "V23G+MGQ, Civil Lines, Karachi, Pakistan",
+    "neighborhood": "Civil Lines",
+    "street": "V23G+MGQ",
+    "city": "Karachi",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "website": "http://www.gno.com.pk/",
+    "phone": "",
+    "phoneUnformatted": "",
+    "claimThisBusiness": true,
+    "location": {
+      "lat": 24.853898,
+      "lng": 67.0268238
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 4,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJwy-DLQA_sz4Rci_v234sYGY",
+    "categories": [
+      "Electric vehicle charging station",
+      "Gas station"
+    ],
+    "fid": "0x3eb33f002d832fc3:0x66602c7edbef2f72",
+    "cid": "7376945113000259442",
+    "reviewsCount": 21,
+    "imagesCount": 12,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:37:33.675Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Friday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Offerings": [
+        {
+          "Car wash": true
+        },
+        {
+          "Diesel gas": true
+        },
+        {
+          "Propane exchange": true
+        }
+      ],
+      "Amenities": [
+        {
+          "Air pump": true
+        },
+        {
+          "Restroom": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=GO%20Petroleum%20-%20Libra%20Autos&query_place_id=ChIJwy-DLQA_sz4Rci_v234sYGY",
+    "searchPageUrl": "https://www.google.com/maps/search/electric%20vehicle%20charging%20station%20Karachi%20Pakistan/@24.837319278282145,66.99251357481508,16z?hl=en",
+    "searchString": "electric vehicle charging station Karachi Pakistan",
+    "language": "en",
+    "rank": 6,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlcWwAQ-whRjWY_yctJMa8pSimz6ld4IKjWLOMLIit_pp5lwbn0vMSKHmIPI4r5U3MkhjxENK27FI6WrqBdhu2NN8Nqn5qu6RJ_SoGBW-iaFc7wxCGPKDxvy-u6dLhQ-CxS-rfV=w408-h305-k-no",
+    "kgmid": "/g/11vw_jzxp4"
+  },
+  {
+    "title": "ILYAS & BROTHERS MOBILE",
+    "subTitle": null,
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "05 Hawksbay Rd, Mauripur, Karachi, 75720, Pakistan",
+    "neighborhood": "Mauripur",
+    "street": "05 Hawksbay Rd",
+    "city": "Karachi",
+    "postalCode": "75720",
+    "state": null,
+    "countryCode": "PK",
+    "phone": "",
+    "phoneUnformatted": "",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 24.8689959,
+      "lng": 66.9595308
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": null,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJ6QnEkFwVsz4RpIr0xsxCSDs",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x3eb3155c90c409e9:0x3b4842ccc6f48aa4",
+    "cid": "4271737693839592100",
+    "reviewsCount": null,
+    "imagesCount": 0,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:37:33.676Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=ILYAS%20%26%20BROTHERS%20MOBILE&query_place_id=ChIJ6QnEkFwVsz4RpIr0xsxCSDs",
+    "searchPageUrl": "https://www.google.com/maps/search/electric%20vehicle%20charging%20station%20Karachi%20Pakistan/@24.837319278282145,66.99251357481508,16z?hl=en",
+    "searchString": "electric vehicle charging station Karachi Pakistan",
+    "language": "en",
+    "rank": 12,
+    "isAdvertisement": false,
+    "imageUrl": null,
+    "kgmid": "/g/11zgvn4wt_"
+  }
+]

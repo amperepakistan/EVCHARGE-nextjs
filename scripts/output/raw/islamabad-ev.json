@@ -1,0 +1,37 @@
+[
+  {
+    "name": null,
+    "operator": null,
+    "branch": null,
+    "brand": null,
+    "brand_wikidata": null,
+    "brand_logo": null,
+    "network": null,
+    "capacity": null,
+    "max_power_kw": null,
+    "socket_types": [],
+    "capacity_by_socket": {},
+    "fee": null,
+    "access": null,
+    "latitude": 33.521436,
+    "longitude": 73.1586756,
+    "street": null,
+    "housenumber": null,
+    "city": null,
+    "postcode": null,
+    "country": "PK",
+    "state": null,
+    "phone": null,
+    "website": null,
+    "opening_hours": null,
+    "osm_id": 13985411254,
+    "osm_type": "node",
+    "all_tags": {
+      "amenity": "charging_station",
+      "check_date": "2026-07-03"
+    },
+    "source_url": "https://www.openstreetmap.org/node/13985411254",
+    "full_address": null,
+    "map_url": "https://www.google.com/maps/search/?api=1&query=33.521436,73.1586756"
+  }
+]

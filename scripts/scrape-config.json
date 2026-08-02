@@ -1,0 +1,54 @@
+{
+  "cities": [
+    {
+      "name": "Karachi",
+      "countryCode": "PK",
+      "searchStrings": [
+        "EV charging station Karachi Pakistan",
+        "electric vehicle charging station Karachi Pakistan",
+        "EV charger Karachi Pakistan"
+      ],
+      "lat": 24.8607,
+      "lng": 67.0011,
+      "radiusMeters": 40000,
+      "latMin": 24.7000,
+      "latMax": 25.0500,
+      "lngMin": 66.8000,
+      "lngMax": 67.2500
+    },
+    {
+      "name": "Lahore",
+      "countryCode": "PK",
+      "searchStrings": [
+        "EV charging station Lahore Pakistan",
+        "electric vehicle charging station Lahore Pakistan",
+        "EV charger Lahore Pakistan"
+      ],
+      "lat": 31.5204,
+      "lng": 74.3587,
+      "radiusMeters": 35000,
+      "latMin": 31.3500,
+      "latMax": 31.7000,
+      "lngMin": 74.1500,
+      "lngMax": 74.5500
+    },
+    {
+      "name": "Islamabad",
+      "countryCode": "PK",
+      "searchStrings": [
+        "EV charging station Islamabad Pakistan",
+        "electric vehicle charging station Islamabad Pakistan",
+        "EV charger Islamabad Pakistan"
+      ],
+      "lat": 33.6844,
+      "lng": 73.0479,
+      "radiusMeters": 30000,
+      "latMin": 33.5000,
+      "latMax": 33.8500,
+      "lngMin": 72.8500,
+      "lngMax": 73.2500
+    }
+  ],
+  "maxItemsPerCity": 50,
+  "matchRadiusMeters": 100
+}

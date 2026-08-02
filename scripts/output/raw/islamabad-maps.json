@@ -1,0 +1,990 @@
+[
+  {
+    "title": "Electric Vehicle Charging Station",
+    "subTitle": "الیکٹرک گاڑی کا چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "Tesla Industries, 81-F Street 6, I-10/3 I 10/3 I-10, Islamabad, Pakistan",
+    "neighborhood": "I-10/3 I 10/3 I-10",
+    "street": "Tesla Industries, 81-F Street 6",
+    "city": "Islamabad",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "phone": "+92 333 8591244",
+    "phoneUnformatted": "+923338591244",
+    "claimThisBusiness": true,
+    "location": {
+      "lat": 33.6544038,
+      "lng": 73.036224
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 3.8,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJo_i1cDOV3zgRhawXl3sGXis",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x38df953370b5f8a3:0x2b5e067b9717ac85",
+    "cid": "3124942319327358085",
+    "reviewsCount": 51,
+    "imagesCount": 21,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:40:46.700Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Friday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Electric%20Vehicle%20Charging%20Station&query_place_id=ChIJo_i1cDOV3zgRhawXl3sGXis",
+    "searchPageUrl": "https://www.google.com/maps/search/EV%20charger%20Islamabad%20Pakistan/@33.67010747118833,73.0479,16z?hl=en",
+    "searchString": "EV charger Islamabad Pakistan",
+    "language": "en",
+    "rank": 1,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnfYI-jYSvbJF3Asa07sWlPFznYKBJ8okE30VCiWS3LfYj5XrN1244gMzNr4du7uNhbfz1uODeVWaj0Q_eA9g9HMG5Eyq_rqco-zwq-b30m0o0EeCOZRHirL_MQOC0pT_rTwHQ_hA=w408-h544-k-no",
+    "kgmid": "/g/11pwq48x2z"
+  },
+  {
+    "title": "Electric Vehicle Charging Station",
+    "subTitle": null,
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "104 Jinnah Ave, G 7/3 Blue Area, Islamabad, Pakistan",
+    "neighborhood": "G 7/3 Blue Area",
+    "street": "104 Jinnah Ave",
+    "city": "Islamabad",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "phone": "",
+    "phoneUnformatted": "",
+    "claimThisBusiness": true,
+    "location": {
+      "lat": 33.7167266,
+      "lng": 73.0678213
+    },
+    "locatedIn": "Attock Petrol Pump (Company Operated)",
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 4.1,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJJcEQyJ-_3zgRKWj4An8-nOU",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x38dfbf9fc810c125:0xe59c3e7f02f86829",
+    "cid": "16545167846283962409",
+    "reviewsCount": 31,
+    "imagesCount": 40,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:40:46.701Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Friday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Electric%20Vehicle%20Charging%20Station&query_place_id=ChIJJcEQyJ-_3zgRKWj4An8-nOU",
+    "searchPageUrl": "https://www.google.com/maps/search/EV%20charger%20Islamabad%20Pakistan/@33.67010747118833,73.0479,16z?hl=en",
+    "searchString": "EV charger Islamabad Pakistan",
+    "language": "en",
+    "rank": 2,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlrAdYLFgAqmIozAe39q96kjSY0Nf2yOBTSS9EW7r-RcPacRMqQ2fLLuWLLb3ULwiYd4cIMKMmAmVpjUQy1ZBBy8a--HU-eRfyA53Ki-17B2r573vckgRMLqnR7RopZXb9daH1wuAS_HMY6=w408-h544-k-no",
+    "kgmid": "/g/11sq5lpprx"
+  },
+  {
+    "title": "Electric Vehicle Charging Station",
+    "subTitle": null,
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "1 Jinnah Avenue, MPCHS F 8/4 F-8, Islamabad, 44000, Pakistan",
+    "neighborhood": "MPCHS F 8/4 F-8",
+    "street": "1 Jinnah Avenue",
+    "city": "Islamabad",
+    "postalCode": "44000",
+    "state": null,
+    "countryCode": "PK",
+    "phone": "+92 314 9106531",
+    "phoneUnformatted": "+923149106531",
+    "claimThisBusiness": true,
+    "location": {
+      "lat": 33.7081082,
+      "lng": 73.0501711
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 3.2,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJ66riKE2_3zgRKeO_Vqx6DEM",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x38dfbf4d28e2aaeb:0x430c7aac56bfe329",
+    "cid": "4831371380870079273",
+    "reviewsCount": 9,
+    "imagesCount": 2,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:40:46.702Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Electric%20Vehicle%20Charging%20Station&query_place_id=ChIJ66riKE2_3zgRKeO_Vqx6DEM",
+    "searchPageUrl": "https://www.google.com/maps/search/EV%20charger%20Islamabad%20Pakistan/@33.67010747118833,73.0479,16z?hl=en",
+    "searchString": "EV charger Islamabad Pakistan",
+    "language": "en",
+    "rank": 3,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmbQqCBlHNHpe8sIM8m180XRZ4SdS1_UeHQg49185GbT2WDpePGDVZ6T4yBSDUXntREltq3NR1EmduXaH1M96XZGqVS0rUaJkE-zu1418NARE6Kus73AhOzqVdcy198AGxlxZmaPg=w408-h544-k-no",
+    "kgmid": "/g/11nxr88gv1"
+  },
+  {
+    "title": "BMW Destination Charging Station",
+    "subTitle": "BMW Destination چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "104 Centaurus Mall, F 8/4 F-8, Islamabad, 44220, Pakistan",
+    "neighborhood": "F 8/4 F-8",
+    "street": "104 Centaurus Mall",
+    "city": "Islamabad",
+    "postalCode": "44220",
+    "state": null,
+    "countryCode": "PK",
+    "website": "https://www.bmw.de/",
+    "phone": "+92 333 8591244",
+    "phoneUnformatted": "+923338591244",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 33.7077601,
+      "lng": 73.049781
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 5,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJzbmF-7C_3zgRzivJAh4lEp0",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x38dfbfb0fb85b9cd:0x9d12251e02c92bce",
+    "cid": "11318149624361462734",
+    "reviewsCount": 4,
+    "imagesCount": 6,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:40:46.702Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Friday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=BMW%20Destination%20Charging%20Station&query_place_id=ChIJzbmF-7C_3zgRzivJAh4lEp0",
+    "searchPageUrl": "https://www.google.com/maps/search/EV%20charger%20Islamabad%20Pakistan/@33.67010747118833,73.0479,16z?hl=en",
+    "searchString": "EV charger Islamabad Pakistan",
+    "language": "en",
+    "rank": 4,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkU9jdple6W7EcThPUWI-gQfZTcrrVaGgyVpML_og2JaOqQzOaI-UPuMcegPBc3HEjjEyYHWxsXOq0bLA0ghJPav4GVqCEvF0Tj1n6ZecCTjyeJHT60MNaOnZzQ1Ni7nD8A-w7YdgaTQf2s=w408-h306-k-no",
+    "kgmid": "/g/11xd0289y8"
+  },
+  {
+    "title": "Go Green Avenue i-9/3 EV Charging Station",
+    "subTitle": "Go Green Avenue چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "Plot 295 Street 1 Street 3, I-9/3 I 9/3 I-9, Islamabad, 46000, Pakistan",
+    "neighborhood": "I-9/3 I 9/3 I-9",
+    "street": "Plot 295 Street 1 Street 3",
+    "city": "Islamabad",
+    "postalCode": "46000",
+    "state": null,
+    "countryCode": "PK",
+    "website": "http://gogreenavenue.com/",
+    "phone": "+92 320 8555015",
+    "phoneUnformatted": "+923208555015",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 33.6630357,
+      "lng": 73.0571414
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 4.9,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJITbN9OOV3zgRTBIVMpofVdc",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x38df95e3f4cd3621:0xd7551f9a3215124c",
+    "cid": "15516342838300578380",
+    "reviewsCount": 56,
+    "imagesCount": 83,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:40:46.702Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "9 AM to 6 PM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "9 AM to 6 PM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "9 AM to 6 PM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "9 AM to 6 PM"
+      },
+      {
+        "day": "Friday",
+        "hours": "9 AM to 6 PM"
+      },
+      {
+        "day": "Saturday",
+        "hours": "9 AM to 6 PM"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Closed"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Go%20Green%20Avenue%20i-9%2F3%20EV%20Charging%20Station&query_place_id=ChIJITbN9OOV3zgRTBIVMpofVdc",
+    "searchPageUrl": "https://www.google.com/maps/search/EV%20charger%20Islamabad%20Pakistan/@33.67010747118833,73.0479,16z?hl=en",
+    "searchString": "EV charger Islamabad Pakistan",
+    "language": "en",
+    "rank": 5,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlYg-TEIOLcOJM8hjtWJ9cmpzjlLIh2j1N43j3wAuhGIizQnU6evJ1CNoXNuAVDB1CVwo149uFn-TsKwxwBvlzNnig_e8KGTu0SZZ_dwNKtO6tmwjja-_MogZqkhDK-XtmqdbYDFDyz6bk=w408-h544-k-no",
+    "kgmid": "/g/11x8j1l4ml"
+  },
+  {
+    "title": "PSO Electro Charging Station",
+    "subTitle": null,
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "P3C5+HWX, F 7 Markaz F-7, Islamabad, Pakistan",
+    "neighborhood": "F 7 Markaz F-7",
+    "street": "P3C5+HWX",
+    "city": "Islamabad",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "phone": "+92 323 8175330",
+    "phoneUnformatted": "+923238175330",
+    "claimThisBusiness": true,
+    "location": {
+      "lat": 33.7214875,
+      "lng": 73.0598696
+    },
+    "locatedIn": "PSO Petrol Pump",
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 3.1,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJoVGsSqq_3zgRZ0ZBGXLpkVE",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x38dfbfaa4aac51a1:0x5191e97219414667",
+    "cid": "5877735664954459751",
+    "reviewsCount": 28,
+    "imagesCount": 7,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:40:46.702Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=PSO%20Electro%20Charging%20Station&query_place_id=ChIJoVGsSqq_3zgRZ0ZBGXLpkVE",
+    "searchPageUrl": "https://www.google.com/maps/search/EV%20charger%20Islamabad%20Pakistan/@33.67010747118833,73.0479,16z?hl=en",
+    "searchString": "EV charger Islamabad Pakistan",
+    "language": "en",
+    "rank": 6,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWky6xjtZaeR8qFEqYWs2wswS1nBbiBEcXTkhht1KEOgFaw4CChOyfsQ-ZI3B50jpStmMuVpaMKzU40cU3NXBsRfssHIyRkUiGBw1wBGtWeXUj3PfACGq5_5nXEloJ9N1PIQ9He6bA=w408-h384-k-no",
+    "kgmid": "/g/11rsq6cmgz"
+  },
+  {
+    "title": "Go EV Charging Station",
+    "subTitle": "Go EV چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "3, F-7/3 F 7/3 F-7, Islamabad, 44210, Pakistan",
+    "neighborhood": "F-7/3 F 7/3 F-7",
+    "street": "3",
+    "city": "Islamabad",
+    "postalCode": "44210",
+    "state": null,
+    "countryCode": "PK",
+    "website": "https://goevcharger.com/",
+    "phone": "+92 310 7125385",
+    "phoneUnformatted": "+923107125385",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 33.725791,
+      "lng": 73.057764
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": null,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJ4T9TMMq_3zgROCfhp19HmFM",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x38dfbfca30533fe1:0x5398475fa7e12738",
+    "cid": "6023642977772054328",
+    "reviewsCount": null,
+    "imagesCount": 0,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:40:46.702Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Friday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Go%20EV%20Charging%20Station&query_place_id=ChIJ4T9TMMq_3zgROCfhp19HmFM",
+    "searchPageUrl": "https://www.google.com/maps/search/EV%20charger%20Islamabad%20Pakistan/@33.67010747118833,73.0479,16z?hl=en",
+    "searchString": "EV charger Islamabad Pakistan",
+    "language": "en",
+    "rank": 7,
+    "isAdvertisement": false,
+    "imageUrl": null,
+    "kgmid": "/g/11xv8g65kr"
+  },
+  {
+    "title": "Go Green Avenue Head office EV Chargering solutions",
+    "subTitle": null,
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "Plot No 363 & 364, Street 5, I-9/3 I 9/3 I-9, Islamabad, 46000, Pakistan",
+    "neighborhood": "I-9/3 I 9/3 I-9",
+    "street": "Plot No 363 & 364, Street 5",
+    "city": "Islamabad",
+    "postalCode": "46000",
+    "state": null,
+    "countryCode": "PK",
+    "website": "https://gogreenavenue.com/",
+    "phone": "+92 320 8553643",
+    "phoneUnformatted": "+923208553643",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 33.6598992,
+      "lng": 73.0585893
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 4.4,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJG1HtTEGV3zgR4Kvy8e_GEDQ",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x38df95414ced511b:0x3410c6eff1f2abe0",
+    "cid": "3751717223458319328",
+    "reviewsCount": 7,
+    "imagesCount": 19,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:40:46.703Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "9 AM to 6 PM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "9 AM to 6 PM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "9 AM to 6 PM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "9 AM to 6 PM"
+      },
+      {
+        "day": "Friday",
+        "hours": "9 AM to 6 PM"
+      },
+      {
+        "day": "Saturday",
+        "hours": "9 AM to 6 PM"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Closed"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Service options": [
+        {
+          "Onsite services": true
+        }
+      ],
+      "Parking": [
+        {
+          "Free parking garage": true
+        },
+        {
+          "Free parking lot": true
+        },
+        {
+          "Free street parking": true
+        },
+        {
+          "On-site parking": true
+        },
+        {
+          "Paid parking lot": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Go%20Green%20Avenue%20Head%20office%20EV%20Chargering%20solutions&query_place_id=ChIJG1HtTEGV3zgR4Kvy8e_GEDQ",
+    "searchPageUrl": "https://www.google.com/maps/search/EV%20charger%20Islamabad%20Pakistan/@33.67010747118833,73.0479,16z?hl=en",
+    "searchString": "EV charger Islamabad Pakistan",
+    "language": "en",
+    "rank": 8,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkkRzO02EHXNa20Kp8sfQ5U0dZTY-IHdEXfyI0JGdHF3zTq4Avz25vrgzlwrAxo151lsRZPD-dlmotJrQwW-oawYuujbn8Qi8AQU_LGMHW4TfW-PCFe82wtZQwaxiEV_P_h769vZrt9yUSj=w408-h510-k-no",
+    "kgmid": "/g/11x9524hmy"
+  },
+  {
+    "title": "PSO Marwat Filling Station",
+    "subTitle": null,
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "M39G+6WC, Rehman Baba Rd, I-8/3 I 8 Markaz I-8, Islamabad, Pakistan",
+    "neighborhood": "I-8/3 I 8 Markaz I-8",
+    "street": "M39G+6WC, Rehman Baba Rd",
+    "city": "Islamabad",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "phone": "",
+    "phoneUnformatted": "",
+    "claimThisBusiness": true,
+    "location": {
+      "lat": 33.668058,
+      "lng": 73.077261
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 2.8,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJx8mlMACV3zgR1IUdBAJJg_k",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x38df950030a5c9c7:0xf9834902041d85d4",
+    "cid": "17979294410400957908",
+    "reviewsCount": 38,
+    "imagesCount": 9,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:40:46.703Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Friday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Amenities": [
+        {
+          "Restroom": true
+        }
+      ],
+      "Payments": [
+        {
+          "Credit cards": true
+        },
+        {
+          "Debit cards": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=PSO%20Marwat%20Filling%20Station&query_place_id=ChIJx8mlMACV3zgR1IUdBAJJg_k",
+    "searchPageUrl": "https://www.google.com/maps/search/EV%20charger%20Islamabad%20Pakistan/@33.67010747118833,73.0479,16z?hl=en",
+    "searchString": "EV charger Islamabad Pakistan",
+    "language": "en",
+    "rank": 11,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmgdXQ9wTacJK7daOyPOGW2rfLokoihkkT3lzZWd1h6juVVWmxj7hFhwU3HrJ5lYPCSX63bkZyyZ_5ApIIUNW8eNJ6BHBmtF46FWqBHzhh9SdmvbIRWgqHvEsc_mdrv8AZBdQMHddI3Hmrc=w426-h240-k-no",
+    "kgmid": "/g/11lzhkxq_s"
+  },
+  {
+    "title": "Dhariwal Enterprises Warehouse",
+    "subTitle": null,
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "Industrial area, Plot#253 Street 6, I-9/2 I 9/2 ISB, Islamabad, 44000, Pakistan",
+    "neighborhood": "I-9/2 I 9/2 ISB",
+    "street": "Industrial area, Plot#253 Street 6",
+    "city": "Islamabad",
+    "postalCode": "44000",
+    "state": null,
+    "countryCode": "PK",
+    "website": "https://xn-international.com/",
+    "phone": "+92 310 6684666",
+    "phoneUnformatted": "+923106684666",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 33.6576638,
+      "lng": 73.0541565
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": null,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJ938UOPaV3zgRQqFbyu1Kngs",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x38df95f638147ff7:0xb9e4aedca5ba142",
+    "cid": "837188965900198210",
+    "reviewsCount": null,
+    "imagesCount": 27,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:40:46.704Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "10:30 AM to 6 PM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "10:30 AM to 6 PM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "10:30 AM to 6 PM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "10:30 AM to 6 PM"
+      },
+      {
+        "day": "Friday",
+        "hours": "1 to 7 PM"
+      },
+      {
+        "day": "Saturday",
+        "hours": "10:30 AM to 6 PM"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Closed"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Dhariwal%20Enterprises%20Warehouse&query_place_id=ChIJ938UOPaV3zgRQqFbyu1Kngs",
+    "searchPageUrl": "https://www.google.com/maps/search/EV%20charger%20Islamabad%20Pakistan/@33.67010747118833,73.0479,16z?hl=en",
+    "searchString": "EV charger Islamabad Pakistan",
+    "language": "en",
+    "rank": 14,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnYa844NOAgJE_VzF2SP1urvL9UgcPuf8_viBUtsRa1vPpzncE8q_Ngu2442fF61yMJ9A78zDU_gCF5XEqkTyzx0reDIl9Uhi8l-P23ZSeBecmt3BxkTPmR0Fl3K0X7jxF081DmU1la9U2j=w408-h544-k-no",
+    "kgmid": "/g/11nq2vhsgg"
+  },
+  {
+    "title": "Go Green avenue Centaurus mall EV charging station",
+    "subTitle": "GO GREEN Avenue",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "F, basement 2 Centaurus mall , 4, 8/4 Jinnah Avenue, F-8, Islamabad, 44220, Pakistan",
+    "neighborhood": "F 8/4 F-8",
+    "street": "F, basement 2 Centaurus mall , 4, 8/4 Jinnah Avenue",
+    "city": "Islamabad",
+    "postalCode": "44220",
+    "state": null,
+    "countryCode": "PK",
+    "website": "https://gogreenavenue.com/",
+    "phone": "+92 327 5395080",
+    "phoneUnformatted": "+923275395080",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 33.7075784,
+      "lng": 73.0493537
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 3,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJPSR0Ywe_3zgRsq6f7kxgRpQ",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x38dfbf076374243d:0x9446604cee9faeb2",
+    "cid": "10684333049520303794",
+    "reviewsCount": 4,
+    "imagesCount": 40,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-02T13:40:49.632Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "10 AM to 11 PM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "10 AM to 11 PM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "10 AM to 11 PM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "10 AM to 11 PM"
+      },
+      {
+        "day": "Friday",
+        "hours": "10 AM to 11 PM"
+      },
+      {
+        "day": "Saturday",
+        "hours": "10 AM to 11 PM"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Closed"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Go%20Green%20avenue%20Centaurus%20mall%20EV%20charging%20station&query_place_id=ChIJPSR0Ywe_3zgRsq6f7kxgRpQ",
+    "searchPageUrl": "https://www.google.com/maps/search/electric%20vehicle%20charging%20station%20Islamabad%20Pakistan/@33.67010747118833,73.0479,16z?hl=en",
+    "searchString": "electric vehicle charging station Islamabad Pakistan",
+    "language": "en",
+    "rank": 20,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmmyn2qYUOjhYLTXzoDkog-Ng-UfSgHQxY-_P7ZnVwH1UAfZ2ygFmM7ZXtMW5v-OUyV_EtiW_1xK7imRrcoIvUlgsYxK4i6eItkhcHBGROeDyp_IKO3OaMSs7LtL-344WNytZ5J_QKTkM38=w408-h306-k-no",
+    "kgmid": "/g/11zbmtj8yh"
+  }
+]

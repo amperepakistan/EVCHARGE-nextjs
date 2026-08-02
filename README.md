@@ -34,7 +34,21 @@ npm run dev
 node --env-file=.env.local scripts/seed-terminals.mjs scripts/sample-terminals.json
 ```
 
-5. Create a super admin:
+5. Seed demo users for every role (local/staging only):
+
+```bash
+npm run seed:users
+```
+
+| Email | Password | Dashboard |
+|---|---|---|
+| `admin@evcharge.pk` | `Admin123!` | `/admin` |
+| `staff@evcharge.pk` | `Staff123!` | `/admin` |
+| `vendor@evcharge.pk` | `Vendor123!` | `/vendor` |
+| `owner@evcharge.pk` | `Owner123!` | `/owner` |
+| `driver@evcharge.pk` | `Driver123!` | API / Flutter (no dashboard) |
+
+Or create only a super admin:
 
 ```bash
 node --env-file=.env.local scripts/create-admin.mjs admin@evcharge.pk 'YourPassword123'
@@ -49,6 +63,7 @@ node --env-file=.env.local scripts/create-admin.mjs admin@evcharge.pk 'YourPassw
 | `npm test` | Vitest (lib validations) |
 | `npm run types:supabase` | Regenerate `types/database.types.ts` |
 | `node --env-file=.env.local scripts/seed-terminals.mjs <file.json>` | Upsert scraped/manual terminals |
+| `npm run seed:users` | Seed demo admin/staff/vendor/owner/driver users |
 | `node --env-file=.env.local scripts/create-admin.mjs <email> <password>` | Create/update super admin |
 
 ## Auth contract

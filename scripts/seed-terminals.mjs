@@ -46,7 +46,7 @@ function mapRow(row) {
     throw new Error(`Invalid row (need name, latitude, longitude): ${JSON.stringify(row)}`);
   }
 
-  return {
+  const res = {
     name,
     latitude,
     longitude,
@@ -70,6 +70,7 @@ function mapRow(row) {
     scraped_at: pick(row, 'scraped_at', 'scrapedAt') ?? new Date().toISOString(),
     is_public: pick(row, 'is_public', 'isPublic') ?? true,
   };
+  return res;
 }
 
 const rows = raw.map(mapRow);

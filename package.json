@@ -10,18 +10,23 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "types:supabase": "supabase gen types typescript --project-id \"$SUPABASE_PROJECT_ID\" > types/database.types.ts"
+    "types:supabase": "supabase gen types typescript --project-id \"$SUPABASE_PROJECT_ID\" > types/database.types.ts",
+    "scrape:apify": "node --env-file=.env.local scripts/scrape-apify.mjs",
+    "scrape:normalize": "node --env-file=.env.local scripts/normalize-apify.mjs",
+    "scrape:seed": "node --env-file=.env.local scripts/seed-terminals.mjs scripts/output/terminals-scraped-pk.json",
+    "seed:users": "node --env-file=.env.local scripts/seed-demo-users.mjs"
   },
   "dependencies": {
+    "@hookform/resolvers": "^4.1.3",
     "@supabase/supabase-js": "^2.49.1",
+    "apify-client": "^2.24.0",
     "bcryptjs": "^3.0.2",
     "jose": "^6.0.10",
     "next": "^15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
-    "zod": "^3.24.2",
-    "@hookform/resolvers": "^4.1.3"
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
