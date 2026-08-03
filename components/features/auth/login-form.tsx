@@ -2,28 +2,34 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState, useTransition } from 'react';
+import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { TextField } from '@/components/ui/text-field';
+import { demoAccounts } from '@/lib/mock/users';
+
+const ROLE_HOME: Record<string, string> = {
+  vendor: '/vendor',
+  owner: '/owner',
+  super_admin: '/admin',
+  staff: '/admin',
+  driver: '/',
+};
 
 export function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [error, setError] = useState<string | null>(null);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [pending, startTransition] = useTransition();
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  function submit(nextEmail: string, nextPassword: string) {
     setError(null);
-
-    const form = new FormData(e.currentTarget);
-    const email = String(form.get('email') ?? '');
-    const password = String(form.get('password') ?? '');
-
     startTransition(async () => {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email: nextEmail, password: nextPassword }),
       });
 
       const json = (await res.json()) as {
@@ -37,55 +43,93 @@ export function LoginForm() {
       }
 
       const next = searchParams.get('next');
-      const roleHome: Record<string, string> = {
-        vendor: '/vendor',
-        owner: '/owner',
-        super_admin: '/admin',
-        staff: '/admin',
-        driver: '/',
-      };
-
-      router.replace(next ?? roleHome[json.data.user.role] ?? '/');
+      router.replace(next ?? ROLE_HOME[json.data.user.role] ?? '/');
       router.refresh();
     });
   }
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-5">
-      <TextField
-        label="Email address"
-        name="email"
-        type="email"
-        required
-        autoComplete="email"
-        placeholder="name@company.com"
-      />
-      <TextField
-        label="Password"
-        name="password"
-        type="password"
-        required
-        autoComplete="current-password"
-        placeholder="••••••••"
-      />
-      {error ? (
-        <div className="rounded-xl border border-[var(--color-error)]/20 bg-[var(--color-error)]/5 p-3.5 text-xs font-medium text-[var(--color-error)]">
-          {error}
+    <div className="flex flex-col gap-6">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          submit(email, password);
+        }}
+        className="flex flex-col gap-5"
+      >
+        <TextField
+          label="Email address"
+          name="email"
+          type="email"
+          required
+          autoComplete="email"
+          placeholder="name@company.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <TextField
+          label="Password"
+          name="password"
+          type="password"
+          required
+          autoComplete="current-password"
+          placeholder="••••••••"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        {error ? (
+          <div className="rounded-button border-error/20 bg-error/5 text-error border p-3.5 text-xs font-medium">
+            {error}
+          </div>
+        ) : null}
+
+        <Button type="submit" size="lg" disabled={pending} className="w-full">
+          {pending ? (
+            <>
+              <Loader2 className="size-4 animate-spin" />
+              Authenticating…
+            </>
+          ) : (
+            'Sign in'
+          )}
+        </Button>
+      </form>
+
+      {/* Demo build: no real user store, so make the sample tenants reachable
+          in one click rather than making people copy credentials around. */}
+      <div className="border-border border-t pt-5">
+        <p className="text-text-secondary text-xs font-bold tracking-wider uppercase">
+          Demo accounts
+        </p>
+        <div className="mt-3 grid gap-2">
+          {demoAccounts.map((account) => (
+            <button
+              key={account.email}
+              type="button"
+              disabled={pending}
+              onClick={() => {
+                setEmail(account.email);
+                setPassword(account.password);
+                submit(account.email, account.password);
+              }}
+              className="rounded-button border-border hover:bg-surface-muted flex items-center justify-between gap-3 border px-3.5 py-2.5 text-left transition-colors disabled:opacity-50"
+            >
+              <span className="min-w-0">
+                <span className="text-text-primary block truncate text-sm font-semibold">
+                  {account.label}
+                </span>
+                <span className="text-text-secondary block truncate text-xs">
+                  {account.email}
+                </span>
+              </span>
+              <span className="rounded-tag bg-surface-muted text-text-secondary shrink-0 px-2 py-1 text-[10px] font-bold tracking-wide uppercase">
+                {account.role.replace('_', ' ')}
+              </span>
+            </button>
+          ))}
         </div>
-      ) : null}
-      <Button type="submit" disabled={pending} className="mt-2 w-full">
-        {pending ? (
-          <span className="flex items-center gap-2">
-            <svg className="h-4 w-4 animate-spin text-current" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-            </svg>
-            Authenticating…
-          </span>
-        ) : (
-          'Sign in to Platform'
-        )}
-      </Button>
-    </form>
+      </div>
+    </div>
   );
 }

@@ -1,107 +1,143 @@
 import Link from 'next/link';
+import { ArrowRight, Building2, ShieldCheck, Wrench, Zap } from 'lucide-react';
 import { BrandLogo } from '@/components/ui/brand-logo';
+
+const PORTALS = [
+  {
+    href: '/vendor',
+    icon: Wrench,
+    title: 'Vendor',
+    description:
+      'Charger health, faults, remote operations and maintenance across everything you install.',
+  },
+  {
+    href: '/owner',
+    icon: Building2,
+    title: 'Terminal Owner',
+    description:
+      'Your site: live bay status, revenue share, sessions, and on-premise security.',
+  },
+  {
+    href: '/admin',
+    icon: ShieldCheck,
+    title: 'Admin Console',
+    description: 'Network-wide oversight, tenants, pricing models and platform RBAC.',
+  },
+];
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-[var(--color-background)]">
-      {/* Top Navbar */}
-      <nav className="border-b border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-4 md:px-12">
+    <div className="bg-background flex min-h-screen flex-col">
+      <nav className="border-border border-b px-6 py-4 md:px-10">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           <BrandLogo size="md" />
-          <div className="flex items-center gap-4">
-            <Link
-              href="/login"
-              className="btn-pill h-10 px-5 text-sm font-semibold bg-[var(--color-primary)] text-[var(--color-on-primary)] hover:bg-[var(--color-primary-dark)] transition-colors flex items-center justify-center shadow-sm"
-            >
-              Sign in
-            </Link>
-          </div>
+          <Link
+            href="/login"
+            className="rounded-button bg-primary text-on-primary hover:bg-primary-dark flex h-10 items-center px-5 text-sm font-semibold transition-colors"
+          >
+            Sign in
+          </Link>
         </div>
       </nav>
 
-      {/* Hero / Main Section */}
-      <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6 py-16 md:px-12">
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-          {/* Left Column: Heading & Description */}
-          <div className="lg:col-span-7">
+      <main className="mx-auto w-full max-w-7xl flex-1 px-6 py-14 md:px-10 md:py-20">
+        <div className="grid gap-14 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-6">
+            <span className="rounded-tag bg-primary-light text-primary-800 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold tracking-wide uppercase">
+              <Zap className="size-3.5" />
+              Pakistan EV network
+            </span>
 
-            <h1 className="font-heading mt-4 text-4xl font-extrabold tracking-tight text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl">
-              Powering the future of EV charging.
+            <h1 className="font-heading text-text-primary mt-6 text-4xl leading-[1.08] font-bold tracking-tight sm:text-5xl lg:text-6xl">
+              One console for every
+              <br />
+              charger you run.
             </h1>
-            
-            <p className="mt-6 text-lg text-[var(--color-text-secondary)] leading-relaxed max-w-2xl">
-              Comprehensive portal for vendors, station owners, and network administrators to monitor live telemetry, manage charging hubs, and process driver sessions.
+
+            <p className="text-text-secondary mt-6 max-w-xl text-lg leading-relaxed">
+              Ampere connects vendors, site owners and operators to the same live data —
+              charger health, sessions, faults and revenue, from install to payout.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-9 flex flex-wrap gap-3">
               <Link
                 href="/login"
-                className="btn-pill h-12 px-6 text-sm font-semibold bg-[var(--color-primary)] text-[var(--color-on-primary)] hover:bg-[var(--color-primary-dark)] transition-colors flex items-center justify-center shadow-sm"
+                className="rounded-button bg-primary text-on-primary hover:bg-primary-dark flex h-12 items-center gap-2 px-6 text-sm font-semibold transition-colors"
               >
-                Sign in to Console →
+                Sign in to console
+                <ArrowRight className="size-4" />
               </Link>
+              <a
+                href="#portals"
+                className="rounded-button border-border text-text-primary hover:bg-surface-muted flex h-12 items-center border px-6 text-sm font-semibold transition-colors"
+              >
+                Explore portals
+              </a>
             </div>
+
+            <dl className="border-border mt-12 grid max-w-lg grid-cols-3 gap-6 border-t pt-8">
+              {[
+                { value: '12', label: 'Live stations' },
+                { value: '6', label: 'Cities' },
+                { value: '99.2%', label: 'Network uptime' },
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <dt className="font-heading text-text-primary text-2xl font-bold tracking-tight">
+                    {stat.value}
+                  </dt>
+                  <dd className="text-text-secondary mt-0.5 text-xs">{stat.label}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
-          {/* Right Column: Portal Access Cards Grid */}
-          <div className="lg:col-span-5 flex flex-col gap-4">
-            <h2 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-secondary)] px-1">
-              Select Portal Dashboard
+          <div id="portals" className="flex flex-col gap-3 lg:col-span-6">
+            <h2 className="text-text-secondary px-1 text-xs font-bold tracking-wider uppercase">
+              Select your portal
             </h2>
 
-            <Link
-              href="/vendor"
-              className="card-rounded group border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-all duration-200 hover:border-[var(--color-primary)] hover:shadow-md"
-            >
-              <div className="flex items-center justify-between">
-                <div className="font-heading text-lg font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary-800)]">
-                  Vendor Dashboard
+            {PORTALS.map(({ href, icon: Icon, title, description }) => (
+              <Link
+                key={href}
+                href={href}
+                className="rounded-card border-border hover:border-primary-400 group border p-5 transition-colors"
+              >
+                <div className="flex items-start gap-4">
+                  <span className="rounded-image bg-surface-muted text-primary-800 group-hover:bg-primary-light flex size-11 shrink-0 items-center justify-center transition-colors">
+                    <Icon className="size-5" />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between gap-3">
+                      <h3 className="font-heading text-text-primary text-base font-bold">
+                        {title}
+                      </h3>
+                      <ArrowRight className="text-text-secondary size-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
+                    </div>
+                    <p className="text-text-secondary mt-1 text-sm leading-relaxed">
+                      {description}
+                    </p>
+                  </div>
                 </div>
-                <span className="text-[var(--color-text-secondary)] group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-              <p className="mt-2 text-sm text-[var(--color-text-secondary)]">
-                Manage station hardware, connector status, dynamic pricing, and uptime diagnostics.
-              </p>
-            </Link>
+              </Link>
+            ))}
 
-            <Link
-              href="/owner"
-              className="card-rounded group border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-all duration-200 hover:border-[var(--color-primary)] hover:shadow-md"
-            >
-              <div className="flex items-center justify-between">
-                <div className="font-heading text-lg font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary-800)]">
-                  Owner Dashboard
-                </div>
-                <span className="text-[var(--color-text-secondary)] group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-              <p className="mt-2 text-sm text-[var(--color-text-secondary)]">
-                Monitor charging revenue, energy consumption metrics, and financial reporting.
+            <div className="rounded-card bg-ink text-on-ink mt-2 p-5">
+              <p className="text-on-ink/60 text-xs font-bold tracking-wide uppercase">
+                Demo build
               </p>
-            </Link>
-
-            <Link
-              href="/admin"
-              className="card-rounded group border border-[var(--color-border)] bg-[var(--color-surface)] p-6 transition-all duration-200 hover:border-[var(--color-primary)] hover:shadow-md"
-            >
-              <div className="flex items-center justify-between">
-                <div className="font-heading text-lg font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary-800)]">
-                  Admin Console
-                </div>
-                <span className="text-[var(--color-text-secondary)] group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-              <p className="mt-2 text-sm text-[var(--color-text-secondary)]">
-                Super-admin network overrides, user role management, and system-wide audits.
+              <p className="mt-2 text-sm leading-relaxed">
+                Every dashboard runs on sample data — no live chargers are connected.
+                Sign in with any demo account to explore.
               </p>
-            </Link>
+            </div>
           </div>
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-6 text-center text-xs text-[var(--color-text-secondary)]">
-        <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4">
+      <footer className="border-border border-t px-6 py-6 md:px-10">
+        <div className="text-text-secondary mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 text-xs md:flex-row">
           <BrandLogo size="sm" />
-          <p>&copy; {new Date().getFullYear()} EV Charging Infrastructure. Built with Design System tokens.</p>
+          <p>&copy; {new Date().getFullYear()} Ampere. EV charging infrastructure for Pakistan.</p>
         </div>
       </footer>
     </div>

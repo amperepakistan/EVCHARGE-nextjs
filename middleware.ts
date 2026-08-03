@@ -26,26 +26,30 @@ export async function middleware(req: NextRequest) {
 
   try {
     const session = await verifyToken(token);
+    // `driver` (and any future role) has no dashboard home. Falling through to
+    // `/login` while still holding a valid cookie bounced them in a loop, so
+    // unknown roles go to the public site instead.
     const roleHome: Record<string, string> = {
       vendor: '/vendor',
       owner: '/owner',
       super_admin: '/admin',
       staff: '/admin',
     };
+    const home = roleHome[session.role] ?? '/';
 
     // Keep roles inside their own dashboard tree
     if (pathname.startsWith('/vendor') && session.role !== 'vendor' && session.role !== 'super_admin') {
-      return NextResponse.redirect(new URL(roleHome[session.role] ?? '/login', req.url));
+      return NextResponse.redirect(new URL(home, req.url));
     }
     if (pathname.startsWith('/owner') && session.role !== 'owner' && session.role !== 'super_admin') {
-      return NextResponse.redirect(new URL(roleHome[session.role] ?? '/login', req.url));
+      return NextResponse.redirect(new URL(home, req.url));
     }
     if (
       pathname.startsWith('/admin') &&
       session.role !== 'super_admin' &&
       session.role !== 'staff'
     ) {
-      return NextResponse.redirect(new URL(roleHome[session.role] ?? '/login', req.url));
+      return NextResponse.redirect(new URL(home, req.url));
     }
 
     return NextResponse.next();

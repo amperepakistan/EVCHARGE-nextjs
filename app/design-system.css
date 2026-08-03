@@ -1,4 +1,13 @@
-/* Design System Tokens for EV Charging App */
+/* Design System Tokens for EV Charging Platform
+ *
+ * Declared inside Tailwind v4's `@theme` (not a plain `:root`) so every token
+ * also generates a utility — `bg-primary`, `text-ink`, `border-border`,
+ * `rounded-card`, `font-heading`. Tailwind still emits each one as a CSS
+ * custom property, so existing `var(--color-*)` usages keep working.
+ *
+ * Values are kept in sync with the Flutter driver app's
+ * `lib/core/theme/app_theme.dart` so web and mobile read as one product.
+ */
 
 @font-face {
   font-family: 'Gotham';
@@ -48,76 +57,78 @@
   font-display: swap;
 }
 
-:root {
-  /* Color Palette */
-  --color-primary: #B6EF6D;          /* CTAs, active states, progress rings, highlights */
-  --color-primary-dark: #9BD854;     /* Pressed/hover state */
-  --color-primary-light: #E7F9CE;    /* Selected chips, subtle highlight backgrounds */
-  --color-on-primary: #1A1A1A;       /* Text/icon on primary - high contrast dark text */
-  
-  --color-text-primary: #1A1A1A;     /* Ink / Body text */
-  --color-text-secondary: #8A8A8A;   /* Labels, timestamps, subtext */
-  
-  --color-background: #FAFAFA;       /* App background */
-  --color-surface: #FFFFFF;          /* Cards, list rows */
-  --color-border: #ECECEC;           /* Card outlines, separators */
-  
-  --color-error: #E53935;            /* Failed charge, offline station */
-  --color-warning: #FFB300;          /* Low battery, fault alert */
-  --color-info: #2196F3;             /* Neutral notices */
+@theme {
+  /* ---- Brand ------------------------------------------------------- */
+  --color-primary: #b6ef6d; /* CTAs, active states, highlights */
+  --color-primary-dark: #9bd854; /* Hover / pressed */
+  --color-primary-light: #edf9da; /* Selected chips, subtle fills */
+  --color-on-primary: #141a0e; /* Text/icons on primary */
 
-  /* Primary Ramp */
-  --color-primary-50: #F7FDEE;
-  --color-primary-100: #E7F9CE;
-  --color-primary-200: #D3F4A8;
-  --color-primary-300: #C4F088;
-  --color-primary-400: #B6EF6D;     /* 500 / base */
-  --color-primary-500: #9BD854;
-  --color-primary-600: #82BE3E;
-  --color-primary-700: #679B2E;
-  --color-primary-800: #4E7A21;
+  /* ---- Ink: high-contrast surfaces ---------------------------------
+   * Emphasis cards, KPI highlights, the dashboard sidebar. Ink is what
+   * keeps a mostly-white UI from reading flat.
+   */
+  --color-ink: #14180f;
+  --color-ink-soft: #262c1e;
+  --color-on-ink: #f7faf1;
+
+  /* ---- Neutrals ----------------------------------------------------- */
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f4f6f0; /* Inset fills, table headers, inputs */
+  --color-border: #e7eae1;
+  --color-text-primary: #14180f;
+  --color-text-secondary: #6c7364;
+
+  /* ---- Semantic status ---------------------------------------------
+   * Reserved for real telemetry state. Never decorative.
+   */
+  --color-available: #4e9f3d;
+  --color-occupied: #e0a11b;
+  --color-offline: #c0483c;
+
+  --color-error: #c0483c;
+  --color-warning: #e0a11b;
+  --color-info: #2f6f9f;
+
+  /* ---- Primary ramp -------------------------------------------------- */
+  --color-primary-50: #f7fdee;
+  --color-primary-100: #e7f9ce;
+  --color-primary-200: #d3f4a8;
+  --color-primary-300: #c4f088;
+  --color-primary-400: #b6ef6d; /* base */
+  --color-primary-500: #9bd854;
+  --color-primary-600: #82be3e;
+  --color-primary-700: #679b2e;
+  --color-primary-800: #4e7a21;
   --color-primary-900: #365615;
 
-  /* Typography Rules:
-   * Heading font is strictly Gotham (GothamBold, GothamMedium, etc.).
+  /* ---- Typography ---------------------------------------------------
+   * Headings are strictly Gotham; body is DM Sans.
    */
   --font-heading: 'Gotham', sans-serif;
   --font-body: 'DM Sans', sans-serif;
 
-  /* Radii Rules:
-   * Buttons: Full pill/stadium — radius = height / 2 (stadium ends)
-   * Cards: ~16–20px moderate rounding
-   * Input fields: ~16–20px
-   *
-   * COMPONENT RULE:
-   * It is STRICTLY FORBIDDEN to use pill elements for section badges or status chips like 
-   * "Network Control Plane" on the main landing page or subheadings.
-   * Pills are strictly reserved for action buttons (CTAs).
+  /* ---- Radii ---------------------------------------------------------
+   * COMPONENT RULE — pill / stadium shapes are NOT permitted anywhere in
+   * the web UI, buttons included. Everything is a rounded rectangle on the
+   * scale below, matching the mobile app. Fully-round geometry is reserved
+   * for genuinely circular things only: status dots and avatars.
    */
-  --radius-card: 18px;               /* 16–20px moderate rounding */
-  --radius-input: 18px;              /* Same family as card radius */
-  --radius-pill: 9999px;             /* Reserved ONLY for Stadium Action Buttons */
+  --radius-tag: 8px; /* Status chips, badges, metadata tags */
+  --radius-button: 14px; /* All buttons and inputs */
+  --radius-image: 16px; /* Media, inset panels */
+  --radius-card: 20px; /* Cards, tables, primary containers */
+  --radius-sheet: 26px; /* Modals, drawers */
 }
 
-/* Typography Utility Classes */
-.font-heading {
-  font-family: var(--font-heading);
-}
-
-.font-body {
-  font-family: var(--font-body);
-}
-
-/* Button Radius Standard */
-.btn-pill {
-  border-radius: var(--radius-pill);
-}
-
-/* Card & Input Radius Standard */
+/* Legacy aliases kept so existing markup keeps rendering while pages are
+ * ported. Prefer the generated utilities (`rounded-card`, `rounded-button`).
+ */
 .card-rounded {
   border-radius: var(--radius-card);
 }
 
 .input-rounded {
-  border-radius: var(--radius-input);
+  border-radius: var(--radius-button);
 }

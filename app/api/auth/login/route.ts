@@ -1,15 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
-import bcrypt from 'bcryptjs';
-import { supabaseServer } from '@/lib/supabase/server';
 import { loginSchema } from '@/lib/validations/terminal';
-import { signToken } from '@/lib/auth/jwt';
-import { SESSION_COOKIE } from '@/lib/auth/session';
+import { setSessionCookie } from '@/lib/auth/session';
 import { apiError } from '@/lib/auth/request';
+import { findMockUser } from '@/lib/mock/users';
 
 /**
  * POST /api/auth/login
- * - Dashboard: sets httpOnly session cookie
- * - Flutter: use `data.token` with Authorization: Bearer
+ *
+ * MVP build: credentials are checked against `lib/mock/users.ts` instead of
+ * the Supabase `users` table, because this phase runs entirely on dummy data.
+ * Everything else is unchanged and real — the same `jose` JWT is signed and
+ * the same httpOnly cookie is set, so `middleware.ts` and
+ * `getSessionFromCookies()` need no special-casing.
+ *
+ * To go live: swap `findMockUser` back for the Supabase lookup plus
+ * `bcrypt.compare`. Nothing else in this file changes.
  */
 export async function POST(req: NextRequest) {
   try {
@@ -20,48 +25,25 @@ export async function POST(req: NextRequest) {
     }
 
     const { email, password } = parsed.data;
-    const { data: user, error } = await supabaseServer()
-      .from('users')
-      .select('id, email, role, full_name, password_hash, is_active')
-      .eq('email', email.toLowerCase())
-      .maybeSingle();
+    const user = findMockUser(email, password);
 
-    if (error) {
-      console.error('[auth/login] db error', error.message);
-      return apiError('Unable to login', 500);
-    }
-
-    if (!user || !user.is_active) {
+    if (!user) {
       return apiError('Invalid email or password', 401);
     }
-
-    const valid = await bcrypt.compare(password, user.password_hash);
-    if (!valid) {
-      return apiError('Invalid email or password', 401);
-    }
-
-    const token = await signToken({ userId: user.id, role: user.role });
 
     const response = NextResponse.json({
       data: {
-        token,
         user: {
           id: user.id,
           email: user.email,
           role: user.role,
-          fullName: user.full_name,
+          fullName: user.fullName,
         },
       },
       error: null,
     });
 
-    response.cookies.set(SESSION_COOKIE, token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
-      path: '/',
-      maxAge: 60 * 60 * 24 * 7,
-    });
+    await setSessionCookie(response, { userId: user.id, role: user.role });
 
     return response;
   } catch (err) {
