@@ -14,7 +14,8 @@
     "scrape:apify": "node --env-file=.env.local scripts/scrape-apify.mjs",
     "scrape:normalize": "node --env-file=.env.local scripts/normalize-apify.mjs",
     "scrape:seed": "node --env-file=.env.local scripts/seed-terminals.mjs scripts/output/terminals-scraped-pk.json",
-    "seed:users": "node --env-file=.env.local scripts/seed-demo-users.mjs"
+    "seed:users": "node --env-file=.env.local scripts/seed-demo-users.mjs",
+    "seed:connected": "node --env-file=.env.local scripts/seed-connected-terminals.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.3",

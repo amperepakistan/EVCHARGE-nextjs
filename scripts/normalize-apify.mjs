@@ -60,6 +60,62 @@ function parseConnectorAndClass(chargingDetails) {
   return { connectorType, chargerClass, powerKw };
 }
 
+/** Turn Google Maps openingHours array into a short display string. */
+function formatOpeningHours(openingHours) {
+  if (!openingHours) return null;
+  if (typeof openingHours === 'string') {
+    const t = openingHours.trim();
+    if (!t || t === '[]') return null;
+    if (!t.startsWith('[')) return t;
+    try {
+      return formatOpeningHours(JSON.parse(t));
+    } catch {
+      return t;
+    }
+  }
+  if (!Array.isArray(openingHours) || openingHours.length === 0) return null;
+
+  const days = openingHours
+    .map((d) => ({
+      day: String(d.day || d.Day || '').trim(),
+      hours: String(d.hours || d.Hours || '').trim(),
+    }))
+    .filter((d) => d.day || d.hours);
+
+  if (!days.length) return null;
+
+  const norms = days.map((d) => d.hours.toLowerCase().replace(/\s+/g, ' ').trim());
+  if (norms.every((h) => h === norms[0])) {
+    const h = days[0].hours;
+    if (/open\s*24|24\s*hours|24\/7/i.test(h)) return '24/7';
+    if (/^closed$/i.test(h)) return 'Closed';
+    return h;
+  }
+
+  const short = (day) =>
+    ({ monday: 'Mon', tuesday: 'Tue', wednesday: 'Wed', thursday: 'Thu', friday: 'Fri', saturday: 'Sat', sunday: 'Sun' })[
+      day.toLowerCase()
+    ] || day.slice(0, 3);
+
+  const weekdays = days.filter((d) =>
+    ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'].includes(d.day.toLowerCase()),
+  );
+  if (
+    weekdays.length === 5 &&
+    weekdays.every((d) => d.hours === weekdays[0].hours)
+  ) {
+    const weekend = days.filter((d) =>
+      ['saturday', 'sunday'].includes(d.day.toLowerCase()),
+    );
+    return [
+      `Mon–Fri ${weekdays[0].hours}`,
+      ...weekend.map((d) => `${short(d.day)} ${d.hours}`),
+    ].join(' · ');
+  }
+
+  return days.map((d) => `${short(d.day)} ${d.hours}`).join(' · ');
+}
+
 const rawFiles = readdirSync(rawDir);
 const mapsFiles = rawFiles.filter((f) => f.endsWith('-maps.json'));
 const evFiles = rawFiles.filter((f) => f.endsWith('-ev.json'));
@@ -103,7 +159,7 @@ for (const file of mapsFiles) {
       connector_type: connectorType,
       power_kw: powerKw,
       price_per_kwh: null,
-      operating_hours: item.openingHours ? JSON.stringify(item.openingHours) : '24/7',
+      operating_hours: formatOpeningHours(item.openingHours) || 'Hours not listed',
       phone_number: item.phone,
       connectivity_tier: 'listed',
       verification_status: 'unverified',
