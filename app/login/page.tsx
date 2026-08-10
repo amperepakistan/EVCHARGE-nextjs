@@ -2,6 +2,8 @@ import { Suspense } from 'react';
 import Link from 'next/link';
 import { LoginForm } from '@/components/features/auth/login-form';
 import { BrandLogo } from '@/components/ui/brand-logo';
+import { SiteFooter } from '@/components/ui/site-footer';
+import { CONTACT } from '@/lib/legal/config';
 
 export default function LoginPage() {
   return (
@@ -44,7 +46,10 @@ export default function LoginPage() {
           <div className="mt-8 border-t border-[var(--color-border)] pt-6 text-center">
             <p className="text-xs text-[var(--color-text-secondary)]">
               Need platform access or technical support?{' '}
-              <a href="mailto:support@evcharge.com" className="font-medium text-[var(--color-text-primary)] underline">
+              <a
+                href={`mailto:${CONTACT.support}`}
+                className="font-medium text-[var(--color-text-primary)] underline"
+              >
                 Contact Administrator
               </a>
             </p>
@@ -52,10 +57,7 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Footer info */}
-      <footer className="text-center text-xs text-[var(--color-text-secondary)] max-w-7xl mx-auto w-full">
-        &copy; {new Date().getFullYear()} EV Charging Network Control Plane. All rights reserved.
-      </footer>
+      <SiteFooter showLogo={false} className="w-full border-t-0" />
     </main>
   );
 }

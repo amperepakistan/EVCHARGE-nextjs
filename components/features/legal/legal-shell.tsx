@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { BrandLogo } from '@/components/ui/brand-logo';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { EFFECTIVE_DATE } from '@/lib/legal/config';
 
 /**
@@ -68,20 +69,7 @@ export function LegalShell({ title, summary, sections, children }: LegalShellPro
         <div className="mt-12">{children}</div>
       </main>
 
-      <footer className="border-border border-t px-6 py-6 md:px-10">
-        <div className="text-text-secondary mx-auto flex max-w-4xl flex-col items-center justify-between gap-3 text-xs md:flex-row">
-          <BrandLogo size="sm" />
-          <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-text-primary transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-text-primary transition-colors">
-              Terms of Service
-            </Link>
-          </div>
-          <p>&copy; {new Date().getFullYear()} Ampere.</p>
-        </div>
-      </footer>
+      <SiteFooter maxWidth="max-w-4xl" />
     </div>
   );
 }
