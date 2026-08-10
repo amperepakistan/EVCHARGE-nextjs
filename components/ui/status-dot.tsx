@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils/cn';
-import type { TerminalStatus } from '@/lib/mock/types';
+import type { TerminalStatus } from '@/types/database.types';
 
 const COLORS: Record<TerminalStatus | 'unknown', string> = {
   available: 'bg-available',

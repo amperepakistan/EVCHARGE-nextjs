@@ -1,9 +1,24 @@
 import type { ServerContext } from '@/lib/server/context';
-import type { CreateTerminalInput, UpdateTerminalInput } from '@/lib/server/modules/terminals/terminals.schema';
+import type {
+  CreateTerminalInput,
+  UpdateTerminalInput,
+} from '@/lib/server/modules/terminals/terminals.schema';
+import type { Tables, TerminalStatus } from '@/types/database.types';
 import { toTerminalInsert, toTerminalUpdate } from '@/lib/utils/terminal-mapper';
+
+const DASHBOARD_LIST_COLUMNS =
+  'id, name, latitude, longitude, city, address, connector_type, charger_class, power_kw, price_per_kwh, operating_hours, phone_number, amenities, connectivity_tier, verification_status, google_place_id, google_maps_url, google_rating, google_rating_count, google_photo_urls, is_public, current_vendor_id, current_owner_id, created_at, updated_at';
 
 const PUBLIC_LIST_COLUMNS =
   'id, name, latitude, longitude, city, address, connector_type, charger_class, power_kw, price_per_kwh, operating_hours, phone_number, connectivity_tier, verification_status, google_place_id, google_maps_url, google_rating, google_rating_count, google_photo_urls, is_public';
+
+export type TerminalRow = Tables<'terminals'>;
+
+export type TerminalStatusSnapshot = {
+  terminal_id: string;
+  status: TerminalStatus;
+  recorded_at: string;
+};
 
 export async function listPublicTerminals(ctx: ServerContext, city?: string | null) {
   let query = ctx.db
@@ -21,6 +36,75 @@ export async function listPublicTerminals(ctx: ServerContext, city?: string | nu
     throw new Error(error.message);
   }
   return data;
+}
+
+export async function listTerminalsForOwner(ctx: ServerContext, ownerId: string) {
+  const { data, error } = await ctx.db
+    .from('terminals')
+    .select(DASHBOARD_LIST_COLUMNS)
+    .eq('current_owner_id', ownerId)
+    .order('name');
+
+  if (error) {
+    throw new Error(error.message);
+  }
+  return data ?? [];
+}
+
+export async function listTerminalsForVendor(ctx: ServerContext, vendorId: string) {
+  const { data, error } = await ctx.db
+    .from('terminals')
+    .select(DASHBOARD_LIST_COLUMNS)
+    .eq('current_vendor_id', vendorId)
+    .order('name');
+
+  if (error) {
+    throw new Error(error.message);
+  }
+  return data ?? [];
+}
+
+export async function getTerminalForVendor(
+  ctx: ServerContext,
+  vendorId: string,
+  terminalId: string,
+) {
+  const { data, error } = await ctx.db
+    .from('terminals')
+    .select(DASHBOARD_LIST_COLUMNS)
+    .eq('id', terminalId)
+    .eq('current_vendor_id', vendorId)
+    .maybeSingle();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+  return data;
+}
+
+export async function getLatestStatusSnapshots(
+  ctx: ServerContext,
+  terminalIds: string[],
+): Promise<Map<string, TerminalStatusSnapshot>> {
+  const map = new Map<string, TerminalStatusSnapshot>();
+  if (terminalIds.length === 0) return map;
+
+  const { data, error } = await ctx.db
+    .from('terminal_status_snapshots')
+    .select('terminal_id, status, recorded_at')
+    .in('terminal_id', terminalIds)
+    .order('recorded_at', { ascending: false });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  for (const row of data ?? []) {
+    if (!map.has(row.terminal_id)) {
+      map.set(row.terminal_id, row);
+    }
+  }
+  return map;
 }
 
 export async function getTerminalById(ctx: ServerContext, id: string) {

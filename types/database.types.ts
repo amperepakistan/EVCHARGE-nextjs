@@ -14,6 +14,8 @@ export type ConnectivityTier =
 
 export type ChargerClass = 'AC' | 'DC';
 
+export type TerminalStatus = 'available' | 'occupied' | 'offline' | 'fault';
+
 type NeverRelationships = [];
 
 export type Database = {
@@ -158,6 +160,8 @@ export type Database = {
           scraped_at: string | null;
           last_verified_at: string | null;
           is_public: boolean;
+          external_ids: Json | null;
+          source_raw: Json | null;
           created_at: string;
           updated_at: string;
         };
@@ -195,10 +199,126 @@ export type Database = {
           scraped_at?: string | null;
           last_verified_at?: string | null;
           is_public?: boolean;
+          external_ids?: Json | null;
+          source_raw?: Json | null;
           created_at?: string;
           updated_at?: string;
         };
         Update: Partial<Database['public']['Tables']['terminals']['Insert']>;
+        Relationships: NeverRelationships;
+      };
+      charging_sessions: {
+        Row: {
+          id: string;
+          terminal_id: string;
+          driver_id: string | null;
+          started_at: string;
+          ended_at: string | null;
+          kwh_delivered: number | null;
+          amount_charged: number | null;
+        };
+        Insert: {
+          id?: string;
+          terminal_id: string;
+          driver_id?: string | null;
+          started_at?: string;
+          ended_at?: string | null;
+          kwh_delivered?: number | null;
+          amount_charged?: number | null;
+        };
+        Update: Partial<Database['public']['Tables']['charging_sessions']['Insert']>;
+        Relationships: NeverRelationships;
+      };
+      terminal_status_snapshots: {
+        Row: {
+          id: string;
+          terminal_id: string;
+          status: TerminalStatus;
+          charge_percent: number | null;
+          kwh_delivered: number | null;
+          source: 'ocpp' | 'sensor' | 'demo' | 'manual';
+          recorded_at: string;
+        };
+        Insert: {
+          id?: string;
+          terminal_id: string;
+          status: TerminalStatus;
+          charge_percent?: number | null;
+          kwh_delivered?: number | null;
+          source?: 'ocpp' | 'sensor' | 'demo' | 'manual';
+          recorded_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['terminal_status_snapshots']['Insert']>;
+        Relationships: NeverRelationships;
+      };
+      field_visibility_rules: {
+        Row: {
+          id: string;
+          role: 'vendor' | 'owner';
+          field_key: string;
+          visible: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          role: 'vendor' | 'owner';
+          field_key: string;
+          visible: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['field_visibility_rules']['Insert']>;
+        Relationships: NeverRelationships;
+      };
+      field_visibility_overrides: {
+        Row: {
+          id: string;
+          entity_type: 'vendor' | 'owner';
+          entity_id: string;
+          field_key: string;
+          visible: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          entity_type: 'vendor' | 'owner';
+          entity_id: string;
+          field_key: string;
+          visible: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['field_visibility_overrides']['Insert']>;
+        Relationships: NeverRelationships;
+      };
+      session_daily_rollups: {
+        Row: {
+          id: string;
+          day: string;
+          terminal_id: string;
+          vendor_id: string | null;
+          owner_id: string | null;
+          session_count: number;
+          kwh_delivered: number;
+          revenue: number;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          day: string;
+          terminal_id: string;
+          vendor_id?: string | null;
+          owner_id?: string | null;
+          session_count?: number;
+          kwh_delivered?: number;
+          revenue?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['session_daily_rollups']['Insert']>;
         Relationships: NeverRelationships;
       };
     };
@@ -211,6 +331,13 @@ export type Database = {
           p_field_key: string;
         };
         Returns: boolean;
+      };
+      refresh_session_daily_rollups: {
+        Args: {
+          p_from_day?: string;
+          p_to_day?: string;
+        };
+        Returns: undefined;
       };
     };
     Enums: Record<string, never>;

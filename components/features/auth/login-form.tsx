@@ -5,7 +5,7 @@ import { useState, useTransition } from 'react';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { TextField } from '@/components/ui/text-field';
-import { demoAccounts } from '@/lib/mock/users';
+import { demoAccounts } from '@/lib/auth/demo-accounts';
 
 const ROLE_HOME: Record<string, string> = {
   vendor: '/vendor',

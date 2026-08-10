@@ -23,28 +23,26 @@ describe('auth.service login', () => {
   });
 
   it('rejects bad credentials', async () => {
-    vi.mocked(findUserByCredentials).mockReturnValue(null);
+    vi.mocked(findUserByCredentials).mockResolvedValue(null);
     await expect(
       login({ email: 'nobody@ampere.pk', password: 'demo1234' }),
     ).rejects.toMatchObject({ status: 401, message: 'Invalid email or password' });
   });
 
   it('returns user and token on success', async () => {
-    vi.mocked(findUserByCredentials).mockReturnValue({
+    vi.mocked(findUserByCredentials).mockResolvedValue({
       id: 'usr-admin-1',
-      email: 'admin@ampere.pk',
-      password: 'demo1234',
+      email: 'admin@evcharge.pk',
       role: 'super_admin',
       fullName: 'Platform Admin',
-      organisation: 'Ampere',
     });
 
-    const result = await login({ email: 'admin@ampere.pk', password: 'demo1234' });
+    const result = await login({ email: 'admin@evcharge.pk', password: 'Admin123!' });
 
     expect(result.token).toBe('signed.jwt.token');
     expect(result.user).toEqual({
       id: 'usr-admin-1',
-      email: 'admin@ampere.pk',
+      email: 'admin@evcharge.pk',
       role: 'super_admin',
       fullName: 'Platform Admin',
     });

@@ -76,6 +76,11 @@ node --env-file=.env.local scripts/create-admin.mjs admin@evcharge.pk 'YourPassw
 Both use `POST /api/v1/auth/login` → `{ data: { token, user }, error }`.
 Dashboard also receives an `httpOnly` cookie; Flutter uses `data.token` as `Authorization: Bearer`.
 
+Demo logins (after `npm run seed:users`): `vendor@evcharge.pk` / `Vendor123!`, `owner@evcharge.pk` / `Owner123!`, `admin@evcharge.pk` / `Admin123!`.
+
+Dashboard tenant scope comes from `vendor_members` / `owner_members` (no demo fallback). Apply migration `20260810130000_session_indexes_and_rollups.sql`, then optionally `node --env-file=.env.local scripts/refresh-session-rollups.mjs` for revenue charts.
+
+
 ## Flutter public reads
 
 The driver app reads `terminals` **directly from Supabase** with the `anon` key. RLS policy `Public can read public terminals` allows `SELECT` where `is_public = true`. Authenticated mutations still go through this Next.js API with `service_role`.

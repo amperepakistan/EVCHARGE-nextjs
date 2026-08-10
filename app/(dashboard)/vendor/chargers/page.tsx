@@ -4,12 +4,24 @@ import { PageHeader } from '@/components/ui/page-header';
 import { DataTable, type Column } from '@/components/ui/data-table';
 import { Badge } from '@/components/ui/badge';
 import { StatusDot, STATUS_LABELS } from '@/components/ui/status-dot';
-import { getVendorScope } from '@/lib/mock/scope';
-import { isConnected, terminalsForVendor } from '@/lib/mock/terminals';
-import { healthFor } from '@/lib/mock/operations';
-import type { MockTerminal } from '@/lib/mock/types';
+import { requireVendorDashboard, TenantAccessError } from '@/lib/server/dashboard';
+import { TenantDenied } from '@/components/features/dashboard/tenant-denied';
+import * as terminalsService from '@/lib/server/modules/terminals/terminals.service';
+import type { TerminalStatus } from '@/types/database.types';
 
-const columns: Column<MockTerminal>[] = [
+type ChargerRow = {
+  id: string;
+  name: string;
+  city: string | null;
+  chargerClass: string | null;
+  connectorType: string | null;
+  connectivityTier: string;
+  powerKw: number | null;
+  status: TerminalStatus | 'unknown';
+  lastSeen: string | null;
+};
+
+const columns: Column<ChargerRow>[] = [
   {
     key: 'name',
     header: 'Charger',
@@ -17,7 +29,7 @@ const columns: Column<MockTerminal>[] = [
       <div className="min-w-0">
         <p className="text-text-primary truncate font-semibold">{t.name}</p>
         <p className="text-text-secondary truncate text-xs">
-          {t.city} · {t.chargerClass} · {t.connectorType}
+          {[t.city, t.chargerClass, t.connectorType].filter(Boolean).join(' · ')}
         </p>
       </div>
     ),
@@ -27,9 +39,9 @@ const columns: Column<MockTerminal>[] = [
     header: 'Status',
     render: (t) => (
       <span className="flex items-center gap-2 whitespace-nowrap">
-        <StatusDot status={t.status ?? 'unknown'} />
+        <StatusDot status={t.status} />
         <span className="text-text-secondary text-xs font-semibold">
-          {STATUS_LABELS[t.status ?? 'unknown']}
+          {STATUS_LABELS[t.status]}
         </span>
       </span>
     ),
@@ -38,7 +50,7 @@ const columns: Column<MockTerminal>[] = [
     key: 'tier',
     header: 'Telemetry',
     render: (t) =>
-      isConnected(t.connectivityTier) ? (
+      terminalsService.isConnectedTier(t.connectivityTier) ? (
         <Badge tone="success">Connected</Badge>
       ) : t.connectivityTier === 'sensor_augmented' ? (
         <Badge tone="primary">Sensor</Badge>
@@ -47,35 +59,21 @@ const columns: Column<MockTerminal>[] = [
       ),
   },
   {
-    key: 'health',
-    header: 'Health',
-    align: 'right',
-    render: (t) => {
-      const health = healthFor(t.id);
-      if (!health) return <span className="text-text-secondary text-xs">—</span>;
-      const tone =
-        health.healthScore >= 80
-          ? 'text-available'
-          : health.healthScore >= 60
-            ? 'text-occupied'
-            : 'text-offline';
-      return <span className={`font-heading font-bold ${tone}`}>{health.healthScore}</span>;
-    },
-  },
-  {
     key: 'power',
     header: 'Power',
     align: 'right',
-    render: (t) => <span className="tabular-nums">{t.powerKw} kW</span>,
+    render: (t) => (
+      <span className="tabular-nums">
+        {t.powerKw != null ? `${t.powerKw} kW` : '—'}
+      </span>
+    ),
   },
   {
     key: 'heartbeat',
     header: 'Last seen',
     align: 'right',
     render: (t) => (
-      <span className="text-text-secondary text-xs">
-        {healthFor(t.id)?.lastHeartbeat ?? 'Never'}
-      </span>
+      <span className="text-text-secondary text-xs">{t.lastSeen ?? 'Never'}</span>
     ),
   },
   {
@@ -95,22 +93,50 @@ const columns: Column<MockTerminal>[] = [
 ];
 
 export default async function VendorChargersPage() {
-  const { vendorId } = await getVendorScope();
-  const terminals = terminalsForVendor(vendorId);
+  try {
+    const { ctx, scope } = await requireVendorDashboard();
+    const terminals = await terminalsService.listTerminalsForVendor(ctx, scope.vendorId);
+    const snapshots = await terminalsService.getLatestStatusByTerminalIds(
+      ctx,
+      terminals.map((t) => t.id),
+    );
 
-  return (
-    <div className="space-y-6">
-      <PageHeader
-        title="Chargers"
-        description={`${terminals.length} units registered to your vendor account.`}
-      />
-      <DataTable
-        columns={columns}
-        rows={terminals}
-        getRowKey={(t) => t.id}
-        emptyTitle="No chargers registered"
-        emptyMessage="Register your first charger to start monitoring it."
-      />
-    </div>
-  );
+    const rows: ChargerRow[] = terminals.map((t) => {
+      const snap = snapshots.get(t.id);
+      return {
+        id: t.id,
+        name: t.name,
+        city: t.city,
+        chargerClass: t.charger_class,
+        connectorType: t.connector_type,
+        connectivityTier: t.connectivity_tier,
+        powerKw: t.power_kw,
+        status: snap?.status ?? 'unknown',
+        lastSeen: snap?.recorded_at
+          ? new Date(snap.recorded_at).toLocaleString()
+          : null,
+      };
+    });
+
+    return (
+      <div className="space-y-6">
+        <PageHeader
+          title="Chargers"
+          description={`${rows.length} units registered to your vendor account.`}
+        />
+        <DataTable
+          columns={columns}
+          rows={rows}
+          getRowKey={(t) => t.id}
+          emptyTitle="No chargers registered"
+          emptyMessage="Register your first charger to start monitoring it."
+        />
+      </div>
+    );
+  } catch (err) {
+    if (err instanceof TenantAccessError) {
+      return <TenantDenied title="Chargers" message={err.message} />;
+    }
+    throw err;
+  }
 }

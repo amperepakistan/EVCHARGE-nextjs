@@ -10,6 +10,10 @@ import type { ServerContext } from '@/lib/server/context';
 
 vi.mock('@/lib/server/modules/terminals/terminals.repository', () => ({
   listPublicTerminals: vi.fn(),
+  listTerminalsForOwner: vi.fn(),
+  listTerminalsForVendor: vi.fn(),
+  getTerminalForVendor: vi.fn(),
+  getLatestStatusSnapshots: vi.fn(),
   getTerminalById: vi.fn(),
   insertTerminal: vi.fn(async (_ctx, input) => ({ id: 'term-1', ...input })),
   updateTerminalById: vi.fn(async (_ctx, id, input) => ({ id, ...input })),
@@ -109,5 +113,12 @@ describe('terminals.service role guards', () => {
     );
     expect(result).toEqual({ id: 'term-1' });
     expect(terminalsRepo.deleteTerminalById).toHaveBeenCalledOnce();
+  });
+
+  it('returns 404 when vendor requests another vendor terminal', async () => {
+    vi.mocked(terminalsRepo.getTerminalForVendor).mockResolvedValue(null);
+    await expect(
+      terminalsService.getTerminalForVendor(makeCtx({ userId: 'u1', role: 'vendor' }), 'vnd-a', 'term-b'),
+    ).rejects.toMatchObject({ status: 404 });
   });
 });

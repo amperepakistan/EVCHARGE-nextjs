@@ -25,7 +25,13 @@ export async function login(raw: unknown): Promise<LoginResult> {
 }
 
 export async function loginWithInput(input: LoginInput): Promise<LoginResult> {
-  const user = findUserByCredentials(input.email, input.password);
+  let user;
+  try {
+    user = await findUserByCredentials(input.email, input.password);
+  } catch (err) {
+    throw new AppError(500, err instanceof Error ? err.message : 'Unable to login');
+  }
+
   if (!user) {
     throw new AppError(401, 'Invalid email or password');
   }

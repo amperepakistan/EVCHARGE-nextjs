@@ -1,6 +1,6 @@
 import type { NextRequest } from 'next/server';
 import { verifyToken } from '@/lib/auth/jwt';
-import { SESSION_COOKIE } from '@/lib/auth/session';
+import { getSessionFromCookies, SESSION_COOKIE } from '@/lib/auth/session';
 import { supabaseServer } from '@/lib/supabase/server';
 import {
   defaultLogger,
@@ -33,6 +33,16 @@ export async function resolveSessionUser(req: NextRequest): Promise<SessionUser 
 export async function createContext(req: NextRequest): Promise<ServerContext> {
   return {
     user: await resolveSessionUser(req),
+    db: supabaseServer(),
+    logger: defaultLogger,
+  };
+}
+
+/** For dashboard Server Components — cookie session only. */
+export async function createContextFromCookies(): Promise<ServerContext> {
+  const payload = await getSessionFromCookies();
+  return {
+    user: payload ? { userId: payload.userId, role: payload.role } : null,
     db: supabaseServer(),
     logger: defaultLogger,
   };

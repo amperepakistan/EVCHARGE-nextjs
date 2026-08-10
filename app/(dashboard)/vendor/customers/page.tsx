@@ -5,31 +5,28 @@ import { StatTile } from '@/components/ui/stat-tile';
 import { DataTable, type Column } from '@/components/ui/data-table';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { getVendorScope } from '@/lib/mock/scope';
-import { customersForVendor } from '@/lib/mock/crm';
-import type { ContractStatus, MockCustomer } from '@/lib/mock/types';
+import { requireVendorDashboard, TenantAccessError } from '@/lib/server/dashboard';
+import { TenantDenied } from '@/components/features/dashboard/tenant-denied';
+import * as customersService from '@/lib/server/modules/customers/customers.service';
+import type { DerivedCustomer } from '@/lib/server/modules/customers/customers.repository';
 
-const STATUS_TONE: Record<ContractStatus, 'success' | 'warning' | 'neutral'> = {
-  active: 'success',
-  pending: 'warning',
-  lapsed: 'neutral',
-};
-
-const columns: Column<MockCustomer>[] = [
+const columns: Column<DerivedCustomer>[] = [
   {
     key: 'customer',
     header: 'Customer',
     render: (c) => (
       <div className="min-w-0">
-        <p className="text-text-primary truncate font-semibold">{c.contactName}</p>
-        <p className="text-text-secondary truncate text-xs">{c.contactEmail}</p>
+        <p className="text-text-primary truncate font-semibold">{c.businessName}</p>
+        <p className="text-text-secondary truncate text-xs">
+          {c.contactEmail ?? 'No email on file'}
+        </p>
       </div>
     ),
   },
   {
     key: 'status',
     header: 'Contract',
-    render: (c) => <Badge tone={STATUS_TONE[c.contractStatus]}>{c.contractStatus}</Badge>,
+    render: () => <Badge tone="neutral">None</Badge>,
   },
   {
     key: 'terminals',
@@ -41,27 +38,13 @@ const columns: Column<MockCustomer>[] = [
     key: 'install',
     header: 'Install fee',
     align: 'right',
-    render: (c) => (
-      <span className="text-text-secondary tabular-nums">
-        Rs {c.installFee.toLocaleString()}
-      </span>
-    ),
+    render: () => <span className="text-text-secondary tabular-nums">Rs 0</span>,
   },
   {
     key: 'mrr',
     header: 'Monthly fee',
     align: 'right',
-    render: (c) => (
-      <span className="font-heading font-bold tabular-nums">
-        Rs {c.monthlyFee.toLocaleString()}
-      </span>
-    ),
-  },
-  {
-    key: 'since',
-    header: 'Since',
-    align: 'right',
-    render: (c) => <span className="text-text-secondary text-xs">{c.contractStartedAt}</span>,
+    render: () => <span className="font-heading font-bold tabular-nums">Rs 0</span>,
   },
   {
     key: 'go',
@@ -80,48 +63,47 @@ const columns: Column<MockCustomer>[] = [
 ];
 
 export default async function VendorCustomersPage() {
-  const { vendorId } = await getVendorScope();
-  const customers = customersForVendor(vendorId);
+  try {
+    const { ctx, scope } = await requireVendorDashboard();
+    const customers = await customersService.listVendorCustomers(ctx, scope.vendorId);
 
-  const active = customers.filter((c) => c.contractStatus === 'active');
-  const mrr = active.reduce((sum, c) => sum + c.monthlyFee, 0);
-  const totalInstalls = customers.reduce((sum, c) => sum + c.installFee, 0);
-
-  return (
-    <div className="space-y-8">
-      <PageHeader
-        title="Customers"
-        description="The terminal owners you've sold and installed for — contract value, not driver activity."
-        action={<Button size="sm">Add customer</Button>}
-      />
-
-      <div className="grid gap-3 sm:grid-cols-3">
-        <StatTile
-          label="Active accounts"
-          value={active.length}
-          hint={`of ${customers.length} total`}
-          variant="ink"
+    return (
+      <div className="space-y-8">
+        <PageHeader
+          title="Customers"
+          description="Site owners with terminals assigned to your vendor account. Contract fees will appear when CRM billing is added."
+          action={<Button size="sm">Add customer</Button>}
         />
-        <StatTile
-          label="Monthly recurring"
-          value={`Rs ${mrr.toLocaleString()}`}
-          hint="From active maintenance contracts"
-          variant="primary"
-        />
-        <StatTile
-          label="Install revenue"
-          value={`Rs ${totalInstalls.toLocaleString()}`}
-          hint="Lifetime one-time fees"
+
+        <div className="grid gap-3 sm:grid-cols-3">
+          <StatTile
+            label="Accounts"
+            value={customers.length}
+            hint="Derived from installed terminals"
+            variant="ink"
+          />
+          <StatTile
+            label="Monthly recurring"
+            value="Rs 0"
+            hint="Contract billing not configured"
+            variant="primary"
+          />
+          <StatTile label="Install revenue" value="Rs 0" hint="Contract billing not configured" />
+        </div>
+
+        <DataTable
+          columns={columns}
+          rows={customers}
+          getRowKey={(c) => c.id}
+          emptyTitle="No customers yet"
+          emptyMessage="Owners of terminals you operate will appear here."
         />
       </div>
-
-      <DataTable
-        columns={columns}
-        rows={customers}
-        getRowKey={(c) => c.id}
-        emptyTitle="No customers yet"
-        emptyMessage="Accounts you install and maintain terminals for will appear here."
-      />
-    </div>
-  );
+    );
+  } catch (err) {
+    if (err instanceof TenantAccessError) {
+      return <TenantDenied title="Customers" message={err.message} />;
+    }
+    throw err;
+  }
 }

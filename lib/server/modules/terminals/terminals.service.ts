@@ -21,6 +21,68 @@ function requireRoles(ctx: ServerContext, allowed: UserRole[]): void {
   }
 }
 
+export async function listTerminalsForOwner(ctx: ServerContext, ownerId: string) {
+  try {
+    return await terminalsRepo.listTerminalsForOwner(ctx, ownerId);
+  } catch (err) {
+    ctx.logger.error('[terminals] list for owner failed', {
+      message: err instanceof Error ? err.message : String(err),
+    });
+    throw new AppError(500, err instanceof Error ? err.message : 'Failed to list terminals');
+  }
+}
+
+export async function listTerminalsForVendor(ctx: ServerContext, vendorId: string) {
+  try {
+    return await terminalsRepo.listTerminalsForVendor(ctx, vendorId);
+  } catch (err) {
+    ctx.logger.error('[terminals] list for vendor failed', {
+      message: err instanceof Error ? err.message : String(err),
+    });
+    throw new AppError(500, err instanceof Error ? err.message : 'Failed to list terminals');
+  }
+}
+
+export async function getTerminalForVendor(
+  ctx: ServerContext,
+  vendorId: string,
+  terminalId: string,
+) {
+  try {
+    const data = await terminalsRepo.getTerminalForVendor(ctx, vendorId, terminalId);
+    if (!data) {
+      throw new AppError(404, 'Terminal not found');
+    }
+    return data;
+  } catch (err) {
+    if (err instanceof AppError) throw err;
+    ctx.logger.error('[terminals] get for vendor failed', {
+      message: err instanceof Error ? err.message : String(err),
+    });
+    throw new AppError(500, err instanceof Error ? err.message : 'Failed to fetch terminal');
+  }
+}
+
+export async function getLatestStatusByTerminalIds(
+  ctx: ServerContext,
+  terminalIds: string[],
+) {
+  try {
+    return await terminalsRepo.getLatestStatusSnapshots(ctx, terminalIds);
+  } catch (err) {
+    ctx.logger.error('[terminals] status snapshots failed', {
+      message: err instanceof Error ? err.message : String(err),
+    });
+    throw new AppError(500, err instanceof Error ? err.message : 'Failed to load status');
+  }
+}
+
+export function isConnectedTier(
+  tier: string | null | undefined,
+): boolean {
+  return tier === 'connected_demo' || tier === 'connected_live';
+}
+
 export async function listTerminals(ctx: ServerContext, city?: string | null) {
   try {
     return await terminalsRepo.listPublicTerminals(ctx, city);
