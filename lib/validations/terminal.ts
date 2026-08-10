@@ -1,43 +1,16 @@
-import { z } from 'zod';
+/**
+ * @deprecated Import from `@/lib/server/modules/terminals/terminals.schema`
+ * or `@/lib/server/modules/auth/auth.schema` instead.
+ * Re-exports kept so existing callers keep compiling during the TECH-1 move.
+ */
+export {
+  createTerminalSchema,
+  updateTerminalSchema,
+  type CreateTerminalInput,
+  type UpdateTerminalInput,
+} from '@/lib/server/modules/terminals/terminals.schema';
 
-export const createTerminalSchema = z.object({
-  name: z.string().min(1),
-  latitude: z.number().min(-90).max(90),
-  longitude: z.number().min(-180).max(180),
-  city: z.string().optional(),
-  address: z.string().optional(),
-  chargerClass: z.enum(['AC', 'DC']).optional(),
-  connectorType: z.string().optional(),
-  powerKw: z.number().positive().optional(),
-  pricePerKwh: z.number().nonnegative().optional(),
-  operatingHours: z.string().optional(),
-  phoneNumber: z.string().optional(),
-  connectivityTier: z
-    .enum(['listed', 'sensor_augmented', 'connected_demo', 'connected_live'])
-    .optional(),
-  verificationStatus: z.enum(['unverified', 'verified', 'flagged']).optional(),
-  currentVendorId: z.string().uuid().nullable().optional(),
-  currentOwnerId: z.string().uuid().nullable().optional(),
-  googlePlaceId: z.string().optional(),
-  googleMapsUrl: z.string().url().optional(),
-  googleRating: z.number().min(0).max(5).optional(),
-  googleRatingCount: z.number().int().nonnegative().optional(),
-  googlePhotoUrls: z.array(z.string().url()).optional(),
-  source: z
-    .enum(['scraped', 'manual', 'vendor_submitted', 'google_places', 'open_charge_map'])
-    .optional(),
-  scrapedAt: z.string().datetime().optional(),
-  lastVerifiedAt: z.string().datetime().optional(),
-  isPublic: z.boolean().optional(),
-});
-
-export const updateTerminalSchema = createTerminalSchema.partial();
-
-export const loginSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8),
-});
-
-export type CreateTerminalInput = z.infer<typeof createTerminalSchema>;
-export type UpdateTerminalInput = z.infer<typeof updateTerminalSchema>;
-export type LoginInput = z.infer<typeof loginSchema>;
+export {
+  loginSchema,
+  type LoginInput,
+} from '@/lib/server/modules/auth/auth.schema';

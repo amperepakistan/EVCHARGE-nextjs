@@ -26,7 +26,7 @@ export function LoginForm() {
   function submit(nextEmail: string, nextPassword: string) {
     setError(null);
     startTransition(async () => {
-      const res = await fetch('/api/auth/login', {
+      const res = await fetch('/api/v1/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: nextEmail, password: nextPassword }),

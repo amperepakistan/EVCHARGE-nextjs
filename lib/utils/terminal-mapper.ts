@@ -1,4 +1,7 @@
-import type { CreateTerminalInput, UpdateTerminalInput } from '@/lib/validations/terminal';
+import type {
+  CreateTerminalInput,
+  UpdateTerminalInput,
+} from '@/lib/server/modules/terminals/terminals.schema';
 import type { Database } from '@/types/database.types';
 
 type TerminalInsert = Database['public']['Tables']['terminals']['Insert'];

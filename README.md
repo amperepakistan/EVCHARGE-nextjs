@@ -73,7 +73,8 @@ node --env-file=.env.local scripts/create-admin.mjs admin@evcharge.pk 'YourPassw
 | Dashboard | `httpOnly` cookie `evcharge_session` | Cookie (middleware + layout) |
 | Flutter | `flutter_secure_storage` | `Authorization: Bearer <token>` |
 
-Both use `POST /api/auth/login` → `{ data: { token, user }, error }`.
+Both use `POST /api/v1/auth/login` → `{ data: { token, user }, error }`.
+Dashboard also receives an `httpOnly` cookie; Flutter uses `data.token` as `Authorization: Bearer`.
 
 ## Flutter public reads
 

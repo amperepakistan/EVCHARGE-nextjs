@@ -14,8 +14,13 @@ const COOKIE_OPTIONS = {
 
 export async function setSessionCookie(response: NextResponse, payload: JwtPayload) {
   const token = await signToken(payload);
-  response.cookies.set(SESSION_COOKIE, token, COOKIE_OPTIONS);
+  applySessionCookie(response, token);
   return token;
+}
+
+/** Attach an already-signed JWT as the dashboard session cookie. */
+export function applySessionCookie(response: NextResponse, token: string) {
+  response.cookies.set(SESSION_COOKIE, token, COOKIE_OPTIONS);
 }
 
 export function clearSessionCookie(response: NextResponse) {

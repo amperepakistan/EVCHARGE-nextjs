@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { createTerminalSchema, loginSchema } from '@/lib/validations/terminal';
 
-describe('loginSchema', () => {
+/** Compatibility re-exports from lib/validations/terminal still work. */
+describe('loginSchema (re-export)', () => {
   it('accepts valid credentials', () => {
     const result = loginSchema.safeParse({
       email: 'admin@evcharge.pk',
@@ -19,7 +20,7 @@ describe('loginSchema', () => {
   });
 });
 
-describe('createTerminalSchema', () => {
+describe('createTerminalSchema (re-export)', () => {
   it('requires name and coordinates', () => {
     const result = createTerminalSchema.safeParse({
       name: 'Karachi DC-01',

@@ -97,56 +97,41 @@ export function verifyToken(token: string) {
 }
 ```
 
-- **Web dashboard**: session token stored in an `httpOnly` cookie, set on login in `app/api/auth/login/route.ts`. `middleware.ts` checks this cookie on every request to `(dashboard)/*` and redirects to login if missing/invalid.
-- **Flutter app**: same login route returns the JWT in the JSON response body instead of (or in addition to) a cookie. Flutter stores it in `flutter_secure_storage` and sends it as `Authorization: Bearer <token>` on subsequent calls to `app/api/*`.
-- Password hashing (`bcrypt`) happens only inside the login/signup Route Handlers, using `supabaseServer()` — never anywhere else.
+- **Web dashboard**: session token stored in an `httpOnly` cookie, set on login in `app/api/v1/auth/login/route.ts`. `middleware.ts` checks this cookie on every request to `(dashboard)/*` and redirects to login if missing/invalid.
+- **Flutter app**: same login route returns the JWT in `data.token` and sets the cookie. Flutter stores the token in `flutter_secure_storage` and sends `Authorization: Bearer <token>` on subsequent calls to `app/api/v1/*`.
+- Password hashing (`bcrypt`) happens only inside the login/signup path, using repositories — never anywhere else.
+- **Nest portability**: business logic lives under `lib/server/modules/<domain>/` (service + repository + zod schema). Route handlers under `app/api/v1/**` are thin adapters. Never import `next/*` inside `lib/server/modules/`.
 
 ## Route Handler conventions
 
 ```ts
-// app/api/terminals/route.ts
-import { NextRequest, NextResponse } from 'next/server';
-import { supabaseServer } from '@/lib/supabase/server';
-import { verifyToken } from '@/lib/auth/jwt';
+// app/api/v1/terminals/route.ts
+import { NextRequest } from 'next/server';
+import { apiOk, apiError } from '@/lib/auth/request';
+import { createContext } from '@/lib/server/create-context';
+import { isAppError } from '@/lib/server/errors';
+import * as terminalsService from '@/lib/server/modules/terminals/terminals.service';
 
 export async function GET(req: NextRequest) {
-  const { data, error } = await supabaseServer()
-    .from('terminals')
-    .select('*');
-
-  if (error) {
-    return NextResponse.json({ data: null, error: error.message }, { status: 500 });
-  }
-  return NextResponse.json({ data, error: null });
-}
-
-export async function POST(req: NextRequest) {
-  const authHeader = req.headers.get('authorization');
-  if (!authHeader?.startsWith('Bearer ')) {
-    return NextResponse.json({ data: null, error: 'Unauthorized' }, { status: 401 });
-  }
-
   try {
-    const { role } = verifyToken(authHeader.replace('Bearer ', ''));
-    if (role !== 'super_admin' && role !== 'vendor') {
-      return NextResponse.json({ data: null, error: 'Forbidden' }, { status: 403 });
-    }
-  } catch {
-    return NextResponse.json({ data: null, error: 'Invalid token' }, { status: 401 });
+    const ctx = await createContext(req);
+    const data = await terminalsService.listTerminals(ctx, req.nextUrl.searchParams.get('city'));
+    return apiOk(data);
+  } catch (err) {
+    if (isAppError(err)) return apiError(err.message, err.status);
+    return apiError('Failed to list terminals', 500);
   }
-
-  // ...validate body with zod, then insert
 }
 ```
 
 - **Consistent response envelope**: every Route Handler returns `{ data, error }`, never a bare array or a thrown unhandled exception.
-- **Every route that isn't a public read validates the `Authorization` header** and checks role before touching Supabase.
-- **Validate request bodies with `zod`** before they reach Supabase — don't rely on database constraints alone to catch bad input.
+- **Auth**: route builds `ServerContext` (Bearer or cookie → `ctx.user`); services enforce roles and throw `AppError`.
+- **Validate request bodies with `zod`** in the module schema before they reach Supabase.
 
 ## Validation
 
 ```ts
-// lib/validations/terminal.ts
+// lib/server/modules/terminals/terminals.schema.ts
 import { z } from 'zod';
 
 export const createTerminalSchema = z.object({
@@ -158,7 +143,7 @@ export const createTerminalSchema = z.object({
 });
 ```
 
-Reuse the same schema on both the Route Handler (server-side validation) and any dashboard form (client-side validation via `react-hook-form` + `zodResolver`), so the rules only live in one place.
+Reuse the same schema on both the service (server-side validation) and any dashboard form (client-side validation via `react-hook-form` + `zodResolver`), so the rules only live in one place.
 
 ## Naming conventions
 

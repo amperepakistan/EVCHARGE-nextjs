@@ -1,0 +1,3672 @@
+[
+  {
+    "title": "Electric Vehicle Charging Station",
+    "subTitle": "الیکٹرک گاڑی کا چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "Plot No. 164, V63V+QVH, Main National Highway, near Abbot laboratory, Allana Goth Quaidabad, Karachi, 75030, Pakistan",
+    "neighborhood": "Allana Goth Quaidabad",
+    "street": "Plot No. 164, V63V+QVH, Main National Highway, near Abbot laboratory",
+    "city": "Karachi",
+    "postalCode": "75030",
+    "state": null,
+    "countryCode": "PK",
+    "website": "http://www.kiamotors-portqasim.com/",
+    "phone": "+92 311 1438111",
+    "phoneUnformatted": "+923111438111",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 24.8542802,
+      "lng": 67.2445355
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 4.7,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJzQyFFqgxsz4REaBJIl_h5H8",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x3eb331a816850ccd:0x7fe4e15f2249a011",
+    "cid": "9215738536220270609",
+    "reviewsCount": 3,
+    "reviewsDistribution": {
+      "oneStar": 0,
+      "twoStar": 0,
+      "threeStar": 0,
+      "fourStar": 1,
+      "fiveStar": 2
+    },
+    "imagesCount": 1,
+    "imageCategories": [
+      "All",
+      "Exterior",
+      "By owner"
+    ],
+    "scrapedAt": "2026-08-04T09:32:28.130Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": "Now: Usually not too busy",
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {
+      "Su": [],
+      "Mo": [
+        {
+          "hour": 6,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 76
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 76
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 76
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 100
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 76
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 92
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 23
+        },
+        {
+          "hour": 4,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 53
+        }
+      ],
+      "Tu": [
+        {
+          "hour": 6,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 23
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 76
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 4,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 46
+        }
+      ],
+      "We": [
+        {
+          "hour": 6,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 84
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 84
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 23
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 15
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 23
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 76
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 4,
+          "occupancyPercent": 76
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 92
+        }
+      ],
+      "Th": [
+        {
+          "hour": 6,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 84
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 76
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 4,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 76
+        }
+      ],
+      "Fr": [
+        {
+          "hour": 6,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 23
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 23
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 4,
+          "occupancyPercent": 92
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 69
+        }
+      ],
+      "Sa": [
+        {
+          "hour": 6,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 46
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 76
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 76
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 53
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 76
+        },
+        {
+          "hour": 4,
+          "occupancyPercent": 84
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 84
+        }
+      ]
+    },
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "9:30 AM to 5:30 AM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "9:30 AM to 5:30 AM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "9:30 AM to 5:30 AM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "9:30 AM to 5:30 AM"
+      },
+      {
+        "day": "Friday",
+        "hours": "9:30 AM to 5:30 AM"
+      },
+      {
+        "day": "Saturday",
+        "hours": "9:30 AM to 5:30 AM"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Closed"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Service options": [
+        {
+          "Onsite services": true
+        }
+      ],
+      "Amenities": [
+        {
+          "Restroom": true
+        }
+      ],
+      "Payments": [
+        {
+          "Credit cards": true
+        },
+        {
+          "Debit cards": true
+        },
+        {
+          "Credit cards": true
+        }
+      ],
+      "Parking": [
+        {
+          "Free parking garage": true
+        },
+        {
+          "Free parking lot": true
+        },
+        {
+          "Free street parking": true
+        },
+        {
+          "On-site parking": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "questionsAndAnswers": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Electric%20Vehicle%20Charging%20Station&query_place_id=ChIJzQyFFqgxsz4REaBJIl_h5H8",
+    "searchString": "Direct Detail URL: https://maps.google.com?q=Plot+No.+164,+V63V+QVH+Electric+Vehicle+Charging+Station,+Main+National+Highway,+near+Abbot+laboratory,+Allana+Goth+Quaidabad,+Karachi,+75030&ftid=0x3eb331a816850ccd:0x7fe4e15f2249a011&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,100813464,94286869,100820247,100822499&g_ep=CAISEjI2LjMwLjMuOTUwNDkyMTU1MBgAIIgnKl0sOTQyOTc2OTksOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsMTAwODEzNDY0LDk0Mjg2ODY5LDEwMDgyMDI0NywxMDA4MjI0OTlCAlBL&skid=6e7b903a-95df-4498-8f39-f51a0ae435c6&g_st=iw",
+    "language": "en",
+    "inputStartUrl": "https://maps.app.goo.gl/N5cKwxZvw1dLBbwT9?g_st=iw",
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmndluMo1ftCz0-xpIMqXOEAFUK6KcFidTqh4CPLQMPlx7HZk7LGMMQ86E2soYJpZRB8VDw65k8opdorlm6OWb7Mo8r-v79Zx7zOBn_xZTvPz0Cwc20eqP9p1uRj_kM0MNjW3ol70JF6UU=w408-h306-k-no",
+    "kgmid": "/g/11x_70yj16",
+    "webResults": [],
+    "tableReservationLinks": [],
+    "tableReservationProviders": [],
+    "bookingLinks": [],
+    "restaurantData": {
+      "tableReservationProvider": null
+    },
+    "ownerUpdates": [
+      {
+        "text": "This is the official announcement from Lucky Motor Corporation.",
+        "buttonText": "Call now",
+        "buttonLink": null,
+        "date": "2026-07-31T13:25:35.000Z",
+        "imageUrl": "https://lh3.googleusercontent.com/geougc/AF1QipMBlFjfbRyIK7OtjhRsvB7SV515nwMFFvB_ODON=h400-no"
+      }
+    ],
+    "imageUrls": [],
+    "reviews": [],
+    "leadsEnrichment": []
+  },
+  {
+    "title": "Z-Volta Charging Station",
+    "subTitle": "Z-Volta چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "36-F, Block-6 Block 6 P.E.C.H.S., Karachi, 75400, Pakistan",
+    "neighborhood": "Block-6 Block 6 P.E.C.H.S.",
+    "street": "36-F",
+    "city": "Karachi",
+    "postalCode": "75400",
+    "state": null,
+    "countryCode": "PK",
+    "website": "https://zvolta.com/",
+    "phone": "+92 310 4446529",
+    "phoneUnformatted": "+923104446529",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 24.8647217,
+      "lng": 67.0709677
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": "V37C+V9 PECHS, Karachi, Pakistan",
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 4.9,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJQ-3SJi4_sz4Rb0nJbO0SCPI",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x3eb33f2e26d2ed43:0xf20812ed6cc9496f",
+    "cid": "17440210367933925743",
+    "reviewsCount": 8,
+    "reviewsDistribution": {
+      "oneStar": 0,
+      "twoStar": 0,
+      "threeStar": 0,
+      "fourStar": 1,
+      "fiveStar": 7
+    },
+    "imagesCount": 6,
+    "imageCategories": [
+      "All",
+      "By owner"
+    ],
+    "scrapedAt": "2026-08-04T09:32:28.550Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": "Now: Usually a little busy",
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {
+      "Su": [
+        {
+          "hour": 4,
+          "occupancyPercent": 8
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 20
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 16
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 48
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 44
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 20
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 16
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 16
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 16
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 20
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 20
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 12
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 4
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 4
+        }
+      ],
+      "Mo": [
+        {
+          "hour": 4,
+          "occupancyPercent": 60
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 44
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 68
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 72
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 84
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 72
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 20
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 16
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 16
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 48
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 52
+        }
+      ],
+      "Tu": [
+        {
+          "hour": 4,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 12
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 16
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 12
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 16
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 48
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 60
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 60
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 36
+        }
+      ],
+      "We": [
+        {
+          "hour": 4,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 60
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 72
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 84
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 100
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 80
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 60
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 60
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 44
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 48
+        }
+      ],
+      "Th": [
+        {
+          "hour": 4,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 44
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 44
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 44
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 60
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 68
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 20
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 20
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 16
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 20
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 24
+        }
+      ],
+      "Fr": [
+        {
+          "hour": 4,
+          "occupancyPercent": 12
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 4
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 0
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 4
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 16
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 44
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 44
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 72
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 48
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 44
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 44
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 48
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 16
+        }
+      ],
+      "Sa": [
+        {
+          "hour": 4,
+          "occupancyPercent": 20
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 20
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 20
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 20
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 44
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 60
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 24
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 16
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 16
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 16
+        }
+      ]
+    },
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Friday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [
+      {
+        "title": "ease of use",
+        "count": 2
+      },
+      {
+        "title": "charging point",
+        "count": 3
+      }
+    ],
+    "gasPrices": [],
+    "questionsAndAnswers": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Z-Volta%20Charging%20Station&query_place_id=ChIJQ-3SJi4_sz4Rb0nJbO0SCPI",
+    "searchString": "Direct Detail URL: https://maps.google.com?q=Z-Volta,+36-F,+Block-6+Block+6+P.E.C.H.S.,+Karachi,+75400&ftid=0x3eb33f2e26d2ed43:0xf20812ed6cc9496f&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,100813464,94286869,100820247,100822499&g_ep=CAISEjI2LjMwLjMuOTUwNDkyMTU1MBgAIIgnKl0sOTQyOTc2OTksOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsMTAwODEzNDY0LDk0Mjg2ODY5LDEwMDgyMDI0NywxMDA4MjI0OTlCAlBL&skid=62064a43-f3b8-412f-b184-7f6160717e48&g_st=iw",
+    "language": "en",
+    "inputStartUrl": "https://maps.app.goo.gl/pHgPri64AbveXEhb6?g_st=iw",
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkO_qot51H-wocWI8Zg86BlkJ7g4EuJje1IG9cFNn8ze0cudmmG0rpmILUv5E41131LpN3OSKlqSxHBrEQOId0XF4UCGg6jCFcRZZMVxu5baudM07b3hXe1oVm9O7eOkcgkoWQsOv1uYsa7=w408-h306-k-no",
+    "kgmid": "/g/11mldds09h",
+    "webResults": [],
+    "tableReservationLinks": [],
+    "tableReservationProviders": [],
+    "bookingLinks": [],
+    "restaurantData": {
+      "tableReservationProvider": null
+    },
+    "ownerUpdates": [],
+    "imageUrls": [],
+    "reviews": [],
+    "leadsEnrichment": []
+  },
+  {
+    "title": "ABB Charging Station",
+    "subTitle": null,
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "X6P8+676, Karachi - Hyderabad Motorway, M-9 Gadap Town, Karachi, Pakistan",
+    "neighborhood": "M-9 Gadap Town",
+    "street": "X6P8+676, Karachi - Hyderabad Motorway",
+    "city": "Karachi",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "phone": "",
+    "phoneUnformatted": "",
+    "claimThisBusiness": true,
+    "location": {
+      "lat": 24.9855311,
+      "lng": 67.2156456
+    },
+    "locatedIn": "Shell",
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 4.6,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJYZp0ISlJsz4R9R64NSVKrW8",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x3eb3492921749a61:0x6fad4a2535b81ef5",
+    "cid": "8047169632856448757",
+    "reviewsCount": 36,
+    "reviewsDistribution": {
+      "oneStar": 2,
+      "twoStar": 1,
+      "threeStar": 1,
+      "fourStar": 0,
+      "fiveStar": 32
+    },
+    "imagesCount": 24,
+    "imageCategories": [
+      "All",
+      "Inside",
+      "Videos"
+    ],
+    "scrapedAt": "2026-08-04T09:32:32.419Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": "Less busy than usual",
+    "popularTimesLivePercent": 7,
+    "popularTimesHistogram": {
+      "Su": [
+        {
+          "hour": 4,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 43
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 54
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 41
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 34
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 41
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 43
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 32
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 47
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 67
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 43
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 43
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 65
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 63
+        }
+      ],
+      "Mo": [
+        {
+          "hour": 4,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 43
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 65
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 54
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 43
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 70
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 63
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 34
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 34
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 45
+        }
+      ],
+      "Tu": [
+        {
+          "hour": 4,
+          "occupancyPercent": 34
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 67
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 74
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 63
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 38
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 34
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 78
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 70
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 41
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 34
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 45
+        }
+      ],
+      "We": [
+        {
+          "hour": 4,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 67
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 60
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 72
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 61
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 70
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 41
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 54
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 81
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 90
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 72
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 56
+        }
+      ],
+      "Th": [
+        {
+          "hour": 4,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 41
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 34
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 60
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 70
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 41
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 47
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 60
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 41
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 67
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 81
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 65
+        }
+      ],
+      "Fr": [
+        {
+          "hour": 4,
+          "occupancyPercent": 34
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 83
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 100
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 92
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 94
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 67
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 25
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 14
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 10
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 18
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 30
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 41
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 47
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 67
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 69
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 40
+        }
+      ],
+      "Sa": [
+        {
+          "hour": 4,
+          "occupancyPercent": 54
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 54
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 43
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 56
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 47
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 45
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 47
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 58
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 49
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 40
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 43
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 36
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 52
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 63
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 74
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 80
+        }
+      ]
+    },
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Friday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "peopleAlsoSearch": [
+      {
+        "category": "People also search for",
+        "title": "Electric Vehicle Charging Station",
+        "reviewsCount": 15,
+        "totalScore": 4.9
+      },
+      {
+        "category": "People also search for",
+        "title": "BMW Charging Station",
+        "reviewsCount": 23,
+        "totalScore": 4
+      },
+      {
+        "category": "People also search for",
+        "title": "EV Electric Car Chargers",
+        "reviewsCount": 27,
+        "totalScore": 4.9
+      },
+      {
+        "category": "People also search for",
+        "title": "RA Engineering Pvt LTD",
+        "reviewsCount": 8,
+        "totalScore": 4
+      }
+    ],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Amenities": [
+        {
+          "Restroom": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "questionsAndAnswers": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=ABB%20Charging%20Station&query_place_id=ChIJYZp0ISlJsz4R9R64NSVKrW8",
+    "searchString": "Direct Detail URL: https://maps.google.com?q=X6P8+676+ABB+Charging+Station,+Karachi+-+Hyderabad+Motorway,+M-9+Gadap+Town,+Karachi&ftid=0x3eb3492921749a61:0x6fad4a2535b81ef5&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,100813464,94286869,100820247,100822499&g_ep=CAISEjI2LjMwLjMuOTUwNDkyMTU1MBgAIIgnKl0sOTQyOTc2OTksOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsMTAwODEzNDY0LDk0Mjg2ODY5LDEwMDgyMDI0NywxMDA4MjI0OTlCAlBL&skid=9143d9bd-3391-4c26-9ee3-9500afa5a235&g_st=iw",
+    "language": "en",
+    "inputStartUrl": "https://maps.app.goo.gl/4DERc9PqWRhDx4Zs8?g_st=iw",
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkTi5ykbdxAVyBwrDEl-iArJpPAlfK5qLPRj5MjGwxIAXhyKZ9-WEK70QTb3OvBIcD7vKk-ACh1HzLtgaYGRqS2pEz0n5yY_-CFUN4nNqMWnnAuNfQPh3CA1GMfNB5LWLJKCHjD_0My9FrP=w408-h544-k-no",
+    "kgmid": "/g/11p76q43t2",
+    "webResults": [],
+    "tableReservationLinks": [],
+    "tableReservationProviders": [],
+    "bookingLinks": [],
+    "restaurantData": {
+      "tableReservationProvider": null
+    },
+    "ownerUpdates": [],
+    "imageUrls": [],
+    "reviews": [],
+    "leadsEnrichment": []
+  },
+  {
+    "title": "ZVolta Charging Station",
+    "subTitle": "ZVolta چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "Maintenance Department power house solar Parking, IBA university, University Of Karachi, Karachi, Pakistan",
+    "neighborhood": "University Of Karachi",
+    "street": "Maintenance Department power house solar Parking, IBA university",
+    "city": "Karachi",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "website": "https://www.zvolta.com/",
+    "phone": "+92 310 4446529",
+    "phoneUnformatted": "+923104446529",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 24.9421525,
+      "lng": 67.1145975
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": "W4R7+VR University Of Karachi, Karachi, Pakistan",
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": null,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJDThJlLQ5sz4RRQNmfnIqTN8",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x3eb339b49449380d:0xdf4c2a727e660345",
+    "cid": "16090282239923192645",
+    "reviewsCount": null,
+    "imagesCount": 2,
+    "imageCategories": [
+      "All",
+      "By owner"
+    ],
+    "scrapedAt": "2026-08-04T09:32:33.006Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "9 AM to 9 PM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "9 AM to 9 PM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "9 AM to 9 PM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "9 AM to 9 PM"
+      },
+      {
+        "day": "Friday",
+        "hours": "9 AM to 9:30 PM"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Closed"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Closed"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "questionsAndAnswers": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=ZVolta%20Charging%20Station&query_place_id=ChIJDThJlLQ5sz4RRQNmfnIqTN8",
+    "searchString": "Direct Detail URL: https://maps.google.com?q=ZVolta,+Maintenance+Department+power+house+solar+Parking,+IBA+university,+University+Of+Karachi,+Karachi&ftid=0x3eb339b49449380d:0xdf4c2a727e660345&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,100813464,94286869,100820247,100822499&g_ep=CAISEjI2LjMwLjMuOTUwNDkyMTU1MBgAIIgnKl0sOTQyOTc2OTksOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsMTAwODEzNDY0LDk0Mjg2ODY5LDEwMDgyMDI0NywxMDA4MjI0OTlCAlBL&skid=25a13b78-5d93-4efc-ad74-6e0cc737feef&g_st=iw",
+    "language": "en",
+    "inputStartUrl": "https://maps.app.goo.gl/cPyrKJLPgb7vwLCB6?g_st=iw",
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmVPzOixED66OSIr00t-3X6uSu7saxoqgocSQZyO9zywh5wk5ZGJikgd08GXqC8bHnWicV4DER4FwuJmTRAIMZ0E2W96MG2MISdAR9GWHCq_wcmvI3SdrMZZgYJwbmT2Zic8E73Mmm29NDI=w408-h541-k-no",
+    "kgmid": "/g/11z42b4l6b",
+    "webResults": [],
+    "tableReservationLinks": [],
+    "tableReservationProviders": [],
+    "bookingLinks": [],
+    "restaurantData": {
+      "tableReservationProvider": null
+    },
+    "ownerUpdates": [],
+    "imageUrls": [],
+    "reviews": [],
+    "leadsEnrichment": []
+  },
+  {
+    "title": "ZVolta Charging Station",
+    "subTitle": "ZVolta چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "Block 6 PECHS Shahr e faisal 6, PECHS Extension Block 6 P.E.C.H.S., Karachi, Pakistan",
+    "neighborhood": "PECHS Extension Block 6 P.E.C.H.S.",
+    "street": "Block 6 PECHS Shahr e faisal 6",
+    "city": "Karachi",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "phone": "",
+    "phoneUnformatted": "",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 24.8570117,
+      "lng": 67.0628721
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": "V347+R4 PECHS, Karachi, Pakistan",
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 5,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJ--yMat4_sz4RRouojyT3nEg",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x3eb33fde6a8cecfb:0x489cf7248fa88b46",
+    "cid": "5232328603498744646",
+    "reviewsCount": 1,
+    "reviewsDistribution": {
+      "oneStar": 0,
+      "twoStar": 0,
+      "threeStar": 0,
+      "fourStar": 0,
+      "fiveStar": 1
+    },
+    "imagesCount": 3,
+    "imageCategories": [
+      "All",
+      "By owner"
+    ],
+    "scrapedAt": "2026-08-04T09:32:34.754Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "questionsAndAnswers": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=ZVolta%20Charging%20Station&query_place_id=ChIJ--yMat4_sz4RRouojyT3nEg",
+    "searchString": "Direct Detail URL: https://maps.google.com?q=ZVolta,+Block+6+PECHS+Shahr+e+faisal+6,+PECHS+Extension+Block+6+P.E.C.H.S.,+Karachi&ftid=0x3eb33fde6a8cecfb:0x489cf7248fa88b46&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,100813464,94286869,100820247,100822499&g_ep=CAISEjI2LjMwLjMuOTUwNDkyMTU1MBgAIIgnKl0sOTQyOTc2OTksOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsMTAwODEzNDY0LDk0Mjg2ODY5LDEwMDgyMDI0NywxMDA4MjI0OTlCAlBL&skid=bb29f015-c067-47b2-972d-6dac2f10788a&g_st=iw",
+    "language": "en",
+    "inputStartUrl": "https://maps.app.goo.gl/TpJxfAmXoGv4t2Td8?g_st=iw",
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk_ObYHp2Gd-rsKWRbj7xEGAFXkNGDLSGjB31fcNgCA6wf6Y9KDD8y88j---PxCb2yzi4K3sDhdCXo4xPzARv6IB7bt7MlKKzTVR2V_dKjNT5qenJKCPZ8Q9ERqp4VRmmlH21Yprm2wJFU=w408-h306-k-no",
+    "kgmid": "/g/11z0gb3jf4",
+    "webResults": [],
+    "tableReservationLinks": [],
+    "tableReservationProviders": [],
+    "bookingLinks": [],
+    "restaurantData": {
+      "tableReservationProvider": null
+    },
+    "ownerUpdates": [],
+    "imageUrls": [],
+    "reviews": [],
+    "leadsEnrichment": []
+  },
+  {
+    "title": "Inverex Charging Station",
+    "subTitle": "Inverex چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "Plot No. 14, Main Shahra-e-Faisal, Karachi Administration Employees Housing Society Bangalore Town, Karachi, 75400, Pakistan",
+    "neighborhood": "Karachi Administration Employees Housing Society Bangalore Town",
+    "street": "Plot No. 14, Main Shahra-e-Faisal",
+    "city": "Karachi",
+    "postalCode": "75400",
+    "state": null,
+    "countryCode": "PK",
+    "website": "https://www.inverexev.com/",
+    "phone": "+92 303 3878638",
+    "phoneUnformatted": "+923033878638",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 24.8679991,
+      "lng": 67.0853002
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": "V39P+54 Bangalore Town, Block A Karachi, Pakistan",
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 5,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJfXKOLh0_sz4RIk02e-iuonY",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x3eb33f1d2e8e727d:0x76a2aee87b364d22",
+    "cid": "8548587356225424674",
+    "reviewsCount": 5,
+    "reviewsDistribution": {
+      "oneStar": 0,
+      "twoStar": 0,
+      "threeStar": 0,
+      "fourStar": 0,
+      "fiveStar": 5
+    },
+    "imagesCount": 15,
+    "imageCategories": [
+      "All",
+      "Exterior",
+      "By owner"
+    ],
+    "scrapedAt": "2026-08-04T09:32:36.335Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "10 AM to 7 PM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "10 AM to 7 PM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "10 AM to 7 PM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "10 AM to 7 PM"
+      },
+      {
+        "day": "Friday",
+        "hours": "10 AM to 7 PM"
+      },
+      {
+        "day": "Saturday",
+        "hours": "10 AM to 7 PM"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Closed"
+      }
+    ],
+    "peopleAlsoSearch": [],
+    "placesTags": [],
+    "reviewsTags": [
+      {
+        "title": "staff",
+        "count": 2
+      }
+    ],
+    "additionalInfo": {
+      "Payments": [
+        {
+          "Credit cards": true
+        },
+        {
+          "Debit cards": true
+        },
+        {
+          "NFC mobile payments": true
+        },
+        {
+          "Credit cards": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "questionsAndAnswers": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Inverex%20Charging%20Station&query_place_id=ChIJfXKOLh0_sz4RIk02e-iuonY",
+    "searchString": "Direct Detail URL: https://maps.google.com?q=Plot+No.+14,+Inverex,+Main+Shahra-e-Faisal,+Karachi+Administration+Employees+Housing+Society+Bangalore+Town,+Karachi,+75400&ftid=0x3eb33f1d2e8e727d:0x76a2aee87b364d22&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,100813464,94286869,100820247,100822499&g_ep=CAISEjI2LjMwLjMuOTUwNDkyMTU1MBgAIIgnKl0sOTQyOTc2OTksOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsMTAwODEzNDY0LDk0Mjg2ODY5LDEwMDgyMDI0NywxMDA4MjI0OTlCAlBL&skid=3401af49-f422-4b39-af58-7d82a185dc2e&g_st=iw",
+    "language": "en",
+    "inputStartUrl": "https://maps.app.goo.gl/9ytUTqs3hcwGDw6v8?g_st=iw",
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkfeWzpDT4UP8cHqjKoFIJvg-dx9fDmQ713vIwz1CLCJsj8yUauSRCnCa8pADPuzNdIhvUzywHt5w8lfC02cy_gcQi7cJRa6oCCXRcMn7WY-JzYD2dyC3NSVEgkA0Dnt47nRrz6w6RLpDIS=w426-h240-k-no",
+    "kgmid": "/g/11ypzys14c",
+    "webResults": [],
+    "tableReservationLinks": [],
+    "tableReservationProviders": [],
+    "bookingLinks": [],
+    "restaurantData": {
+      "tableReservationProvider": null
+    },
+    "ownerUpdates": [],
+    "imageUrls": [],
+    "reviews": [],
+    "leadsEnrichment": []
+  },
+  {
+    "title": "Electric Vehicle Charging Station",
+    "subTitle": null,
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "X569+CRF, Main Rd, Sadaat E Amroha Society Gulzar E Hijri Scheme 33, Karachi, Pakistan",
+    "neighborhood": "Sadaat E Amroha Society Gulzar E Hijri Scheme 33",
+    "street": "X569+CRF, Main Rd",
+    "city": "Karachi",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "phone": "+92 347 1212774",
+    "phoneUnformatted": "+923471212774",
+    "claimThisBusiness": true,
+    "location": {
+      "lat": 24.9611536,
+      "lng": 67.1695137
+    },
+    "locatedIn": "Dr Eshaal Medical Complex",
+    "floor": null,
+    "plusCode": null,
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 4.9,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJPaCqTQA5sz4RasU3VyYP9UM",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x3eb339004daaa03d:0x43f50f265737c56a",
+    "cid": "4896836827181729130",
+    "reviewsCount": 15,
+    "reviewsDistribution": {
+      "oneStar": 0,
+      "twoStar": 0,
+      "threeStar": 0,
+      "fourStar": 1,
+      "fiveStar": 14
+    },
+    "imagesCount": 0,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-04T09:32:38.115Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Closed"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Closed"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Closed"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Closed"
+      },
+      {
+        "day": "Friday",
+        "hours": "1 to 8 PM"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Closed"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Closed"
+      }
+    ],
+    "peopleAlsoSearch": [
+      {
+        "category": "People also search for",
+        "title": "ABB Charging Station",
+        "reviewsCount": 36,
+        "totalScore": 4.6
+      },
+      {
+        "category": "People also search for",
+        "title": "BMW Charging Station",
+        "reviewsCount": 23,
+        "totalScore": 4
+      },
+      {
+        "category": "People also search for",
+        "title": "EV Electric Car Chargers",
+        "reviewsCount": 27,
+        "totalScore": 4.9
+      },
+      {
+        "category": "People also search for",
+        "title": "RA Engineering Pvt LTD",
+        "reviewsCount": 8,
+        "totalScore": 4
+      }
+    ],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "questionsAndAnswers": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Electric%20Vehicle%20Charging%20Station&query_place_id=ChIJPaCqTQA5sz4RasU3VyYP9UM",
+    "searchString": "Direct Detail URL: https://maps.google.com?q=X569+CRF+Electric+Vehicle+Charging+Station,+Main+Rd,+Sadaat+E+Amroha+Society+Gulzar+E+Hijri+Scheme+33,+Karachi&ftid=0x3eb339004daaa03d:0x43f50f265737c56a&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,100813464,94286869,100820247,100822499&g_ep=CAISEjI2LjMwLjMuOTUwNDkyMTU1MBgAIIgnKl0sOTQyOTc2OTksOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsMTAwODEzNDY0LDk0Mjg2ODY5LDEwMDgyMDI0NywxMDA4MjI0OTlCAlBL&skid=204d2ab4-c03d-4845-adf0-6eb3bb49cfb1&g_st=iw",
+    "language": "en",
+    "inputStartUrl": "https://maps.app.goo.gl/Q4BdjRcZHXBiFN4x5?g_st=iw",
+    "isAdvertisement": false,
+    "imageUrl": null,
+    "kgmid": "/g/11y63vbpxs",
+    "webResults": [],
+    "tableReservationLinks": [],
+    "tableReservationProviders": [],
+    "bookingLinks": [],
+    "restaurantData": {
+      "tableReservationProvider": null
+    },
+    "ownerUpdates": [],
+    "imageUrls": [],
+    "reviews": [],
+    "leadsEnrichment": []
+  },
+  {
+    "title": "BMW Destination Charging Station",
+    "subTitle": "BMW چارجنگ اسٹیشن",
+    "description": null,
+    "price": null,
+    "categoryName": "Electric vehicle charging station",
+    "address": "Karachi - Hyderabad Motorway, Nooriabad, Pakistan",
+    "neighborhood": null,
+    "street": "Karachi - Hyderabad Motorway",
+    "city": "Nooriabad",
+    "postalCode": null,
+    "state": null,
+    "countryCode": "PK",
+    "website": "https://www.bmw.de/de/index.html",
+    "phone": "+92 301 8221311",
+    "phoneUnformatted": "+923018221311",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 25.17708,
+      "lng": 67.79653
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": "5QGW+RJ Nooriabad, Pakistan",
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 3.8,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJ1c-XJUOWTDkRIXorddk4_gQ",
+    "categories": [
+      "Electric vehicle charging station"
+    ],
+    "fid": "0x394c96432597cfd5:0x4fe38d9752b7a21",
+    "cid": "359787526861060641",
+    "reviewsCount": 6,
+    "reviewsDistribution": {
+      "oneStar": 1,
+      "twoStar": 0,
+      "threeStar": 1,
+      "fourStar": 1,
+      "fiveStar": 3
+    },
+    "imagesCount": 0,
+    "imageCategories": [],
+    "scrapedAt": "2026-08-04T09:32:39.767Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": "Now: Usually not too busy",
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {
+      "Su": [
+        {
+          "hour": 4,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 21
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 78
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 21
+        }
+      ],
+      "Mo": [
+        {
+          "hour": 4,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 78
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 100
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 100
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 78
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 50
+        }
+      ],
+      "Tu": [
+        {
+          "hour": 4,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 21
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 21
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 85
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 35
+        }
+      ],
+      "We": [
+        {
+          "hour": 4,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 42
+        }
+      ],
+      "Th": [
+        {
+          "hour": 4,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 78
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 85
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 50
+        }
+      ],
+      "Fr": [
+        {
+          "hour": 4,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 92
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 78
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 71
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 42
+        }
+      ],
+      "Sa": [
+        {
+          "hour": 4,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 5,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 6,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 7,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 8,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 9,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 10,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 11,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 12,
+          "occupancyPercent": 42
+        },
+        {
+          "hour": 13,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 14,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 15,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 16,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 17,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 18,
+          "occupancyPercent": 28
+        },
+        {
+          "hour": 19,
+          "occupancyPercent": 21
+        },
+        {
+          "hour": 20,
+          "occupancyPercent": 21
+        },
+        {
+          "hour": 21,
+          "occupancyPercent": 50
+        },
+        {
+          "hour": 22,
+          "occupancyPercent": 57
+        },
+        {
+          "hour": 23,
+          "occupancyPercent": 78
+        },
+        {
+          "hour": 0,
+          "occupancyPercent": 64
+        },
+        {
+          "hour": 1,
+          "occupancyPercent": 35
+        },
+        {
+          "hour": 2,
+          "occupancyPercent": 21
+        },
+        {
+          "hour": 3,
+          "occupancyPercent": 21
+        }
+      ]
+    },
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Thursday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Friday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Open 24 hours"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Open 24 hours"
+      }
+    ],
+    "peopleAlsoSearch": [
+      {
+        "category": "People also search for",
+        "title": "Sheikh CNG",
+        "reviewsCount": 225,
+        "totalScore": 4
+      },
+      {
+        "category": "People also search for",
+        "title": "Kohistan CNG",
+        "reviewsCount": 56,
+        "totalScore": 3.9
+      },
+      {
+        "category": "People also search for",
+        "title": "Taj Petroleum Station",
+        "reviewsCount": 29,
+        "totalScore": 4.7
+      },
+      {
+        "category": "People also search for",
+        "title": "Battery Charging Shop",
+        "reviewsCount": 0,
+        "totalScore": 0
+      }
+    ],
+    "placesTags": [],
+    "reviewsTags": [],
+    "gasPrices": [],
+    "questionsAndAnswers": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=BMW%20Destination%20Charging%20Station&query_place_id=ChIJ1c-XJUOWTDkRIXorddk4_gQ",
+    "searchString": "Direct Detail URL: https://maps.google.com?q=BMW+Destination,+Karachi+-+Hyderabad+Motorway,+Nooriabad&ftid=0x394c96432597cfd5:0x4fe38d9752b7a21&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,100813464,94286869,100820247,100822499&g_ep=CAISEjI2LjMwLjMuOTUwNDkyMTU1MBgAIIgnKl0sOTQyOTc2OTksOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsOTQyMTg2NDEsOTQyODIxMzQsMTAwODEzNDY0LDk0Mjg2ODY5LDEwMDgyMDI0NywxMDA4MjI0OTlCAlBL&skid=914e820c-b591-48dc-b8f5-fe02002f1319&g_st=iw",
+    "language": "en",
+    "inputStartUrl": "https://maps.app.goo.gl/wjyXaqzxMWgcdSHE6?g_st=iw",
+    "isAdvertisement": false,
+    "imageUrl": null,
+    "kgmid": "/g/11w_hh71k3",
+    "webResults": [],
+    "tableReservationLinks": [],
+    "tableReservationProviders": [],
+    "bookingLinks": [],
+    "restaurantData": {
+      "tableReservationProvider": null
+    },
+    "ownerUpdates": [],
+    "imageUrls": [],
+    "reviews": [],
+    "leadsEnrichment": []
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Shell EV Charging — Askari IV Gulistan-e-Johar",
+    "latitude": 24.900388,
+    "longitude": 67.116797,
+    "address": "Shell Askari IV Gulistan e Johar, Rashid Minhas Rd, next to McDonalds, Askari 4, Karachi",
+    "city": "Karachi",
+    "charger_class": "DC",
+    "connector_type": "CCS2",
+    "power_kw": 50,
+    "operating_hours": "Hours not listed",
+    "connectivity_tier": "listed",
+    "verification_status": "verified",
+    "google_place_id": "manual:ftid:0x3eb339351cec1357:0xd1c370e5dd3c4eb1",
+    "google_maps_url": "https://maps.app.goo.gl/3pfihCMG7wccvAAr8?g_st=iw",
+    "source": "manual",
+    "is_public": true,
+    "google_raw": {
+      "source_link": "https://maps.app.goo.gl/3pfihCMG7wccvAAr8?g_st=iw",
+      "ftid": "0x3eb339351cec1357:0xd1c370e5dd3c4eb1",
+      "plus_code": "W428+5P3",
+      "full_plus_code": "7JP9W428+5P3",
+      "coord_source": "open_location_code",
+      "curated_by": "umer_maps_links"
+    }
+  }
+]
