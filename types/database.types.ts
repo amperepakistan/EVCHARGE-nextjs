@@ -125,6 +125,44 @@ export type Database = {
         Update: Partial<Database['public']['Tables']['owner_members']['Insert']>;
         Relationships: NeverRelationships;
       };
+      drivers: {
+        Row: {
+          id: string;
+          user_id: string | null;
+          phone_number: string | null;
+          email: string | null;
+          preferred_vehicle_key: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id?: string | null;
+          phone_number?: string | null;
+          email?: string | null;
+          preferred_vehicle_key?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['drivers']['Insert']>;
+        Relationships: NeverRelationships;
+      };
+      driver_favorites: {
+        Row: {
+          id: string;
+          user_id: string;
+          terminal_id: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          terminal_id: string;
+          created_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['driver_favorites']['Insert']>;
+        Relationships: NeverRelationships;
+      };
       terminals: {
         Row: {
           id: string;
