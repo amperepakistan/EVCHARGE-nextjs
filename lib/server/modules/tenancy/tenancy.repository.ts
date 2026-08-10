@@ -48,3 +48,23 @@ export type OwnerScope = {
   role: UserRole;
   ownerId: string;
 };
+
+export async function vendorExists(ctx: ServerContext, vendorId: string): Promise<boolean> {
+  const { data, error } = await ctx.db
+    .from('vendors')
+    .select('id')
+    .eq('id', vendorId)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
+  return Boolean(data);
+}
+
+export async function ownerExists(ctx: ServerContext, ownerId: string): Promise<boolean> {
+  const { data, error } = await ctx.db
+    .from('terminal_owners')
+    .select('id')
+    .eq('id', ownerId)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
+  return Boolean(data);
+}

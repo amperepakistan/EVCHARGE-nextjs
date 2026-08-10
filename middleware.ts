@@ -37,22 +37,22 @@ export async function middleware(req: NextRequest) {
     };
     const home = roleHome[session.role] ?? '/';
 
-    // Keep roles inside their own dashboard tree
-    if (pathname.startsWith('/vendor') && session.role !== 'vendor' && session.role !== 'super_admin') {
+    // Keep roles inside their own dashboard tree. Platform admins may enter
+    // vendor/owner trees after selecting a tenant from /admin.
+    const platformAdmin = session.role === 'super_admin' || session.role === 'staff';
+    if (pathname.startsWith('/vendor') && session.role !== 'vendor' && !platformAdmin) {
       return NextResponse.redirect(new URL(home, req.url));
     }
-    if (pathname.startsWith('/owner') && session.role !== 'owner' && session.role !== 'super_admin') {
+    if (pathname.startsWith('/owner') && session.role !== 'owner' && !platformAdmin) {
       return NextResponse.redirect(new URL(home, req.url));
     }
-    if (
-      pathname.startsWith('/admin') &&
-      session.role !== 'super_admin' &&
-      session.role !== 'staff'
-    ) {
+    if (pathname.startsWith('/admin') && !platformAdmin) {
       return NextResponse.redirect(new URL(home, req.url));
     }
 
-    return NextResponse.next();
+    const requestHeaders = new Headers(req.headers);
+    requestHeaders.set('x-pathname', pathname);
+    return NextResponse.next({ request: { headers: requestHeaders } });
   } catch {
     const loginUrl = new URL('/login', req.url);
     loginUrl.searchParams.set('next', pathname);

@@ -52,3 +52,14 @@ export async function requireOwnerDashboard(): Promise<{
     throw err;
   }
 }
+
+export async function requireAdminDashboard(): Promise<{ ctx: ServerContext }> {
+  const ctx = await createContextFromCookies();
+  if (!ctx.user) {
+    redirect('/login');
+  }
+  if (ctx.user.role !== 'super_admin' && ctx.user.role !== 'staff') {
+    redirect('/');
+  }
+  return { ctx };
+}

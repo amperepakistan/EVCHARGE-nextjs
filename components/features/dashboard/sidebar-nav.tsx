@@ -28,42 +28,64 @@ interface NavLink {
   icon: React.ComponentType<{ className?: string }>;
 }
 
+const VENDOR_LINKS: NavLink[] = [
+  { href: '/vendor', label: 'Overview', icon: LayoutDashboard },
+  { href: '/vendor/chargers', label: 'Chargers', icon: Zap },
+  { href: '/vendor/faults', label: 'Faults', icon: ShieldAlert },
+  { href: '/vendor/maintenance', label: 'Maintenance', icon: Wrench },
+  { href: '/vendor/customers', label: 'Customers', icon: Handshake },
+  { href: '/vendor/opportunities', label: 'Opportunities', icon: MapPinned },
+  { href: '/vendor/revenue', label: 'Business', icon: ReceiptText },
+  { href: '/vendor/team', label: 'Team', icon: Users },
+];
+
+const OWNER_LINKS: NavLink[] = [
+  { href: '/owner', label: 'Overview', icon: LayoutDashboard },
+  { href: '/owner/sites', label: 'My sites', icon: Building2 },
+  { href: '/owner/sessions', label: 'Sessions', icon: CalendarClock },
+  { href: '/owner/pricing', label: 'Pricing', icon: CreditCard },
+  { href: '/owner/revenue', label: 'Revenue', icon: ReceiptText },
+  { href: '/owner/security', label: 'Site security', icon: ShieldAlert },
+  { href: '/owner/analytics', label: 'Analytics', icon: BarChart3 },
+  { href: '/owner/opportunities', label: 'Expansion', icon: MapPinned },
+  { href: '/owner/vendors', label: 'Vendors', icon: Store },
+];
+
+const ADMIN_LINKS: NavLink[] = [
+  { href: '/admin', label: 'Console', icon: Activity },
+  { href: '/admin/drivers', label: 'Drivers', icon: Users },
+  { href: '/admin/vendors', label: 'Vendors', icon: Store },
+  { href: '/admin/owners', label: 'Owners', icon: Building2 },
+  { href: '/admin/chargers', label: 'Chargers', icon: Zap },
+  { href: '/admin/sessions', label: 'Sessions', icon: CalendarClock },
+];
+
 const LINKS: Partial<Record<UserRole, NavLink[]>> = {
-  vendor: [
-    { href: '/vendor', label: 'Overview', icon: LayoutDashboard },
-    { href: '/vendor/chargers', label: 'Chargers', icon: Zap },
-    { href: '/vendor/faults', label: 'Faults', icon: ShieldAlert },
-    { href: '/vendor/maintenance', label: 'Maintenance', icon: Wrench },
-    { href: '/vendor/customers', label: 'Customers', icon: Handshake },
-    { href: '/vendor/opportunities', label: 'Opportunities', icon: MapPinned },
-    { href: '/vendor/revenue', label: 'Business', icon: ReceiptText },
-    { href: '/vendor/team', label: 'Team', icon: Users },
-  ],
-  owner: [
-    { href: '/owner', label: 'Overview', icon: LayoutDashboard },
-    { href: '/owner/sites', label: 'My sites', icon: Building2 },
-    { href: '/owner/sessions', label: 'Sessions', icon: CalendarClock },
-    { href: '/owner/pricing', label: 'Pricing', icon: CreditCard },
-    { href: '/owner/revenue', label: 'Revenue', icon: ReceiptText },
-    { href: '/owner/security', label: 'Site security', icon: ShieldAlert },
-    { href: '/owner/analytics', label: 'Analytics', icon: BarChart3 },
-    { href: '/owner/opportunities', label: 'Expansion', icon: MapPinned },
-    { href: '/owner/vendors', label: 'Vendors', icon: Store },
-  ],
-  super_admin: [{ href: '/admin', label: 'Console', icon: Activity }],
-  staff: [{ href: '/admin', label: 'Console', icon: Activity }],
+  vendor: VENDOR_LINKS,
+  owner: OWNER_LINKS,
+  super_admin: ADMIN_LINKS,
+  staff: ADMIN_LINKS,
 };
 
 interface SidebarNavProps {
   role: UserRole;
+  /** When a platform admin is drilled into a tenant, show that tenant's nav. */
+  navRole?: UserRole;
   userName: string;
   organisation: string;
   logout: () => Promise<void>;
 }
 
-export function SidebarNav({ role, userName, organisation, logout }: SidebarNavProps) {
+export function SidebarNav({
+  role,
+  navRole,
+  userName,
+  organisation,
+  logout,
+}: SidebarNavProps) {
   const pathname = usePathname();
-  const links = LINKS[role] ?? [];
+  const effectiveRole = navRole ?? role;
+  const links = LINKS[effectiveRole] ?? [];
 
   return (
     <aside className="bg-ink text-on-ink flex w-full shrink-0 flex-col lg:h-screen lg:w-64 lg:sticky lg:top-0">
@@ -79,9 +101,10 @@ export function SidebarNav({ role, userName, organisation, logout }: SidebarNavP
       <nav className="flex-1 px-3 pb-4">
         <ul className="flex flex-col gap-1">
           {links.map(({ href, label, icon: Icon }) => {
-            // Exact match for the section root, prefix match for its children,
-            // so /vendor doesn't stay lit while you're on /vendor/faults.
-            const active = pathname === href || pathname.startsWith(`${href}/`);
+            const active =
+              href === '/admin'
+                ? pathname === '/admin'
+                : pathname === href || pathname.startsWith(`${href}/`);
             return (
               <li key={href}>
                 <Link

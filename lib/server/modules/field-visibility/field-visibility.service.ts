@@ -7,6 +7,11 @@ export async function canOwnerSee(
   ownerId: string,
   fieldKey: string,
 ): Promise<boolean> {
+  // Platform admins always see owner fields when drilling into a tenant.
+  if (ctx.user?.role === 'super_admin' || ctx.user?.role === 'staff') {
+    return true;
+  }
+
   try {
     return await visibilityRepo.resolveFieldVisibility(ctx, 'owner', ownerId, fieldKey);
   } catch (err) {

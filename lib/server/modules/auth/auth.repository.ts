@@ -115,3 +115,23 @@ export async function createDriverUser(input: {
     fullName: user.full_name ?? user.email,
   };
 }
+
+export async function updateUserPassword(userId: string, password: string): Promise<void> {
+  const password_hash = await bcrypt.hash(password, 12);
+  const { error } = await supabaseServer()
+    .from('users')
+    .update({ password_hash })
+    .eq('id', userId);
+  if (error) throw new Error(error.message);
+}
+
+export async function isEmailTaken(email: string, excludeUserId?: string): Promise<boolean> {
+  const normalized = email.trim().toLowerCase();
+  let query = supabaseServer().from('users').select('id').eq('email', normalized);
+  if (excludeUserId) {
+    query = query.neq('id', excludeUserId);
+  }
+  const { data, error } = await query.maybeSingle();
+  if (error) throw new Error(error.message);
+  return Boolean(data);
+}
