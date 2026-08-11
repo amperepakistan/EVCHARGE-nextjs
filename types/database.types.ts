@@ -134,6 +134,8 @@ export type Database = {
           phone_number: string | null;
           email: string | null;
           preferred_vehicle_key: string | null;
+          profile_image_url: string | null;
+          profile_image_updated_at: string | null;
           created_at: string;
           updated_at: string;
         };
@@ -143,6 +145,8 @@ export type Database = {
           phone_number?: string | null;
           email?: string | null;
           preferred_vehicle_key?: string | null;
+          profile_image_url?: string | null;
+          profile_image_updated_at?: string | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -163,6 +167,34 @@ export type Database = {
           created_at?: string;
         };
         Update: Partial<Database['public']['Tables']['driver_favorites']['Insert']>;
+        Relationships: NeverRelationships;
+      };
+      terminal_cameras: {
+        Row: {
+          id: string;
+          terminal_id: string;
+          label: string;
+          stream_type: 'snapshot' | 'mjpeg' | 'rtsp';
+          stream_url: string | null;
+          snapshot_url: string | null;
+          online: boolean;
+          last_seen_at: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          terminal_id: string;
+          label: string;
+          stream_type?: 'snapshot' | 'mjpeg' | 'rtsp';
+          stream_url?: string | null;
+          snapshot_url?: string | null;
+          online?: boolean;
+          last_seen_at?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['terminal_cameras']['Insert']>;
         Relationships: NeverRelationships;
       };
       user_push_tokens: {

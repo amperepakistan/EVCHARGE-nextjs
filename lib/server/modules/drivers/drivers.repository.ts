@@ -8,6 +8,7 @@ export type DriverProfile = {
   phoneNumber: string | null;
   preferredVehicleKey: string | null;
   fullName: string | null;
+  profileImageUrl: string | null;
 };
 
 export async function findDriverByUserId(
@@ -16,7 +17,7 @@ export async function findDriverByUserId(
 ): Promise<DriverProfile | null> {
   const { data: driver, error } = await ctx.db
     .from('drivers')
-    .select('id, user_id, email, phone_number, preferred_vehicle_key')
+    .select('id, user_id, email, phone_number, preferred_vehicle_key, profile_image_url')
     .eq('user_id', userId)
     .maybeSingle();
 
@@ -36,7 +37,24 @@ export async function findDriverByUserId(
     phoneNumber: driver.phone_number,
     preferredVehicleKey: driver.preferred_vehicle_key,
     fullName: user?.full_name ?? null,
+    profileImageUrl: driver.profile_image_url,
   };
+}
+
+export async function setDriverProfileImage(
+  ctx: ServerContext,
+  userId: string,
+  url: string,
+): Promise<DriverProfile> {
+  const { error } = await ctx.db
+    .from('drivers')
+    .update({ profile_image_url: url, profile_image_updated_at: new Date().toISOString() })
+    .eq('user_id', userId);
+  if (error) throw new Error(error.message);
+
+  const profile = await findDriverByUserId(ctx, userId);
+  if (!profile) throw new Error('Driver profile missing');
+  return profile;
 }
 
 export async function updateDriverForUser(
