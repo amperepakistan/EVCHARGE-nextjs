@@ -1,4 +1,4 @@
- EVCharge — Next.js (dashboards + Flutter API)
+EVCharge — Next.js (dashboards + Flutter API)
 
 App Router project serving:
 - **Web dashboards** at `/vendor`, `/owner`, `/admin` (cookie session)
