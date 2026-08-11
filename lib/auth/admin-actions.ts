@@ -87,3 +87,60 @@ export async function updateDriverEmailAction(
     return { ok: false, message };
   }
 }
+
+export type PushActionState = {
+  ok: boolean;
+  message: string;
+};
+
+export async function sendPushNotificationAction(
+  _prev: PushActionState,
+  formData: FormData,
+): Promise<PushActionState> {
+  try {
+    await requirePlatformAdmin();
+
+    const title = String(formData.get('title') ?? '').trim();
+    const body = String(formData.get('body') ?? '').trim();
+    const audienceRaw = String(formData.get('audience') ?? 'all');
+    const audience = audienceRaw === 'selected' ? 'selected' : 'all';
+    const userIds = formData
+      .getAll('userIds')
+      .map((v) => String(v).trim())
+      .filter(Boolean);
+
+    if (!title || !body) {
+      return { ok: false, message: 'Title and body are required.' };
+    }
+
+    const { sendFcmNotificationToUsers } = await import(
+      '@/lib/notifications/fcm-service'
+    );
+
+    const result = await sendFcmNotificationToUsers({
+      audience,
+      userIds,
+      title,
+      body,
+    });
+
+    if (!result.success) {
+      return {
+        ok: false,
+        message: result.error || 'Failed to send push notification.',
+      };
+    }
+
+    return {
+      ok: true,
+      message: `Sent to ${result.successCount}/${result.deviceCount} device(s) across ${result.userCount} account(s).`,
+    };
+  } catch (err) {
+    const message = isAppError(err)
+      ? err.message
+      : err instanceof Error
+        ? err.message
+        : 'Failed to send push notification';
+    return { ok: false, message };
+  }
+}

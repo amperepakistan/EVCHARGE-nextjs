@@ -109,6 +109,15 @@ export default async function AdminConsolePage() {
             Full site-owner controls for any hosting account
           </p>
         </Link>
+        <Link
+          href="/admin/notifications"
+          className="border-border bg-surface hover:bg-surface-muted rounded-lg border p-4 transition-colors"
+        >
+          <p className="text-text-primary text-sm font-semibold">Send push notifications</p>
+          <p className="text-text-secondary mt-1 text-xs">
+            Broadcast to all drivers or selected accounts
+          </p>
+        </Link>
       </div>
 
       <section className="space-y-3">

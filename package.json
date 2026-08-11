@@ -22,6 +22,7 @@
     "@supabase/supabase-js": "^2.49.1",
     "apify-client": "^2.24.0",
     "bcryptjs": "^3.0.2",
+    "firebase-admin": "^14.2.0",
     "internmap": "^2.0.3",
     "jose": "^6.0.10",
     "leaflet": "^1.9.4",

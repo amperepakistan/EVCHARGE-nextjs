@@ -165,6 +165,26 @@ export type Database = {
         Update: Partial<Database['public']['Tables']['driver_favorites']['Insert']>;
         Relationships: NeverRelationships;
       };
+      user_push_tokens: {
+        Row: {
+          id: string;
+          user_id: string;
+          fcm_token: string;
+          platform: 'android' | 'ios' | 'web';
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          fcm_token: string;
+          platform?: 'android' | 'ios' | 'web';
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['user_push_tokens']['Insert']>;
+        Relationships: NeverRelationships;
+      };
       terminals: {
         Row: {
           id: string;

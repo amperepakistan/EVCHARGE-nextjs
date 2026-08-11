@@ -12,6 +12,7 @@ import {
   LayoutDashboard,
   LogOut,
   MapPinned,
+  Bell,
   ReceiptText,
   Settings,
   ShieldAlert,
@@ -60,6 +61,8 @@ const ADMIN_LINKS: NavLink[] = [
   { href: '/admin/chargers', label: 'Chargers', icon: Zap },
   { href: '/admin/sessions', label: 'Sessions', icon: CalendarClock },
   { href: '/admin/app-config', label: 'App config', icon: Settings },
+  { href: '/admin/notifications', label: 'Notifications', icon: Bell },
+
 ];
 
 const LINKS: Partial<Record<UserRole, NavLink[]>> = {
