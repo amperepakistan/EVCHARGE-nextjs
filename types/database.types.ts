@@ -16,6 +16,8 @@ export type ChargerClass = 'AC' | 'DC';
 
 export type TerminalStatus = 'available' | 'occupied' | 'offline' | 'fault';
 
+export type AppPlatform = 'ios' | 'android';
+
 type NeverRelationships = [];
 
 export type Database = {
@@ -357,6 +359,54 @@ export type Database = {
           updated_at?: string;
         };
         Update: Partial<Database['public']['Tables']['session_daily_rollups']['Insert']>;
+        Relationships: NeverRelationships;
+      };
+      app_config: {
+        Row: {
+          platform: AppPlatform;
+          min_version: string;
+          min_build_number: number;
+          latest_version: string;
+          latest_build_number: number;
+          force_update: boolean;
+          store_url: string | null;
+          updated_at: string;
+          updated_by: string | null;
+        };
+        Insert: {
+          platform: AppPlatform;
+          min_version?: string;
+          min_build_number?: number;
+          latest_version?: string;
+          latest_build_number?: number;
+          force_update?: boolean;
+          store_url?: string | null;
+          updated_at?: string;
+          updated_by?: string | null;
+        };
+        Update: Partial<Database['public']['Tables']['app_config']['Insert']>;
+        Relationships: NeverRelationships;
+      };
+      app_maintenance: {
+        Row: {
+          id: boolean;
+          enabled: boolean;
+          message: string | null;
+          starts_at: string | null;
+          ends_at: string | null;
+          updated_at: string;
+          updated_by: string | null;
+        };
+        Insert: {
+          id?: boolean;
+          enabled?: boolean;
+          message?: string | null;
+          starts_at?: string | null;
+          ends_at?: string | null;
+          updated_at?: string;
+          updated_by?: string | null;
+        };
+        Update: Partial<Database['public']['Tables']['app_maintenance']['Insert']>;
         Relationships: NeverRelationships;
       };
     };

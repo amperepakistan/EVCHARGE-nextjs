@@ -101,6 +101,7 @@ export function verifyToken(token: string) {
 - **Flutter app**: same login route returns the JWT in `data.token` and sets the cookie. Flutter stores the token in `flutter_secure_storage` and sends `Authorization: Bearer <token>` on subsequent calls to `app/api/v1/*`.
 - Password hashing (`bcrypt`) happens only inside the login/signup path, using repositories — never anywhere else.
 - **Nest portability**: business logic lives under `lib/server/modules/<domain>/` (service + repository + zod schema). Route handlers under `app/api/v1/**` are thin adapters. Never import `next/*` inside `lib/server/modules/`.
+- **Multi-version API support**: `app/api/v1/**` must keep working for every app version still at/above the superadmin-configured floor (`/admin/app-config`), not just the newest one. Follow `../docs/VERSIONING.md` — it covers when a route needs a version branch, how to comment one, and when it's safe to delete.
 
 ## Route Handler conventions
 
