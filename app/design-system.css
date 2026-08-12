@@ -59,9 +59,9 @@
 
 @theme {
   /* ---- Brand ------------------------------------------------------- */
-  --color-primary: #b6ef6d; /* CTAs, active states, highlights */
-  --color-primary-dark: #9bd854; /* Hover / pressed */
-  --color-primary-light: #edf9da; /* Selected chips, subtle fills */
+  --color-primary: #c1f21d; /* CTAs, active states, highlights */
+  --color-primary-dark: #aad711; /* Hover / pressed */
+  --color-primary-light: #f1fbd0; /* Selected chips, subtle fills */
   --color-on-primary: #141a0e; /* Text/icons on primary */
 
   /* ---- Ink: high-contrast surfaces ---------------------------------
@@ -92,16 +92,16 @@
   --color-info: #2f6f9f;
 
   /* ---- Primary ramp -------------------------------------------------- */
-  --color-primary-50: #f7fdee;
-  --color-primary-100: #e7f9ce;
-  --color-primary-200: #d3f4a8;
-  --color-primary-300: #c4f088;
-  --color-primary-400: #b6ef6d; /* base */
-  --color-primary-500: #9bd854;
-  --color-primary-600: #82be3e;
-  --color-primary-700: #679b2e;
-  --color-primary-800: #4e7a21;
-  --color-primary-900: #365615;
+  --color-primary-50: #fafeee;
+  --color-primary-100: #f1fbd0;
+  --color-primary-200: #e6f8aa;
+  --color-primary-300: #daf582;
+  --color-primary-400: #c1f21d; /* base */
+  --color-primary-500: #aad711;
+  --color-primary-600: #8aad15;
+  --color-primary-700: #6c8616;
+  --color-primary-800: #506214;
+  --color-primary-900: #354010;
 
   /* ---- Typography ---------------------------------------------------
    * Headings are strictly Gotham; body is DM Sans.
