@@ -34,6 +34,8 @@ export function toTerminalInsert(input: CreateTerminalInput): TerminalInsert {
     scraped_at: input.scrapedAt,
     last_verified_at: input.lastVerifiedAt,
     is_public: input.isPublic,
+    submitted_by_user_id: input.submittedByUserId,
+    submission_notes: input.submissionNotes,
   };
 }
 
@@ -67,5 +69,9 @@ export function toTerminalUpdate(input: UpdateTerminalInput): TerminalUpdate {
   if (input.scrapedAt !== undefined) row.scraped_at = input.scrapedAt;
   if (input.lastVerifiedAt !== undefined) row.last_verified_at = input.lastVerifiedAt;
   if (input.isPublic !== undefined) row.is_public = input.isPublic;
+  if (input.submittedByUserId !== undefined) {
+    row.submitted_by_user_id = input.submittedByUserId;
+  }
+  if (input.submissionNotes !== undefined) row.submission_notes = input.submissionNotes;
   return row;
 }

@@ -1,5 +1,6 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import {
   clearAdminTenantScope,
@@ -10,6 +11,7 @@ import { createContextFromCookies } from '@/lib/server/create-context';
 import { AppError, isAppError } from '@/lib/server/errors';
 import * as adminService from '@/lib/server/modules/admin/admin.service';
 import * as driversAdmin from '@/lib/server/modules/admin/drivers-admin.service';
+import * as terminalsService from '@/lib/server/modules/terminals/terminals.service';
 
 function requirePlatformAdmin() {
   return createContextFromCookies().then((ctx) => {
@@ -143,4 +145,21 @@ export async function sendPushNotificationAction(
         : 'Failed to send push notification';
     return { ok: false, message };
   }
+}
+
+export async function approveSuggestedTerminalAction(terminalId: string) {
+  const ctx = await requirePlatformAdmin();
+  await terminalsService.updateTerminalWithInput(ctx, terminalId, {
+    isPublic: true,
+    verificationStatus: 'verified',
+  });
+  revalidatePath('/admin/chargers');
+}
+
+export async function dismissSuggestedTerminalAction(terminalId: string) {
+  const ctx = await requirePlatformAdmin();
+  await terminalsService.updateTerminalWithInput(ctx, terminalId, {
+    verificationStatus: 'flagged',
+  });
+  revalidatePath('/admin/chargers');
 }

@@ -3,6 +3,7 @@ import { AppError } from '@/lib/server/errors';
 import { loginSchema } from '@/lib/server/modules/auth/auth.schema';
 import {
   createTerminalSchema,
+  suggestTerminalSchema,
   updateTerminalSchema,
 } from '@/lib/server/modules/terminals/terminals.schema';
 import * as terminalsService from '@/lib/server/modules/terminals/terminals.service';
@@ -113,6 +114,61 @@ describe('terminals.service role guards', () => {
     );
     expect(result).toEqual({ id: 'term-1' });
     expect(terminalsRepo.deleteTerminalById).toHaveBeenCalledOnce();
+  });
+
+  it('rejects driver suggestions without auth', async () => {
+    await expect(
+      terminalsService.suggestTerminal(makeCtx(null), {
+        name: 'Scout DC',
+        latitude: 24.86,
+        longitude: 67.0,
+      }),
+    ).rejects.toMatchObject({ status: 401 });
+  });
+
+  it('rejects suggestions from non-drivers', async () => {
+    await expect(
+      terminalsService.suggestTerminal(makeCtx({ userId: 'u1', role: 'vendor' }), {
+        name: 'Scout DC',
+        latitude: 24.86,
+        longitude: 67.0,
+      }),
+    ).rejects.toMatchObject({ status: 403 });
+  });
+
+  it('stores driver suggestions as non-public driver_submitted', async () => {
+    const result = await terminalsService.suggestTerminal(
+      makeCtx({ userId: 'drv-1', role: 'driver' }),
+      {
+        name: 'Scout DC',
+        latitude: 24.86,
+        longitude: 67.0,
+        city: 'Karachi',
+        notes: 'Behind the mall',
+      },
+    );
+    expect(result).toMatchObject({ id: 'term-1', name: 'Scout DC' });
+    expect(terminalsRepo.insertTerminal).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({
+        name: 'Scout DC',
+        source: 'driver_submitted',
+        isPublic: false,
+        verificationStatus: 'unverified',
+        submittedByUserId: 'drv-1',
+        submissionNotes: 'Behind the mall',
+      }),
+    );
+  });
+
+  it('accepts a valid suggestion payload', () => {
+    const result = suggestTerminalSchema.safeParse({
+      name: 'Scout DC',
+      latitude: 24.86,
+      longitude: 67.0,
+      notes: 'Optional',
+    });
+    expect(result.success).toBe(true);
   });
 
   it('returns 404 when vendor requests another vendor terminal', async () => {

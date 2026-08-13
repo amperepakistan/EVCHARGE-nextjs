@@ -248,10 +248,13 @@ export type Database = {
             | 'vendor_submitted'
             | 'google_places'
             | 'open_charge_map'
+            | 'driver_submitted'
             | null;
           scraped_at: string | null;
           last_verified_at: string | null;
           is_public: boolean;
+          submitted_by_user_id: string | null;
+          submission_notes: string | null;
           external_ids: Json | null;
           source_raw: Json | null;
           created_at: string;
@@ -287,10 +290,13 @@ export type Database = {
             | 'vendor_submitted'
             | 'google_places'
             | 'open_charge_map'
+            | 'driver_submitted'
             | null;
           scraped_at?: string | null;
           last_verified_at?: string | null;
           is_public?: boolean;
+          submitted_by_user_id?: string | null;
+          submission_notes?: string | null;
           external_ids?: Json | null;
           source_raw?: Json | null;
           created_at?: string;

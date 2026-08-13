@@ -5,7 +5,7 @@ export type VendorRow = Tables<'vendors'>;
 export type OwnerRow = Tables<'terminal_owners'>;
 
 const TERMINAL_ADMIN_COLUMNS =
-  'id, name, city, address, connector_type, charger_class, power_kw, connectivity_tier, verification_status, current_vendor_id, current_owner_id, is_public, created_at';
+  'id, name, city, address, latitude, longitude, connector_type, charger_class, power_kw, connectivity_tier, verification_status, current_vendor_id, current_owner_id, is_public, source, submitted_by_user_id, submission_notes, created_at';
 
 export async function listVendors(ctx: ServerContext): Promise<VendorRow[]> {
   const { data, error } = await ctx.db.from('vendors').select('*').order('name');
@@ -65,10 +65,25 @@ export async function listAllTerminals(ctx: ServerContext, limit = 200) {
   const { data, error } = await ctx.db
     .from('terminals')
     .select(TERMINAL_ADMIN_COLUMNS)
-    .order('name')
+    .order('created_at', { ascending: false })
     .limit(limit);
   if (error) throw new Error(error.message);
   return data ?? [];
+}
+
+export async function getUsersByIds(
+  ctx: ServerContext,
+  ids: string[],
+): Promise<Map<string, { full_name: string | null; email: string | null }>> {
+  if (ids.length === 0) return new Map();
+  const { data, error } = await ctx.db
+    .from('users')
+    .select('id, full_name, email')
+    .in('id', ids);
+  if (error) throw new Error(error.message);
+  return new Map(
+    (data ?? []).map((u) => [u.id, { full_name: u.full_name, email: u.email }]),
+  );
 }
 
 export type NetworkSessionRow = {

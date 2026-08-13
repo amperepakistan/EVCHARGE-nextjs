@@ -3,6 +3,7 @@ import type { ServerContext } from '@/lib/server/context';
 import { AppError } from '@/lib/server/errors';
 import {
   createTerminalSchema,
+  suggestTerminalSchema,
   updateTerminalSchema,
   type CreateTerminalInput,
   type UpdateTerminalInput,
@@ -107,6 +108,43 @@ export async function getTerminal(ctx: ServerContext, id: string) {
       message: err instanceof Error ? err.message : String(err),
     });
     throw new AppError(500, err instanceof Error ? err.message : 'Failed to fetch terminal');
+  }
+}
+
+export async function suggestTerminal(ctx: ServerContext, raw: unknown) {
+  if (!ctx.user) {
+    throw new AppError(401, 'Unauthorized');
+  }
+  if (ctx.user.role !== 'driver') {
+    throw new AppError(403, 'Forbidden');
+  }
+
+  const parsed = suggestTerminalSchema.safeParse(raw);
+  if (!parsed.success) {
+    throw new AppError(400, parsed.error.issues[0]?.message ?? 'Invalid body');
+  }
+
+  try {
+    return await terminalsRepo.insertTerminal(ctx, {
+      name: parsed.data.name,
+      latitude: parsed.data.latitude,
+      longitude: parsed.data.longitude,
+      city: parsed.data.city,
+      address: parsed.data.address,
+      connectorType: parsed.data.connectorType,
+      chargerClass: parsed.data.chargerClass,
+      source: 'driver_submitted',
+      isPublic: false,
+      verificationStatus: 'unverified',
+      submittedByUserId: ctx.user.userId,
+      submissionNotes: parsed.data.notes,
+    });
+  } catch (err) {
+    ctx.logger.error('[terminals] suggest failed', {
+      userId: ctx.user.userId,
+      message: err instanceof Error ? err.message : String(err),
+    });
+    throw new AppError(500, err instanceof Error ? err.message : 'Failed to submit station');
   }
 }
 

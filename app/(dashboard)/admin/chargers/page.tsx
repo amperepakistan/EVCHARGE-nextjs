@@ -1,7 +1,9 @@
 import { PageHeader } from '@/components/ui/page-header';
 import { DataTable, type Column } from '@/components/ui/data-table';
 import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
 import { StatusDot, STATUS_LABELS } from '@/components/ui/status-dot';
+import { ChargerReviewActions } from '@/components/features/admin/charger-review-actions';
 import { requireAdminDashboard } from '@/lib/server/dashboard';
 import * as adminService from '@/lib/server/modules/admin/admin.service';
 import * as terminalsService from '@/lib/server/modules/terminals/terminals.service';
@@ -11,12 +13,23 @@ type ChargerRow = {
   id: string;
   name: string;
   city: string | null;
+  address: string | null;
+  latitude: number;
+  longitude: number;
+  connector_type: string | null;
   status: TerminalStatus | 'unknown';
   connectivity_tier: string;
   power_kw: number | null;
   vendorName: string | null;
   ownerName: string | null;
   lastSeen: string | null;
+  is_public: boolean;
+  source: string | null;
+  verification_status: 'unverified' | 'verified' | 'flagged';
+  submission_notes: string | null;
+  submitterName: string | null;
+  submitterEmail: string | null;
+  created_at: string;
 };
 
 const columns: Column<ChargerRow>[] = [
@@ -41,6 +54,21 @@ const columns: Column<ChargerRow>[] = [
         </span>
       </span>
     ),
+  },
+  {
+    key: 'visibility',
+    header: 'Visibility',
+    render: (t) =>
+      t.is_public ? (
+        <Badge tone="success">Public</Badge>
+      ) : (
+        <Badge tone="warning">Hidden</Badge>
+      ),
+  },
+  {
+    key: 'source',
+    header: 'Source',
+    render: (t) => <Badge tone="neutral">{t.source ?? '—'}</Badge>,
   },
   {
     key: 'vendor',
@@ -80,22 +108,75 @@ const columns: Column<ChargerRow>[] = [
   },
 ];
 
+function sourceLabel(source: string | null) {
+  if (source === 'driver_submitted') return 'Driver scout';
+  if (!source) return 'Unknown source';
+  return source.replaceAll('_', ' ');
+}
+
 export default async function AdminChargersPage() {
   const { ctx } = await requireAdminDashboard();
   const chargers = await adminService.listNetworkChargers(ctx);
+  const pending = chargers.filter(
+    (t) => !t.is_public && t.verification_status !== 'flagged',
+  );
+  const live = chargers.filter((t) => t.is_public);
 
   return (
     <div className="space-y-6">
       <PageHeader
         title="Network chargers"
-        description={`${chargers.length} terminals across every vendor and owner.`}
+        description={`${live.length} public terminals · ${pending.length} waiting for review.`}
       />
+
+      {pending.length > 0 ? (
+        <section className="space-y-3">
+          <div>
+            <h2 className="font-heading text-lg font-bold">Pending review</h2>
+            <p className="text-text-secondary text-sm">
+              Driver-submitted chargers stay off the public map until you approve them.
+            </p>
+          </div>
+          <div className="space-y-3">
+            {pending.map((t) => (
+              <Card key={t.id}>
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div className="min-w-0 space-y-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="font-heading text-base font-bold">{t.name}</p>
+                      <Badge tone="warning">{sourceLabel(t.source)}</Badge>
+                      <Badge tone="neutral">{t.verification_status}</Badge>
+                    </div>
+                    <p className="text-text-secondary text-sm">
+                      {[t.address, t.city].filter(Boolean).join(' · ') || 'No address'}
+                    </p>
+                    <p className="text-text-secondary text-xs tabular-nums">
+                      {Number(t.latitude).toFixed(5)}, {Number(t.longitude).toFixed(5)}
+                      {t.connector_type ? ` · ${t.connector_type}` : ''}
+                    </p>
+                    {t.submission_notes ? (
+                      <p className="text-text-primary text-sm">{t.submission_notes}</p>
+                    ) : null}
+                    <p className="text-text-secondary text-xs">
+                      Submitted by {t.submitterName || t.submitterEmail || 'unknown driver'}
+                      {' · '}
+                      {new Date(t.created_at).toLocaleString()}
+                    </p>
+                  </div>
+                  <ChargerReviewActions terminalId={t.id} />
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <DataTable
         columns={columns}
-        rows={chargers}
+        rows={live}
         getRowKey={(t) => t.id}
-        emptyTitle="No chargers"
-        emptyMessage="Terminals will appear here once seeded or registered."
+        emptyTitle="No public chargers"
+        emptyMessage="Terminals will appear here once seeded, registered, or approved."
       />
     </div>
   );

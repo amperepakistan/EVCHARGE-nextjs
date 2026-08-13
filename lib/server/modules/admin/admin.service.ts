@@ -116,22 +116,39 @@ export async function listNetworkChargers(ctx: ServerContext) {
       ctx,
       terminals.map((t) => t.id),
     );
-    const [vendors, owners] = await Promise.all([
+    const [vendors, owners, submitters] = await Promise.all([
       adminRepo.listVendors(ctx),
       adminRepo.listOwners(ctx),
+      adminRepo.getUsersByIds(
+        ctx,
+        [
+          ...new Set(
+            terminals
+              .map((t) => t.submitted_by_user_id)
+              .filter((id): id is string => Boolean(id)),
+          ),
+        ],
+      ),
     ]);
     const vendorName = new Map(vendors.map((v) => [v.id, v.name]));
     const ownerName = new Map(owners.map((o) => [o.id, o.name]));
 
-    return terminals.map((t) => ({
-      ...t,
-      status: snapshots.get(t.id)?.status ?? ('unknown' as const),
-      lastSeen: snapshots.get(t.id)?.recorded_at ?? null,
-      vendorName: t.current_vendor_id
-        ? (vendorName.get(t.current_vendor_id) ?? null)
-        : null,
-      ownerName: t.current_owner_id ? (ownerName.get(t.current_owner_id) ?? null) : null,
-    }));
+    return terminals.map((t) => {
+      const submitter = t.submitted_by_user_id
+        ? submitters.get(t.submitted_by_user_id)
+        : undefined;
+      return {
+        ...t,
+        status: snapshots.get(t.id)?.status ?? ('unknown' as const),
+        lastSeen: snapshots.get(t.id)?.recorded_at ?? null,
+        vendorName: t.current_vendor_id
+          ? (vendorName.get(t.current_vendor_id) ?? null)
+          : null,
+        ownerName: t.current_owner_id ? (ownerName.get(t.current_owner_id) ?? null) : null,
+        submitterName: submitter?.full_name ?? null,
+        submitterEmail: submitter?.email ?? null,
+      };
+    });
   } catch (err) {
     if (err instanceof AppError) throw err;
     throw new AppError(500, err instanceof Error ? err.message : 'Failed to list chargers');
