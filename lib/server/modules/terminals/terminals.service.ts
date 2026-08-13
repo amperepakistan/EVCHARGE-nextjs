@@ -9,6 +9,7 @@ import {
   type UpdateTerminalInput,
 } from '@/lib/server/modules/terminals/terminals.schema';
 import * as terminalsRepo from '@/lib/server/modules/terminals/terminals.repository';
+import { scoutAmenities } from '@/lib/server/modules/terminals/scout-meta';
 
 const WRITE_ROLES: UserRole[] = ['super_admin', 'staff', 'vendor'];
 const DELETE_ROLES: UserRole[] = ['super_admin', 'staff'];
@@ -125,7 +126,7 @@ export async function suggestTerminal(ctx: ServerContext, raw: unknown) {
   }
 
   try {
-    return await terminalsRepo.insertTerminal(ctx, {
+    return await terminalsRepo.insertScoutTerminal(ctx, {
       name: parsed.data.name,
       latitude: parsed.data.latitude,
       longitude: parsed.data.longitude,
@@ -133,16 +134,7 @@ export async function suggestTerminal(ctx: ServerContext, raw: unknown) {
       address: parsed.data.address,
       connectorType: parsed.data.connectorType,
       chargerClass: parsed.data.chargerClass,
-      // Live DB CHECK + PostgREST cache don't include driver_submitted /
-      // submitted_by_user_id yet. Scout metadata lives on source_raw.
-      source: 'manual',
-      sourceRaw: {
-        kind: 'driver_submitted',
-        submittedByUserId: ctx.user.userId,
-        notes: parsed.data.notes,
-      },
-      isPublic: false,
-      verificationStatus: 'unverified',
+      amenities: scoutAmenities(ctx.user.userId, parsed.data.notes),
     });
   } catch (err) {
     ctx.logger.error('[terminals] suggest failed', {

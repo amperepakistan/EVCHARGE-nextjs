@@ -17,6 +17,7 @@ vi.mock('@/lib/server/modules/terminals/terminals.repository', () => ({
   getLatestStatusSnapshots: vi.fn(),
   getTerminalById: vi.fn(),
   insertTerminal: vi.fn(async (_ctx, input) => ({ id: 'term-1', ...input })),
+  insertScoutTerminal: vi.fn(async (_ctx, input) => ({ id: 'term-1', ...input })),
   updateTerminalById: vi.fn(async (_ctx, id, input) => ({ id, ...input })),
   deleteTerminalById: vi.fn(async () => undefined),
 }));
@@ -148,18 +149,11 @@ describe('terminals.service role guards', () => {
       },
     );
     expect(result).toMatchObject({ id: 'term-1', name: 'Scout DC' });
-    expect(terminalsRepo.insertTerminal).toHaveBeenCalledWith(
+    expect(terminalsRepo.insertScoutTerminal).toHaveBeenCalledWith(
       expect.anything(),
       expect.objectContaining({
         name: 'Scout DC',
-        source: 'manual',
-        isPublic: false,
-        verificationStatus: 'unverified',
-        sourceRaw: {
-          kind: 'driver_submitted',
-          submittedByUserId: 'drv-1',
-          notes: 'Behind the mall',
-        },
+        amenities: ['__ampere_scout__', 'user:drv-1', 'notes:Behind the mall'],
       }),
     );
   });

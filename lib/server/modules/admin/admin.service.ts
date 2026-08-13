@@ -1,6 +1,7 @@
 import type { ServerContext } from '@/lib/server/context';
 import { AppError } from '@/lib/server/errors';
 import * as adminRepo from '@/lib/server/modules/admin/admin.repository';
+import { parseScoutAmenities } from '@/lib/server/modules/terminals/scout-meta';
 
 function requirePlatformAdmin(ctx: ServerContext) {
   if (!ctx.user) throw new AppError(401, 'Unauthorized');
@@ -108,21 +109,6 @@ export async function getOwner(ctx: ServerContext, ownerId: string) {
   }
 }
 
-function scoutMeta(raw: unknown): {
-  kind?: string;
-  submittedByUserId?: string;
-  notes?: string;
-} {
-  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return {};
-  const obj = raw as Record<string, unknown>;
-  return {
-    kind: typeof obj.kind === 'string' ? obj.kind : undefined,
-    submittedByUserId:
-      typeof obj.submittedByUserId === 'string' ? obj.submittedByUserId : undefined,
-    notes: typeof obj.notes === 'string' ? obj.notes : undefined,
-  };
-}
-
 export async function listNetworkChargers(ctx: ServerContext) {
   requirePlatformAdmin(ctx);
   try {
@@ -131,7 +117,7 @@ export async function listNetworkChargers(ctx: ServerContext) {
       ctx,
       terminals.map((t) => t.id),
     );
-    const metas = terminals.map((t) => scoutMeta(t.source_raw));
+    const metas = terminals.map((t) => parseScoutAmenities(t.amenities));
     const [vendors, owners, submitters] = await Promise.all([
       adminRepo.listVendors(ctx),
       adminRepo.listOwners(ctx),

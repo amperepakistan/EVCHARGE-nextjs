@@ -115,6 +115,45 @@ export async function getTerminalById(ctx: ServerContext, id: string) {
   return data;
 }
 
+/** Driver scout insert — only columns that exist on the live terminals table. */
+export async function insertScoutTerminal(
+  ctx: ServerContext,
+  input: {
+    name: string;
+    latitude: number;
+    longitude: number;
+    city?: string;
+    address?: string;
+    connectorType?: string;
+    chargerClass?: 'AC' | 'DC';
+    amenities: string[];
+  },
+) {
+  const { data, error } = await ctx.db
+    .from('terminals')
+    .insert({
+      name: input.name,
+      latitude: input.latitude,
+      longitude: input.longitude,
+      city: input.city ?? null,
+      address: input.address ?? null,
+      connector_type: input.connectorType ?? null,
+      charger_class: input.chargerClass ?? null,
+      source: 'manual',
+      is_public: false,
+      verification_status: 'unverified',
+      connectivity_tier: 'listed',
+      amenities: input.amenities,
+    })
+    .select()
+    .single();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+  return data;
+}
+
 export async function insertTerminal(ctx: ServerContext, input: CreateTerminalInput) {
   const insert = toTerminalInsert({
     ...input,

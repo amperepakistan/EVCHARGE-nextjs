@@ -14,6 +14,10 @@ export async function listFavorites(ctx: ServerContext) {
     const terminalIds = await favoritesRepo.listFavoriteTerminalIds(ctx, user.userId);
     return { terminalIds };
   } catch (err) {
+    ctx.logger.error('[favorites] list failed', {
+      userId: user.userId,
+      message: err instanceof Error ? err.message : String(err),
+    });
     throw new AppError(500, err instanceof Error ? err.message : 'Failed to list favorites');
   }
 }
@@ -33,6 +37,10 @@ export async function addFavorite(ctx: ServerContext, raw: unknown) {
     );
     return { terminalId };
   } catch (err) {
+    ctx.logger.error('[favorites] add failed', {
+      userId: user.userId,
+      message: err instanceof Error ? err.message : String(err),
+    });
     throw new AppError(500, err instanceof Error ? err.message : 'Failed to add favorite');
   }
 }
@@ -45,6 +53,10 @@ export async function removeFavorite(ctx: ServerContext, terminalId: string) {
     await favoritesRepo.removeFavorite(ctx, user.userId, terminalId);
     return { terminalId };
   } catch (err) {
+    ctx.logger.error('[favorites] remove failed', {
+      userId: user.userId,
+      message: err instanceof Error ? err.message : String(err),
+    });
     throw new AppError(500, err instanceof Error ? err.message : 'Failed to remove favorite');
   }
 }
