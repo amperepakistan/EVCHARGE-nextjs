@@ -152,7 +152,13 @@ export function SendPushForm({ recipients }: { recipients: PushRecipientOption[]
         </Button>
 
         {state.message ? (
-          <p className={state.ok ? 'text-available text-xs' : 'text-error text-xs'}>
+          <p
+            className={
+              state.ok
+                ? 'text-available text-xs'
+                : 'text-error max-w-prose text-xs leading-5'
+            }
+          >
             {state.message}
           </p>
         ) : null}

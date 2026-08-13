@@ -1,6 +1,10 @@
 import { getMessaging } from '@/lib/firebase/admin';
 import type { MulticastMessage } from 'firebase-admin/messaging';
-import { listPushTokenRows } from '@/lib/server/modules/notifications/push-tokens.repository';
+import {
+  deletePushTokens,
+  listPushTokenRows,
+  type PushTokenRow,
+} from '@/lib/server/modules/notifications/push-tokens.repository';
 import { supabaseServer } from '@/lib/supabase/server';
 
 export interface SendPushToUsersOptions {
@@ -22,6 +26,11 @@ export type SendPushToUsersResult = {
   error?: string;
 };
 
+const STALE_TOKEN_CODES = new Set([
+  'messaging/registration-token-not-registered',
+  'messaging/invalid-registration-token',
+]);
+
 async function resolveTargetUserIds(
   audience: 'all' | 'selected',
   userIds?: string[],
@@ -41,19 +50,47 @@ async function resolveTargetUserIds(
   return (data ?? []).map((u) => u.id);
 }
 
-async function loadTokensForUsers(userIds: string[]): Promise<string[]> {
-  if (userIds.length === 0) return [];
-
-  const rows = await listPushTokenRows(supabaseServer(), userIds);
-  return Array.from(new Set(rows.map((row) => row.fcmToken).filter(Boolean)));
-}
-
 function chunk<T>(items: T[], size: number): T[][] {
   const out: T[][] = [];
   for (let i = 0; i < items.length; i += size) {
     out.push(items.slice(i, i + size));
   }
   return out;
+}
+
+function explainFcmFailures(codes: string[], platforms: string[]): string {
+  const unique = [...new Set(codes.filter(Boolean))];
+  const joined = unique.join(', ');
+  const ios = platforms.includes('ios');
+
+  if (
+    unique.some(
+      (code) =>
+        code.includes('third-party-auth') ||
+        code.includes('mismatched-credential') ||
+        /apns/i.test(code),
+    )
+  ) {
+    return 'Firebase could not talk to Apple Push (APNs). In Firebase Console → ampere-ac9f0 → Project settings → Cloud Messaging → Apple app, upload the APNs Authentication Key (.p8) for pk.ampere.app.';
+  }
+
+  if (unique.some((code) => STALE_TOKEN_CODES.has(code) || code.includes('invalid-argument'))) {
+    return ios
+      ? 'The iPhone token is invalid or from an old build. Install the latest TestFlight build, open Ampere while signed in, allow notifications, then refresh this page.'
+      : 'The saved device token is invalid. Ask that driver to force-quit Ampere and open it again while signed in, then refresh this page.';
+  }
+
+  if (unique.some((code) => code.includes('sender-id') || code.includes('mismatched-sender'))) {
+    return 'FCM sender mismatch: the app token is from a different Firebase project than the server service account.';
+  }
+
+  if (ios) {
+    return `All iOS deliveries failed${joined ? ` (${joined})` : ''}. Confirm the APNs .p8 key is uploaded in Firebase Console for pk.ampere.app, then reopen Ampere on a real iPhone.`;
+  }
+
+  return joined
+    ? `All device deliveries failed (${joined}).`
+    : 'All device deliveries failed. Tokens may be stale.';
 }
 
 export async function sendFcmNotificationToUsers({
@@ -77,8 +114,8 @@ export async function sendFcmNotificationToUsers({
       };
     }
 
-    const tokens = await loadTokensForUsers(targetUserIds);
-    if (tokens.length === 0) {
+    const rows = await listPushTokenRows(supabaseServer(), targetUserIds);
+    if (rows.length === 0) {
       return {
         success: false,
         successCount: 0,
@@ -108,6 +145,10 @@ export async function sendFcmNotificationToUsers({
         },
       },
       apns: {
+        headers: {
+          'apns-priority': '10',
+          'apns-push-type': 'alert',
+        },
         payload: {
           aps: {
             sound: 'default',
@@ -119,25 +160,55 @@ export async function sendFcmNotificationToUsers({
 
     let successCount = 0;
     let failureCount = 0;
+    const failureCodes: string[] = [];
+    const staleRows: PushTokenRow[] = [];
 
-    for (const batch of chunk(tokens, 500)) {
+    for (const batch of chunk(rows, 500)) {
       const response = await messaging.sendEachForMulticast({
         ...base,
-        tokens: batch,
+        tokens: batch.map((row) => row.fcmToken),
       });
       successCount += response.successCount;
       failureCount += response.failureCount;
+
+      response.responses.forEach((item, index) => {
+        if (item.success) return;
+        const row = batch[index];
+        const code = item.error?.code ?? 'unknown';
+        const message = item.error?.message ?? '';
+        failureCodes.push(code);
+        console.error('[FCM Service] token delivery failed', {
+          userId: row?.userId,
+          platform: row?.platform,
+          code,
+          message,
+        });
+        if (row && (STALE_TOKEN_CODES.has(code) || /not registered|invalid/i.test(message))) {
+          staleRows.push(row);
+        }
+      });
+    }
+
+    if (staleRows.length > 0) {
+      try {
+        await deletePushTokens(supabaseServer(), staleRows);
+      } catch (err) {
+        console.error('[FCM Service] failed to prune stale tokens', err);
+      }
     }
 
     return {
       success: successCount > 0,
       successCount,
       failureCount,
-      deviceCount: tokens.length,
+      deviceCount: rows.length,
       userCount: targetUserIds.length,
       error:
         successCount === 0
-          ? 'All device deliveries failed. Tokens may be stale.'
+          ? explainFcmFailures(
+              failureCodes,
+              rows.map((row) => row.platform),
+            )
           : undefined,
     };
   } catch (error: unknown) {

@@ -172,3 +172,28 @@ export async function listPushTokenRows(db: Db, userIds: string[]): Promise<Push
   );
   return perUser.flat();
 }
+
+export async function deletePushTokens(db: Db, rows: PushTokenRow[]) {
+  const tokens = [...new Set(rows.map((row) => row.fcmToken).filter(Boolean))];
+  if (tokens.length === 0) return;
+
+  const { error } = await db.from('user_push_tokens').delete().in('fcm_token', tokens);
+  if (error && !isMissingPushTokensTable(error.message)) {
+    throw new Error(error.message);
+  }
+
+  const byUser = new Map<string, Set<string>>();
+  for (const row of rows) {
+    const set = byUser.get(row.userId) ?? new Set<string>();
+    set.add(row.fcmToken);
+    byUser.set(row.userId, set);
+  }
+
+  await Promise.all(
+    [...byUser.entries()].map(async ([userId, remove]) => {
+      const existing = await listFromStorage(db, userId);
+      const next = existing.filter((token) => !remove.has(token.fcmToken));
+      if (next.length !== existing.length) await saveToStorage(db, userId, next);
+    }),
+  );
+}
