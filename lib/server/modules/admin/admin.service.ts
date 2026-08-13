@@ -108,6 +108,21 @@ export async function getOwner(ctx: ServerContext, ownerId: string) {
   }
 }
 
+function scoutMeta(raw: unknown): {
+  kind?: string;
+  submittedByUserId?: string;
+  notes?: string;
+} {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return {};
+  const obj = raw as Record<string, unknown>;
+  return {
+    kind: typeof obj.kind === 'string' ? obj.kind : undefined,
+    submittedByUserId:
+      typeof obj.submittedByUserId === 'string' ? obj.submittedByUserId : undefined,
+    notes: typeof obj.notes === 'string' ? obj.notes : undefined,
+  };
+}
+
 export async function listNetworkChargers(ctx: ServerContext) {
   requirePlatformAdmin(ctx);
   try {
@@ -116,6 +131,7 @@ export async function listNetworkChargers(ctx: ServerContext) {
       ctx,
       terminals.map((t) => t.id),
     );
+    const metas = terminals.map((t) => scoutMeta(t.source_raw));
     const [vendors, owners, submitters] = await Promise.all([
       adminRepo.listVendors(ctx),
       adminRepo.listOwners(ctx),
@@ -123,8 +139,8 @@ export async function listNetworkChargers(ctx: ServerContext) {
         ctx,
         [
           ...new Set(
-            terminals
-              .map((t) => t.submitted_by_user_id)
+            metas
+              .map((m) => m.submittedByUserId)
               .filter((id): id is string => Boolean(id)),
           ),
         ],
@@ -133,9 +149,10 @@ export async function listNetworkChargers(ctx: ServerContext) {
     const vendorName = new Map(vendors.map((v) => [v.id, v.name]));
     const ownerName = new Map(owners.map((o) => [o.id, o.name]));
 
-    return terminals.map((t) => {
-      const submitter = t.submitted_by_user_id
-        ? submitters.get(t.submitted_by_user_id)
+    return terminals.map((t, index) => {
+      const meta = metas[index];
+      const submitter = meta?.submittedByUserId
+        ? submitters.get(meta.submittedByUserId)
         : undefined;
       return {
         ...t,
@@ -147,6 +164,8 @@ export async function listNetworkChargers(ctx: ServerContext) {
         ownerName: t.current_owner_id ? (ownerName.get(t.current_owner_id) ?? null) : null,
         submitterName: submitter?.full_name ?? null,
         submitterEmail: submitter?.email ?? null,
+        submission_notes: meta?.notes ?? null,
+        isDriverScout: meta?.kind === 'driver_submitted',
       };
     });
   } catch (err) {

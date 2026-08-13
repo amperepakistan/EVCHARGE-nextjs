@@ -133,11 +133,16 @@ export async function suggestTerminal(ctx: ServerContext, raw: unknown) {
       address: parsed.data.address,
       connectorType: parsed.data.connectorType,
       chargerClass: parsed.data.chargerClass,
-      source: 'driver_submitted',
+      // Live DB CHECK + PostgREST cache don't include driver_submitted /
+      // submitted_by_user_id yet. Scout metadata lives on source_raw.
+      source: 'manual',
+      sourceRaw: {
+        kind: 'driver_submitted',
+        submittedByUserId: ctx.user.userId,
+        notes: parsed.data.notes,
+      },
       isPublic: false,
       verificationStatus: 'unverified',
-      submittedByUserId: ctx.user.userId,
-      submissionNotes: parsed.data.notes,
     });
   } catch (err) {
     ctx.logger.error('[terminals] suggest failed', {

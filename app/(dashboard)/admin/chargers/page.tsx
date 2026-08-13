@@ -29,6 +29,7 @@ type ChargerRow = {
   submission_notes: string | null;
   submitterName: string | null;
   submitterEmail: string | null;
+  isDriverScout?: boolean;
   created_at: string;
 };
 
@@ -108,8 +109,8 @@ const columns: Column<ChargerRow>[] = [
   },
 ];
 
-function sourceLabel(source: string | null) {
-  if (source === 'driver_submitted') return 'Driver scout';
+function sourceLabel(source: string | null, isDriverScout?: boolean) {
+  if (isDriverScout || source === 'driver_submitted') return 'Driver scout';
   if (!source) return 'Unknown source';
   return source.replaceAll('_', ' ');
 }
@@ -129,14 +130,22 @@ export default async function AdminChargersPage() {
         description={`${live.length} public terminals · ${pending.length} waiting for review.`}
       />
 
-      {pending.length > 0 ? (
-        <section className="space-y-3">
-          <div>
-            <h2 className="font-heading text-lg font-bold">Pending review</h2>
-            <p className="text-text-secondary text-sm">
-              Driver-submitted chargers stay off the public map until you approve them.
+      <section id="pending" className="space-y-3">
+        <div>
+          <h2 className="font-heading text-lg font-bold">Pending review</h2>
+          <p className="text-text-secondary text-sm">
+            When a driver taps “Help us map Pakistan”, the station lands here — hidden from
+            the public app until you approve it.
+          </p>
+        </div>
+        {pending.length === 0 ? (
+          <Card>
+            <p className="text-text-primary text-sm font-semibold">No scouts waiting</p>
+            <p className="text-text-secondary mt-1 text-sm">
+              New driver submissions show up here automatically.
             </p>
-          </div>
+          </Card>
+        ) : (
           <div className="space-y-3">
             {pending.map((t) => (
               <Card key={t.id}>
@@ -144,7 +153,7 @@ export default async function AdminChargersPage() {
                   <div className="min-w-0 space-y-1">
                     <div className="flex flex-wrap items-center gap-2">
                       <p className="font-heading text-base font-bold">{t.name}</p>
-                      <Badge tone="warning">{sourceLabel(t.source)}</Badge>
+                      <Badge tone="warning">{sourceLabel(t.source, t.isDriverScout)}</Badge>
                       <Badge tone="neutral">{t.verification_status}</Badge>
                     </div>
                     <p className="text-text-secondary text-sm">
@@ -162,14 +171,22 @@ export default async function AdminChargersPage() {
                       {' · '}
                       {new Date(t.created_at).toLocaleString()}
                     </p>
+                    <a
+                      href={`https://www.google.com/maps?q=${t.latitude},${t.longitude}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-primary-800 hover:underline text-xs font-semibold"
+                    >
+                      Open pin on Google Maps
+                    </a>
                   </div>
                   <ChargerReviewActions terminalId={t.id} />
                 </div>
               </Card>
             ))}
           </div>
-        </section>
-      ) : null}
+        )}
+      </section>
 
       <DataTable
         columns={columns}

@@ -24,3 +24,5 @@ CREATE INDEX IF NOT EXISTS terminals_submitted_by_user_id_idx
 CREATE INDEX IF NOT EXISTS terminals_pending_review_idx
   ON public.terminals (is_public, source)
   WHERE is_public = false;
+
+NOTIFY pgrst, 'reload schema';

@@ -118,6 +118,15 @@ export default async function AdminConsolePage() {
             Broadcast to all drivers or selected accounts
           </p>
         </Link>
+        <Link
+          href="/admin/chargers"
+          className="border-border bg-surface hover:bg-surface-muted rounded-lg border p-4 transition-colors"
+        >
+          <p className="text-text-primary text-sm font-semibold">Review scouted chargers</p>
+          <p className="text-text-secondary mt-1 text-xs">
+            Driver “Help us map” submissions wait here until you approve them
+          </p>
+        </Link>
       </div>
 
       <section className="space-y-3">

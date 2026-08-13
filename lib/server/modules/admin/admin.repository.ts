@@ -5,7 +5,7 @@ export type VendorRow = Tables<'vendors'>;
 export type OwnerRow = Tables<'terminal_owners'>;
 
 const TERMINAL_ADMIN_COLUMNS =
-  'id, name, city, address, latitude, longitude, connector_type, charger_class, power_kw, connectivity_tier, verification_status, current_vendor_id, current_owner_id, is_public, source, submitted_by_user_id, submission_notes, created_at';
+  'id, name, city, address, latitude, longitude, connector_type, charger_class, power_kw, connectivity_tier, verification_status, current_vendor_id, current_owner_id, is_public, source, source_raw, created_at';
 
 export async function listVendors(ctx: ServerContext): Promise<VendorRow[]> {
   const { data, error } = await ctx.db.from('vendors').select('*').order('name');

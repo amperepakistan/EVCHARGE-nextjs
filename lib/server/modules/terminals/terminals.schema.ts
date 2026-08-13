@@ -38,6 +38,7 @@ export const createTerminalSchema = z.object({
   isPublic: z.boolean().optional(),
   submittedByUserId: z.string().uuid().nullable().optional(),
   submissionNotes: z.string().max(2000).optional(),
+  sourceRaw: z.record(z.string(), z.unknown()).optional(),
 });
 
 export const updateTerminalSchema = createTerminalSchema.partial();

@@ -152,11 +152,14 @@ describe('terminals.service role guards', () => {
       expect.anything(),
       expect.objectContaining({
         name: 'Scout DC',
-        source: 'driver_submitted',
+        source: 'manual',
         isPublic: false,
         verificationStatus: 'unverified',
-        submittedByUserId: 'drv-1',
-        submissionNotes: 'Behind the mall',
+        sourceRaw: {
+          kind: 'driver_submitted',
+          submittedByUserId: 'drv-1',
+          notes: 'Behind the mall',
+        },
       }),
     );
   });

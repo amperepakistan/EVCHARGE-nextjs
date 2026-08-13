@@ -58,7 +58,7 @@ const ADMIN_LINKS: NavLink[] = [
   { href: '/admin/drivers', label: 'Drivers', icon: Users },
   { href: '/admin/vendors', label: 'Vendors', icon: Store },
   { href: '/admin/owners', label: 'Owners', icon: Building2 },
-  { href: '/admin/chargers', label: 'Chargers', icon: Zap },
+  { href: '/admin/chargers', label: 'Chargers & scouts', icon: Zap },
   { href: '/admin/sessions', label: 'Sessions', icon: CalendarClock },
   { href: '/admin/app-config', label: 'App config', icon: Settings },
   { href: '/admin/notifications', label: 'Notifications', icon: Bell },

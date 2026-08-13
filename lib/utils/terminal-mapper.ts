@@ -2,14 +2,14 @@ import type {
   CreateTerminalInput,
   UpdateTerminalInput,
 } from '@/lib/server/modules/terminals/terminals.schema';
-import type { Database } from '@/types/database.types';
+import type { Database, Json } from '@/types/database.types';
 
 type TerminalInsert = Database['public']['Tables']['terminals']['Insert'];
 type TerminalUpdate = Database['public']['Tables']['terminals']['Update'];
 
 /** Map camelCase API/form fields → snake_case DB columns. */
 export function toTerminalInsert(input: CreateTerminalInput): TerminalInsert {
-  return {
+  const row: TerminalInsert = {
     name: input.name,
     latitude: input.latitude,
     longitude: input.longitude,
@@ -34,9 +34,11 @@ export function toTerminalInsert(input: CreateTerminalInput): TerminalInsert {
     scraped_at: input.scrapedAt,
     last_verified_at: input.lastVerifiedAt,
     is_public: input.isPublic,
-    submitted_by_user_id: input.submittedByUserId,
-    submission_notes: input.submissionNotes,
   };
+  if (input.sourceRaw !== undefined) {
+    row.source_raw = input.sourceRaw as Json;
+  }
+  return row;
 }
 
 export function toTerminalUpdate(input: UpdateTerminalInput): TerminalUpdate {
@@ -69,9 +71,6 @@ export function toTerminalUpdate(input: UpdateTerminalInput): TerminalUpdate {
   if (input.scrapedAt !== undefined) row.scraped_at = input.scrapedAt;
   if (input.lastVerifiedAt !== undefined) row.last_verified_at = input.lastVerifiedAt;
   if (input.isPublic !== undefined) row.is_public = input.isPublic;
-  if (input.submittedByUserId !== undefined) {
-    row.submitted_by_user_id = input.submittedByUserId;
-  }
-  if (input.submissionNotes !== undefined) row.submission_notes = input.submissionNotes;
+  if (input.sourceRaw !== undefined) row.source_raw = input.sourceRaw as Json;
   return row;
 }
