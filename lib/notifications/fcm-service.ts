@@ -1,5 +1,6 @@
 import { getMessaging } from '@/lib/firebase/admin';
 import type { MulticastMessage } from 'firebase-admin/messaging';
+import { listPushTokenRows } from '@/lib/server/modules/notifications/push-tokens.repository';
 import { supabaseServer } from '@/lib/supabase/server';
 
 export interface SendPushToUsersOptions {
@@ -43,16 +44,8 @@ async function resolveTargetUserIds(
 async function loadTokensForUsers(userIds: string[]): Promise<string[]> {
   if (userIds.length === 0) return [];
 
-  const supabase = supabaseServer();
-  const { data, error } = await supabase
-    .from('user_push_tokens')
-    .select('fcm_token')
-    .in('user_id', userIds);
-
-  if (error) throw new Error(error.message);
-
-  const tokens = (data ?? []).map((row) => row.fcm_token).filter(Boolean);
-  return Array.from(new Set(tokens));
+  const rows = await listPushTokenRows(supabaseServer(), userIds);
+  return Array.from(new Set(rows.map((row) => row.fcmToken).filter(Boolean)));
 }
 
 function chunk<T>(items: T[], size: number): T[][] {
@@ -94,8 +87,8 @@ export async function sendFcmNotificationToUsers({
         userCount: targetUserIds.length,
         error:
           audience === 'all'
-            ? 'No registered devices found. Drivers must open the app while logged in.'
-            : 'Selected drivers have no registered devices.',
+            ? 'No registered devices found. Ask drivers to open Ampere while signed in, then refresh this page.'
+            : 'Selected drivers have no registered devices. Ask them to open Ampere while signed in, then refresh.',
       };
     }
 

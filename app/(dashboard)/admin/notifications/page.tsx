@@ -5,6 +5,7 @@ import {
 } from '@/components/features/admin/send-push-form';
 import { requireAdminDashboard } from '@/lib/server/dashboard';
 import * as driversAdmin from '@/lib/server/modules/admin/drivers-admin.service';
+import { listPushTokenRows } from '@/lib/server/modules/notifications/push-tokens.repository';
 
 export default async function AdminNotificationsPage() {
   const { ctx } = await requireAdminDashboard();
@@ -16,16 +17,9 @@ export default async function AdminNotificationsPage() {
 
   const tokenCountByUser = new Map<string, number>();
   if (userIds.length > 0) {
-    const { data: tokens } = await ctx.db
-      .from('user_push_tokens')
-      .select('user_id')
-      .in('user_id', userIds);
-
-    for (const row of tokens ?? []) {
-      tokenCountByUser.set(
-        row.user_id,
-        (tokenCountByUser.get(row.user_id) ?? 0) + 1,
-      );
+    const tokens = await listPushTokenRows(ctx.db, userIds);
+    for (const row of tokens) {
+      tokenCountByUser.set(row.userId, (tokenCountByUser.get(row.userId) ?? 0) + 1);
     }
   }
 

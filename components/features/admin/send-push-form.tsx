@@ -73,6 +73,12 @@ export function SendPushForm({ recipients }: { recipients: PushRecipientOption[]
             {withDevices.length} of {recipients.length} driver accounts have a
             registered device.
           </p>
+          {withDevices.length === 0 ? (
+            <p className="text-warning mt-1 text-xs">
+              No devices yet. Ask drivers to open Ampere while signed in, then
+              refresh this page.
+            </p>
+          ) : null}
         </div>
 
         {audience === 'selected' ? (

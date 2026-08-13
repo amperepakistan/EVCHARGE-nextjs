@@ -4,6 +4,7 @@ import {
   isAuthError,
   requireAuth,
 } from '@/lib/auth/request';
+import { upsertPushToken } from '@/lib/server/modules/notifications/push-tokens.repository';
 import { supabaseServer } from '@/lib/supabase/server';
 
 /**
@@ -33,19 +34,17 @@ export async function POST(req: NextRequest) {
         ? platform
         : 'android';
 
-    const supabase = supabaseServer();
-    const { error } = await supabase.from('user_push_tokens').upsert(
-      {
-        user_id: auth.userId,
-        fcm_token: token,
+    try {
+      await upsertPushToken(supabaseServer(), {
+        userId: auth.userId,
+        fcmToken: token,
         platform: validPlatform,
-        updated_at: new Date().toISOString(),
-      },
-      { onConflict: 'user_id,fcm_token' },
-    );
-
-    if (error) {
-      console.error('[notifications/register-token] DB upsert failed:', error.message);
+      });
+    } catch (err) {
+      console.error(
+        '[notifications/register-token] store failed:',
+        err instanceof Error ? err.message : err,
+      );
       return apiError('Failed to store push token', 500);
     }
 
