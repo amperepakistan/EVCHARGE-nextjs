@@ -63,6 +63,10 @@ function explainFcmFailures(codes: string[], platforms: string[]): string {
   const joined = unique.join(', ');
   const ios = platforms.includes('ios');
 
+  if (unique.some((code) => code.includes('invalid-credential') || code === 'app/invalid-credential')) {
+    return 'Firebase Admin credentials on the server are invalid. In Vercel, set FIREBASE_SERVICE_ACCOUNT_KEY to the full JSON from Firebase Console → ampere-ac9f0 → Project settings → Service accounts → Generate new private key. Then redeploy.';
+  }
+
   if (
     unique.some(
       (code) =>
