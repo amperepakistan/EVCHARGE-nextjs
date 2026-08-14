@@ -1,9 +1,17 @@
+import Image from 'next/image';
+
 export function BrandLogo({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
   // Heights matched precisely to text line box centers
   const iconSizes = {
     sm: 'h-6 w-6 rounded-md',
     md: 'h-8 w-8 rounded-xl',
     lg: 'h-10 w-10 rounded-xl',
+  };
+
+  const iconPx = {
+    sm: 24,
+    md: 32,
+    lg: 40,
   };
 
   const textSizes = {
@@ -14,25 +22,14 @@ export function BrandLogo({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
 
   return (
     <div className="flex items-center gap-3">
-      {/* 1:1 Aspect ratio Icon placeholder */}
-      <div
-        className={`aspect-square ${iconSizes[size]} bg-[var(--color-primary)] flex items-center justify-center font-heading font-extrabold text-[var(--color-on-primary)] shadow-sm shrink-0`}
-      >
-        <svg
-          className="w-3/5 h-3/5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2.5"
-            d="M13 10V3L4 14h7v7l9-11h-7z"
-          />
-        </svg>
-      </div>
+      {/* Logo mark — always rounded, never sharp corners */}
+      <Image
+        src="/brand/logo.png"
+        alt="Ampere"
+        width={iconPx[size]}
+        height={iconPx[size]}
+        className={`aspect-square ${iconSizes[size]} shadow-sm shrink-0 object-cover`}
+      />
 
       {/* Brand Heading Text in Gotham matching exact line-height box of icon */}
       <span

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -95,9 +96,13 @@ export function SidebarNav({
   return (
     <aside className="bg-ink text-on-ink flex w-full shrink-0 flex-col lg:h-screen lg:w-64 lg:sticky lg:top-0">
       <div className="flex items-center gap-2.5 px-5 py-5">
-        <span className="bg-primary text-on-primary rounded-image flex size-8 items-center justify-center">
-          <Zap className="size-4.5" />
-        </span>
+        <Image
+          src="/brand/logo.png"
+          alt="Ampere"
+          width={32}
+          height={32}
+          className="rounded-image aspect-square size-8 shrink-0 object-cover"
+        />
         <span className="font-heading text-on-ink text-lg font-bold tracking-tight">
           Ampere
         </span>
