@@ -1,0 +1,61 @@
+brand,model,vehicle_type,battery_capacity_kwh,range_km,ac_charging_kw,dc_charging_kw,connector,price_pkr,url,source,scraped_at
+Nora,Nora EV,BEV,23.1,450,,,,2099999,https://www.noraevtech.com/,www.noraevtech.com,2026-08-16T11:06:07.631Z
+BMW,BMW iX,BEV,,701,,,,,https://www.bmw-pakistan.com/models/new-ix/,www.bmw-pakistan.com,2026-08-16T11:06:09.040Z
+BYD,Atto 2,BEV,45.12,380,,,,,https://www.byd-mega.com/vehicles/atto-2,www.byd-mega.com,2026-08-16T11:06:09.074Z
+BYD,Shark,PHEV,,800,,,,19950000,https://www.byd-mega.com/vehicles/shark,www.byd-mega.com,2026-08-16T11:06:09.251Z
+BYD,Atto 3,BEV,49.92,410,,88,,8990000,https://www.byd-mega.com/vehicles/atto-3,www.byd-mega.com,2026-08-16T11:06:09.367Z
+BYD,Seal,BEV,82.56,650,,,,14790000,https://www.byd-mega.com/vehicles/seal,www.byd-mega.com,2026-08-16T11:06:09.379Z
+BYD,Sealion 7,BEV,82.56,567,,,,,https://www.byd-mega.com/vehicles/sealion-7,www.byd-mega.com,2026-08-16T11:06:09.479Z
+JMEV,JMEV Elight,BEV,,500,,80,,8499000,https://capitalsmartmotors.pk/vehicles/jmev-elight/,capitalsmartmotors.pk,2026-08-16T11:06:09.587Z
+JMEV,JMEV EV3,BEV,30,330,,,,4899000,https://capitalsmartmotors.pk/vehicles/jmev-ev3/,capitalsmartmotors.pk,2026-08-16T11:06:09.709Z
+Riddara,Riddara RD6,BEV,,461,,,,13299000,https://capitalsmartmotors.pk/vehicles/riddara-rd6/,capitalsmartmotors.pk,2026-08-16T11:06:09.717Z
+Zeekr,Zeekr X,BEV,,440,,,,17990000,https://capitalsmartmotors.pk/vehicles/zeekr-x/,capitalsmartmotors.pk,2026-08-16T11:06:09.822Z
+Zeekr,Zeekr 009,BEV,,582,,,,45999000,https://capitalsmartmotors.pk/vehicles/zeekr-009/,capitalsmartmotors.pk,2026-08-16T11:06:10.055Z
+Forthing,Forthing Friday,REEV,,150,,,,8999000,https://capitalsmartmotors.pk/vehicles/forthing-friday/,capitalsmartmotors.pk,2026-08-16T11:06:10.092Z
+BMW,BMW iX1,BEV,,438,,,,,https://www.bmw-pakistan.com/models/the-ix1/,www.bmw-pakistan.com,2026-08-16T11:06:10.886Z
+BMW,BMW iX2,BEV,,477,,,,,https://www.bmw-pakistan.com/models/the-new-ix2/,www.bmw-pakistan.com,2026-08-16T11:06:10.909Z
+BMW,BMW iX3,BEV,,,,,,,https://www.bmw-pakistan.com/models/the-ix3/,www.bmw-pakistan.com,2026-08-16T11:06:11.472Z
+Audi,Audi RS e-tron GT,BEV,,472,,,,,https://www.audi.com.pk/en/models/audi-e-tron-gt/audi-rs-etron-gt/,www.audi.com.pk,2026-08-16T11:06:11.631Z
+Kaiyi,Kaiyi e-Qute 04,BEV,,,,,,,https://nexgenhitech.com.pk/kaiyi-e-qute04/,nexgenhitech.com.pk,2026-08-16T11:06:17.038Z
+KIA,KIA Sorento PHEV,PHEV,13.8,66,3.3,,,,https://kia-luckymotorcorp.com/showroom/the-all-new-sorento-phev/,kia-luckymotorcorp.com,2026-08-16T11:06:17.535Z
+KIA,KIA Sportage L Hybrid,HEV,1.49,,,,,,https://kia-luckymotorcorp.com/showroom/the-all-new-sportage-l/,kia-luckymotorcorp.com,2026-08-16T11:06:18.250Z
+KIA,KIA EV9,BEV,,,,,,,https://kia-luckymotorcorp.com/showroom/ev9/,kia-luckymotorcorp.com,2026-08-16T11:06:19.226Z
+KIA,KIA EV5,BEV,,,,,,,https://kia-luckymotorcorp.com/showroom/ev5/,kia-luckymotorcorp.com,2026-08-16T11:06:19.235Z
+KIA,KIA Sorento Hybrid,HEV,,,3.3,,,,https://kia-luckymotorcorp.com/showroom/the-all-new-sorento/,kia-luckymotorcorp.com,2026-08-16T11:06:19.782Z
+Honri,Honri i300,BEV,,,,,,,https://honripakistan.com/ve-3-0/,honripakistan.com,2026-08-16T11:06:20.126Z
+Honri,Honri i200,BEV,18.5,200,,,,,https://honripakistan.com/ve-2-0/,honripakistan.com,2026-08-16T11:06:20.234Z
+Deepal,Deepal S07,BEV,66.8,485,7,,,,https://www.deepal.pk/s7/,www.deepal.pk,2026-08-16T11:06:22.255Z
+Deepal,Deepal L07,PHEV,66.8,540,7,,,,https://www.deepal.pk/l7/,www.deepal.pk,2026-08-16T11:06:22.573Z
+Deepal,Deepal S05,BEV,27.28,170,,,,,https://www.deepal.pk/s5/,www.deepal.pk,2026-08-16T11:06:22.586Z
+Deepal,Deepal E07,BEV,89.98,590,,,,,https://www.deepal.pk/e7/,www.deepal.pk,2026-08-16T11:06:22.773Z
+Hyundai,Hyundai IONIQ 5,BEV,,,,,,,https://hyundai-nishat.com/ioniq-5/,hyundai-nishat.com,2026-08-16T11:06:49.308Z
+Hyundai,Hyundai IONIQ 6,BEV,,,,,,,https://hyundai-nishat.com/ioniq-6/,hyundai-nishat.com,2026-08-16T11:06:52.359Z
+Hyundai,Hyundai Tucson Hybrid,HEV,,,,,,,https://hyundai-nishat.com/tucson-hybrid/,hyundai-nishat.com,2026-08-16T11:06:52.545Z
+Hyundai,Hyundai Elantra Hybrid,HEV,,,,,,,https://hyundai-nishat.com/elantra-hybrid/,hyundai-nishat.com,2026-08-16T11:06:53.017Z
+Hyundai,Hyundai Palisade Hybrid,HEV,,,,,,,https://hyundai-nishat.com/palisade-hybrid/,hyundai-nishat.com,2026-08-16T11:06:53.810Z
+Hyundai,Hyundai Santa Fe Hybrid,HEV,,,,,,,https://hyundai-nishat.com/santa-fe/,hyundai-nishat.com,2026-08-16T11:06:56.040Z
+GAC,GAC Hyptec HT,BEV,,,,,,11999000,https://www.gacgroup.com/en-pk/suv/hyptec-ht,www.gacgroup.com,2026-08-16T11:07:20.384Z
+GAC,GAC Aion ES,BEV,,442,,,,,https://www.gacgroup.com/en-pk/sedan/aion-es,www.gacgroup.com,2026-08-16T11:07:20.957Z
+GAC,GAC Aion V,BEV,,520,,,,,https://www.gacgroup.com/en-pk/suv/aion-v,www.gacgroup.com,2026-08-16T11:07:25.524Z
+GAC,GAC Aion UT,BEV,,400,,,,,https://www.gacgroup.com/en-pk/hatchback/aion-ut,www.gacgroup.com,2026-08-16T11:07:33.667Z
+MG,MG ZS Hybrid+,HEV,,,,,,,https://mgmotors.com.pk/model/mg-zs-hybrid,mgmotors.com.pk,2026-08-16T11:07:46.247Z
+MG,MG HS Super Hybrid,PHEV,24.7,135,,,,,https://mgmotors.com.pk/model/mg-hs-super-hybrid,mgmotors.com.pk,2026-08-16T11:07:46.428Z
+MG,MG HS PHEV,PHEV,16.6,50,,,,,https://mgmotors.com.pk/model/phev,mgmotors.com.pk,2026-08-16T11:08:02.369Z
+MG,MG4 EV Urban,BEV,43,316,,82,,,https://mgmotors.com.pk/model/mg4-ev-urban,mgmotors.com.pk,2026-08-16T11:08:06.644Z
+MG,MG Cyberster,BEV,,507,,150,,,https://mgmotors.com.pk/model/cyberster,mgmotors.com.pk,2026-08-16T11:08:07.202Z
+MG,MG HS Hybrid+,PHEV,,,,,,,https://mgmotors.com.pk/model/mg-hs-hybrid-plus,mgmotors.com.pk,2026-08-16T11:08:16.240Z
+MG,MG Binguo,BEV,31.9,333,,,CCS2,,https://mgmotors.com.pk/model/binguo,mgmotors.com.pk,2026-08-16T11:08:16.655Z
+Dongfeng,Dongfeng 007,BEV,,,,,,,https://chawlagreenmotors.com/007.html,chawlagreenmotors.com,2026-08-16T11:08:18.622Z
+Dongfeng,Dongfeng Box,BEV,,,,,,,https://chawlagreenmotors.com/box.html,chawlagreenmotors.com,2026-08-16T11:08:18.629Z
+Dongfeng,Dongfeng Vigo,BEV,,,,,,,https://chawlagreenmotors.com/vigo.html,chawlagreenmotors.com,2026-08-16T11:08:19.115Z
+GWM,Tank 500 HEV,HEV,,,,,,20499997,https://www.gwm-pakistan.com/models/tank-500,www.gwm-pakistan.com,2026-08-16T11:08:30.436Z
+GWM,Tank 500 PHEV,PHEV,,,,,,22500000,https://www.gwm-pakistan.com/models/tank-500-phev,www.gwm-pakistan.com,2026-08-16T11:08:37.233Z
+GWM,Haval Jolion HEV,HEV,,,,,,,https://www.gwm-pakistan.com/models/haval-jolion-hev,www.gwm-pakistan.com,2026-08-16T11:08:37.600Z
+GWM,GWM Ora 3,BEV,,,,,,,https://www.gwm-pakistan.com/models/ora-03,www.gwm-pakistan.com,2026-08-16T11:08:40.247Z
+GUGO,GUGO Box,BEV,,,,,,,https://gugomotors.com/box,gugomotors.com,2026-08-16T11:08:50.678Z
+GWM,GWM Ora 7,BEV,,640,,,,15300001,https://www.gwm-pakistan.com/models/ora-07,www.gwm-pakistan.com,2026-08-16T11:08:53.704Z
+GWM,Haval H6 HEV,HEV,,,,,,11523015,https://www.gwm-pakistan.com/models/haval-h6-hev,www.gwm-pakistan.com,2026-08-16T11:09:05.985Z
+GWM,GWM Ora 5,BEV,,435,,,,8599000,https://www.gwm-pakistan.com/models/ora-05,www.gwm-pakistan.com,2026-08-16T11:09:06.524Z
+GWM,Haval H6 PHEV,PHEV,,1000,,3.3,,12895000,https://www.gwm-pakistan.com/models/haval-h6-phev,www.gwm-pakistan.com,2026-08-16T11:09:08.486Z
+Xpeng,Xpeng X9,BEV,,702,,330,,,https://xpengpakistan.com/x9,xpengpakistan.com,2026-08-16T11:09:14.831Z
+Xpeng,Xpeng G6,BEV,,,,,,,https://xpengpakistan.com/g6,xpengpakistan.com,2026-08-16T11:09:28.333Z

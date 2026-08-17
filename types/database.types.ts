@@ -445,6 +445,42 @@ export type Database = {
         Update: Partial<Database['public']['Tables']['app_config']['Insert']>;
         Relationships: NeverRelationships;
       };
+      ev_vehicles: {
+        Row: {
+          id: string;
+          brand: string;
+          model: string;
+          vehicle_type: string | null;
+          battery_capacity_kwh: number | null;
+          range_km: number | null;
+          ac_charging_kw: number | null;
+          dc_charging_kw: number | null;
+          connector: string;
+          price_pkr: number | null;
+          source_url: string | null;
+          source: string | null;
+          scraped_at: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id: string;
+          brand: string;
+          model: string;
+          vehicle_type?: string | null;
+          battery_capacity_kwh?: number | null;
+          range_km?: number | null;
+          ac_charging_kw?: number | null;
+          dc_charging_kw?: number | null;
+          connector?: string;
+          price_pkr?: number | null;
+          source_url?: string | null;
+          source?: string | null;
+          scraped_at?: string | null;
+          created_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['ev_vehicles']['Insert']>;
+        Relationships: NeverRelationships;
+      };
       app_maintenance: {
         Row: {
           id: boolean;
