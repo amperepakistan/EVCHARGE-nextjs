@@ -52,8 +52,8 @@ export default async function CustomerDetailPage({
             <h2 className="font-heading text-lg font-bold tracking-tight">Contract</h2>
             <Card>
               <dl className="space-y-3 text-sm">
-                <Row label="Install fee" value="Rs 0" />
-                <Row label="Monthly fee" value="Rs 0" />
+                <Row label="Install fee" value="OMR 0" />
+                <Row label="Monthly fee" value="OMR 0" />
                 <Row label="Terminals" value={String(customer.terminalCount)} />
               </dl>
               <p className="text-text-secondary mt-4 text-xs">

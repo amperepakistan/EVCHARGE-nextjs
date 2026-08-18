@@ -1,4 +1,7 @@
 import type { ServerContext } from '@/lib/server/context';
+import { SCREENSHOT_AU } from '@/lib/screenshot-mode';
+import { mockHourlyUsage, mockSessions } from '@/lib/mock/operations';
+import { mockTerminals, OWNER_ID_MALL } from '@/lib/mock/terminals';
 
 export type SessionListRow = {
   id: string;
@@ -16,6 +19,25 @@ export async function listSessionsForOwner(
   ownerId: string,
   limit = 100,
 ): Promise<SessionListRow[]> {
+  if (SCREENSHOT_AU) {
+    const ownerTerminals = mockTerminals.filter((t) => t.ownerId === OWNER_ID_MALL);
+    const ids = new Set(ownerTerminals.map((t) => t.id));
+    const nameById = new Map(ownerTerminals.map((t) => [t.id, t.name]));
+    return mockSessions
+      .filter((s) => ids.has(s.terminalId))
+      .slice(0, limit)
+      .map((s) => ({
+        id: s.id,
+        terminal_id: s.terminalId,
+        terminal_name: nameById.get(s.terminalId) ?? null,
+        driver_id: s.driverLabel,
+        started_at: s.startedAt.replace(' ', 'T') + ':00Z',
+        ended_at: s.endedAt ? s.endedAt.replace(' ', 'T') + ':00Z' : null,
+        kwh_delivered: s.kwhDelivered,
+        amount_charged: s.amountCharged,
+      }));
+  }
+
   const { data: terminals, error: termError } = await ctx.db
     .from('terminals')
     .select('id, name')
@@ -47,6 +69,14 @@ export async function hourlySessionCountsForOwner(
   ownerId: string,
   sinceIso: string,
 ): Promise<{ hour: number; sessions: number }[]> {
+  if (SCREENSHOT_AU) {
+    const byHour = new Map(mockHourlyUsage.map((r) => [Number.parseInt(r.hour, 10), r.sessions]));
+    return Array.from({ length: 24 }, (_, hour) => ({
+      hour,
+      sessions: byHour.get(hour) ?? 0,
+    }));
+  }
+
   const { data: terminals, error: termError } = await ctx.db
     .from('terminals')
     .select('id')

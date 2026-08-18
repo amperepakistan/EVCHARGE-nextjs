@@ -8,6 +8,7 @@ import { StatusDot } from '@/components/ui/status-dot';
 import { EmptyState } from '@/components/ui/empty-state';
 import { SiteMapLoader } from '@/components/features/dashboard/site-map-loader';
 import { getVendorScope } from '@/lib/mock/scope';
+import { formatMoney } from '@/lib/screenshot-mode';
 import { terminalById, terminalsForVendor } from '@/lib/mock/terminals';
 import { mockFaults, mockHealth } from '@/lib/mock/operations';
 import { customersForVendor } from '@/lib/mock/crm';
@@ -111,7 +112,7 @@ export default async function VendorOverviewPage() {
         />
         <StatTile
           label="Monthly recurring"
-          value={`Rs ${mrr.toLocaleString()}`}
+          value={formatMoney(mrr)}
           hint="From maintenance contracts"
           icon={<ReceiptText className="size-4.5" />}
         />

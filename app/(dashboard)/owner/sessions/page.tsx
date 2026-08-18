@@ -3,6 +3,7 @@ import { StatTile } from '@/components/ui/stat-tile';
 import { DataTable, type Column } from '@/components/ui/data-table';
 import { Badge } from '@/components/ui/badge';
 import { requireOwnerDashboard, TenantAccessError } from '@/lib/server/dashboard';
+import { formatMoney } from '@/lib/screenshot-mode';
 import { TenantDenied } from '@/components/features/dashboard/tenant-denied';
 import * as sessionsService from '@/lib/server/modules/sessions/sessions.service';
 import type { SessionListRow } from '@/lib/server/modules/sessions/sessions.repository';
@@ -57,7 +58,7 @@ const columns: Column<SessionListRow>[] = [
     align: 'right',
     render: (s) => (
       <span className="font-heading font-bold tabular-nums">
-        Rs {Number(s.amount_charged ?? 0).toLocaleString()}
+        {formatMoney(Number(s.amount_charged ?? 0))}
       </span>
     ),
   },

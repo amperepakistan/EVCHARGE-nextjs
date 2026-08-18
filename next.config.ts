@@ -5,9 +5,11 @@ const nextConfig: NextConfig = {
   serverExternalPackages: ['bcryptjs'],
   images: {
     remotePatterns: [
-      // Station photography in the dummy-data build. The real dataset stores
-      // Google Places photo URLs, so this list grows when the API is wired up.
-      { protocol: 'https', hostname: 'images.unsplash.com' },
+      { protocol: 'https', hostname: 'images.unsplash.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'lh3.googleusercontent.com', pathname: '/**' },
+      { protocol: 'https', hostname: '*.googleusercontent.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'maps.googleapis.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'streetviewpixels-pa.googleapis.com', pathname: '/**' },
     ],
   },
 };

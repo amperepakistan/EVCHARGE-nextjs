@@ -1,13 +1,14 @@
-import Image from 'next/image';
 import { Clock, MapPin, Pencil } from 'lucide-react';
 import { PageHeader } from '@/components/ui/page-header';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { EmptyState } from '@/components/ui/empty-state';
+import { StationCoverImage } from '@/components/features/dashboard/station-cover-image';
 import { requireOwnerDashboard, TenantAccessError } from '@/lib/server/dashboard';
 import { amenitiesList, photoUrl } from '@/lib/server/dashboard-ui';
 import { TenantDenied } from '@/components/features/dashboard/tenant-denied';
+import { demoSiteAmenities, demoSitePhoto } from '@/lib/server/owner-demo-data';
 import * as terminalsService from '@/lib/server/modules/terminals/terminals.service';
 
 export default async function OwnerSitesPage() {
@@ -32,24 +33,19 @@ export default async function OwnerSitesPage() {
         ) : (
           <div className="grid gap-4 lg:grid-cols-2">
             {terminals.map((terminal) => {
-              const photo = photoUrl(terminal.google_photo_urls);
-              const amenities = amenitiesList(terminal.amenities);
+              const photo = photoUrl(terminal.google_photo_urls) ?? demoSitePhoto(terminal.id);
+              const listed = amenitiesList(terminal.amenities).filter(
+                (a) => !a.startsWith('__') && !a.startsWith('user:') && !a.startsWith('notes:'),
+              );
+              const amenities = listed.length > 0 ? listed : demoSiteAmenities(terminal.id);
               return (
                 <Card key={terminal.id} padded={false}>
-                  <div className="relative h-40 w-full overflow-hidden">
-                    {photo ? (
-                      <Image
-                        src={photo}
-                        alt={terminal.name}
-                        fill
-                        sizes="(min-width: 1024px) 50vw, 100vw"
-                        className="object-cover"
-                      />
-                    ) : (
-                      <div className="bg-surface-muted text-text-secondary flex h-full items-center justify-center text-sm">
-                        No photo uploaded
-                      </div>
-                    )}
+                  <div className="relative h-40 w-full overflow-hidden bg-surface-muted">
+                    <StationCoverImage
+                      src={photo}
+                      fallbackSrc={demoSitePhoto(terminal.id)}
+                      alt={terminal.name}
+                    />
                   </div>
 
                   <div className="p-5">

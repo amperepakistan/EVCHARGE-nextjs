@@ -18,7 +18,7 @@ const DRIVER_FEATURES = [
     icon: MapPin,
     title: 'Every charger, one map',
     description:
-      'Public, private and semi-public stations across Pakistan — including the ones no single operator’s app will ever show you.',
+      'Public, private and semi-public stations across Oman — including the ones no single operator’s app will ever show you.',
   },
   {
     icon: PlugZap,
@@ -47,7 +47,7 @@ const BUSINESS_PATHS = [
     icon: Wrench,
     title: 'Become a terminal vendor',
     description:
-      'You already sell, install and maintain chargers. An Ampere integration makes yours the only package in Pakistan that comes with a national driver app attached — on a bill you are already sending.',
+      'You already sell, install and maintain chargers. An Ampere integration makes yours the only package in Oman that comes with a national driver app attached — on a bill you are already sending.',
     cta: 'Become a partner',
     subject: 'Vendor partnership enquiry',
   },
@@ -78,11 +78,11 @@ export default function HomePage() {
           <div className="max-w-3xl">
             <span className="rounded-tag bg-primary-light text-primary-800 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold tracking-wide uppercase">
               <Zap className="size-3.5" />
-              Pakistan EV network
+              Oman EV network
             </span>
 
             <h1 className="font-heading text-text-primary mt-6 text-4xl leading-[1.08] font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Every EV charger in Pakistan.
+              Every EV charger in Oman.
               <br />
               One map.
             </h1>

@@ -6,6 +6,7 @@ import { StatTile } from '@/components/ui/stat-tile';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { DataTable, type Column } from '@/components/ui/data-table';
+import { formatMoney } from '@/lib/screenshot-mode';
 import { requireAdminDashboard } from '@/lib/server/dashboard';
 import * as driversAdmin from '@/lib/server/modules/admin/drivers-admin.service';
 import { DriverAccountForms } from '@/components/features/admin/driver-account-forms';
@@ -64,7 +65,7 @@ const sessionColumns: Column<SessionRow>[] = [
     align: 'right',
     render: (s) => (
       <span className="font-heading font-bold tabular-nums">
-        Rs {Number(s.amount_charged ?? 0).toLocaleString()}
+        {formatMoney(Number(s.amount_charged ?? 0))}
       </span>
     ),
   },

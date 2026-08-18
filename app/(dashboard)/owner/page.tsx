@@ -6,6 +6,7 @@ import { Card } from '@/components/ui/card';
 import { StatusDot, STATUS_LABELS } from '@/components/ui/status-dot';
 import { Badge } from '@/components/ui/badge';
 import { getOwnerScope } from '@/lib/mock/scope';
+import { formatMoney } from '@/lib/screenshot-mode';
 import { terminalsForOwner } from '@/lib/mock/terminals';
 import { mockSessions } from '@/lib/mock/operations';
 import { canOwnerSee } from '@/lib/mock/field-visibility';
@@ -52,7 +53,7 @@ export default async function OwnerOverviewPage() {
         {showRevenue ? (
           <StatTile
             label="Your share today"
-            value={`Rs ${share.toLocaleString()}`}
+            value={formatMoney(share)}
             hint="35% revenue share"
             variant="primary"
           />

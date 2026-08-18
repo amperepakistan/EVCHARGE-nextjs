@@ -1,5 +1,7 @@
 import type { ServerContext } from '@/lib/server/context';
 import type { Tables, TerminalStatus } from '@/types/database.types';
+import { SCREENSHOT_AU } from '@/lib/screenshot-mode';
+import { screenshotAllTerminals } from '@/lib/server/screenshot-terminals';
 
 export type VendorRow = Tables<'vendors'>;
 export type OwnerRow = Tables<'terminal_owners'>;
@@ -46,6 +48,8 @@ export async function getOwnerById(
 }
 
 export async function countTerminals(ctx: ServerContext): Promise<number> {
+  if (SCREENSHOT_AU) return screenshotAllTerminals().length;
+
   const { count, error } = await ctx.db
     .from('terminals')
     .select('id', { count: 'exact', head: true });
@@ -62,6 +66,8 @@ export async function countDrivers(ctx: ServerContext): Promise<number> {
 }
 
 export async function listAllTerminals(ctx: ServerContext, limit = 200) {
+  if (SCREENSHOT_AU) return screenshotAllTerminals().slice(0, limit);
+
   const { data, error } = await ctx.db
     .from('terminals')
     .select(TERMINAL_ADMIN_COLUMNS)

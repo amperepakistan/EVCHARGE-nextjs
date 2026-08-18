@@ -32,7 +32,7 @@ export const mockUsers: MockUser[] = [
     role: 'owner',
     fullName: 'Sana Iqbal',
     ownerId: OWNER_ID_MALL,
-    organisation: 'Dolmen Group',
+    organisation: 'Omran Group',
   },
   {
     // Second owner exists to demonstrate field-visibility tiering — this one
@@ -43,7 +43,7 @@ export const mockUsers: MockUser[] = [
     role: 'owner',
     fullName: 'Imran Shah',
     ownerId: OWNER_ID_SOCIETY,
-    organisation: 'Askari Housing Society',
+    organisation: 'Al Mouj Muscat',
   },
   {
     id: 'usr-admin-1',

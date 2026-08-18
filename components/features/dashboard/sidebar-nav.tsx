@@ -112,9 +112,15 @@ export function SidebarNav({
         <ul className="flex flex-col gap-1">
           {links.map(({ href, label, icon: Icon }) => {
             const active =
-              href === '/admin'
-                ? pathname === '/admin'
-                : pathname === href || pathname.startsWith(`${href}/`);
+              pathname === href ||
+              (pathname.startsWith(`${href}/`) &&
+                !links.some(
+                  (other) =>
+                    other.href !== href &&
+                    other.href.startsWith(`${href}/`) &&
+                    (pathname === other.href ||
+                      pathname.startsWith(`${other.href}/`)),
+                ));
             return (
               <li key={href}>
                 <Link

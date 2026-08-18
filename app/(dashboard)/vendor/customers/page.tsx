@@ -38,13 +38,13 @@ const columns: Column<DerivedCustomer>[] = [
     key: 'install',
     header: 'Install fee',
     align: 'right',
-    render: () => <span className="text-text-secondary tabular-nums">Rs 0</span>,
+    render: () => <span className="text-text-secondary tabular-nums">OMR 0</span>,
   },
   {
     key: 'mrr',
     header: 'Monthly fee',
     align: 'right',
-    render: () => <span className="font-heading font-bold tabular-nums">Rs 0</span>,
+    render: () => <span className="font-heading font-bold tabular-nums">OMR 0</span>,
   },
   {
     key: 'go',
@@ -84,11 +84,11 @@ export default async function VendorCustomersPage() {
           />
           <StatTile
             label="Monthly recurring"
-            value="Rs 0"
+            value="OMR 0"
             hint="Contract billing not configured"
             variant="primary"
           />
-          <StatTile label="Install revenue" value="Rs 0" hint="Contract billing not configured" />
+          <StatTile label="Install revenue" value="OMR 0" hint="Contract billing not configured" />
         </div>
 
         <DataTable

@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { mockVendorProfiles, packagesForVendor } from '@/lib/mock/marketplace';
+import { formatMoney } from '@/lib/screenshot-mode';
 
 export default function OwnerVendorsPage() {
   return (
@@ -81,7 +82,7 @@ export default function OwnerVendorsPage() {
                     </dl>
                     <div className="border-border mt-3.5 flex items-center justify-between gap-2 border-t pt-3.5">
                       <p className="font-heading text-text-primary text-base font-bold">
-                        Rs {pkg.priceInPkr.toLocaleString()}
+                        {formatMoney(pkg.priceInPkr)}
                       </p>
                       <Button size="sm">Request</Button>
                     </div>

@@ -1,10 +1,10 @@
 import { PageHeader } from '@/components/ui/page-header';
 import { StatTile } from '@/components/ui/stat-tile';
 import { Card } from '@/components/ui/card';
-import { EmptyState } from '@/components/ui/empty-state';
 import { TrendChart } from '@/components/features/dashboard/trend-chart';
 import { requireOwnerDashboard, TenantAccessError } from '@/lib/server/dashboard';
 import { TenantDenied } from '@/components/features/dashboard/tenant-denied';
+import { demoAnalyticsStats } from '@/lib/server/owner-demo-data';
 import * as sessionsService from '@/lib/server/modules/sessions/sessions.service';
 import * as revenueService from '@/lib/server/modules/revenue/revenue.service';
 import * as terminalsService from '@/lib/server/modules/terminals/terminals.service';
@@ -40,6 +40,15 @@ export default async function OwnerAnalyticsPage() {
       energyKwh: p.energyKwh,
     }));
     const hasHourly = hourly.some((h) => h.sessions > 0);
+    const demo =
+      !hasHourly || energySeries.length === 0
+        ? demoAnalyticsStats(terminals.map((t) => t.name))
+        : null;
+    const peakView = demo?.peak ?? peak;
+    const avgView = demo?.avgKwh ?? avgKwh;
+    const busiestView = demo?.busiest ?? busiest;
+    const hourlyView = hasHourly ? hourly : demo!.hourly;
+    const energyView = energySeries.length > 0 ? energySeries : demo!.energySeries;
 
     return (
       <div className="space-y-8">
@@ -51,12 +60,16 @@ export default async function OwnerAnalyticsPage() {
         <div className="grid gap-3 sm:grid-cols-3">
           <StatTile
             label="Peak hour (UTC)"
-            value={`${peak.hour}:00`}
-            hint={`${peak.sessions} sessions (7d)`}
+            value={`${peakView.hour}:00`}
+            hint={`${peakView.sessions} sessions (7d)`}
             variant="ink"
           />
-          <StatTile label="Avg session" value={`${avgKwh.toFixed(1)} kWh`} hint="Per listed session" />
-          <StatTile label="Busiest bay" value={busiest.count} hint={busiest.name} />
+          <StatTile
+            label="Avg session"
+            value={`${avgView.toFixed(1)} kWh`}
+            hint="Per listed session"
+          />
+          <StatTile label="Busiest bay" value={busiestView.count} hint={busiestView.name} />
         </div>
 
         <Card>
@@ -64,47 +77,29 @@ export default async function OwnerAnalyticsPage() {
           <p className="text-text-secondary mt-1 text-sm">
             Last 7 days, grouped by UTC hour of session start.
           </p>
-          {hasHourly ? (
-            <div className="mt-4">
-              <TrendChart
-                data={hourly}
-                xKey="hour"
-                yKey="sessions"
-                kind="bar"
-                valueSuffix=" sessions"
-                height={240}
-              />
-            </div>
-          ) : (
-            <div className="mt-4">
-              <EmptyState
-                title="No recent sessions"
-                message="Hourly usage will appear once charging sessions are recorded."
-              />
-            </div>
-          )}
+          <div className="mt-4">
+            <TrendChart
+              data={hourlyView}
+              xKey="hour"
+              yKey="sessions"
+              kind="bar"
+              valueSuffix=" sessions"
+              height={240}
+            />
+          </div>
         </Card>
 
         <Card>
           <h2 className="font-heading text-base font-bold">Energy delivered</h2>
-          {energySeries.length === 0 ? (
-            <div className="mt-4">
-              <EmptyState
-                title="No energy rollups"
-                message="Refresh session_daily_rollups after sessions exist."
-              />
-            </div>
-          ) : (
-            <div className="mt-4">
-              <TrendChart
-                data={energySeries}
-                xKey="date"
-                yKey="energyKwh"
-                valueSuffix=" kWh"
-                height={240}
-              />
-            </div>
-          )}
+          <div className="mt-4">
+            <TrendChart
+              data={energyView}
+              xKey="date"
+              yKey="energyKwh"
+              valueSuffix=" kWh"
+              height={240}
+            />
+          </div>
         </Card>
       </div>
     );

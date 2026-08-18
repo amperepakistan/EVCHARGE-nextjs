@@ -134,7 +134,7 @@ export default async function AdminChargersPage() {
         <div>
           <h2 className="font-heading text-lg font-bold">Pending review</h2>
           <p className="text-text-secondary text-sm">
-            When a driver taps “Help us map Pakistan”, the station lands here — hidden from
+            When a driver taps “Help us map Oman”, the station lands here — hidden from
             the public app until you approve it.
           </p>
         </div>

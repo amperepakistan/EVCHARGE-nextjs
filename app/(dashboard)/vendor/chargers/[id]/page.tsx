@@ -21,6 +21,7 @@ import { StatusDot, STATUS_LABELS } from '@/components/ui/status-dot';
 import { requireVendorDashboard, TenantAccessError } from '@/lib/server/dashboard';
 import { TenantDenied } from '@/components/features/dashboard/tenant-denied';
 import * as terminalsService from '@/lib/server/modules/terminals/terminals.service';
+import { formatMoney } from '@/lib/screenshot-mode';
 import { isAppError } from '@/lib/server/errors';
 
 const REMOTE_OPS = [
@@ -145,7 +146,7 @@ export default async function ChargerDetailPage({
                     label="Tariff"
                     value={
                       terminal.price_per_kwh != null
-                        ? `Rs ${terminal.price_per_kwh}/kWh`
+                        ? `${formatMoney(terminal.price_per_kwh, 2)}/kWh`
                         : '—'
                     }
                   />

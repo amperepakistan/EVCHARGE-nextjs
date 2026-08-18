@@ -31,7 +31,7 @@ interface SiteMapProps {
 export function SiteMap({ pins, height = 360, center, zoom = 6 }: SiteMapProps) {
   const resolvedCenter = useMemo<LatLngExpression>(() => {
     if (center) return center;
-    if (pins.length === 0) return [30.3753, 69.3451]; // Pakistan centroid
+    if (pins.length === 0) return [23.588, 58.3829];
     const lat = pins.reduce((sum, p) => sum + p.latitude, 0) / pins.length;
     const lng = pins.reduce((sum, p) => sum + p.longitude, 0) / pins.length;
     return [lat, lng];

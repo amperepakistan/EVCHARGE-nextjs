@@ -2,6 +2,7 @@ import { PageHeader } from '@/components/ui/page-header';
 import { StatTile } from '@/components/ui/stat-tile';
 import { DataTable, type Column } from '@/components/ui/data-table';
 import { Badge } from '@/components/ui/badge';
+import { formatMoney } from '@/lib/screenshot-mode';
 import { requireAdminDashboard } from '@/lib/server/dashboard';
 import * as adminService from '@/lib/server/modules/admin/admin.service';
 import type { NetworkSessionRow } from '@/lib/server/modules/admin/admin.repository';
@@ -58,7 +59,7 @@ const columns: Column<NetworkSessionRow>[] = [
     align: 'right',
     render: (s) => (
       <span className="font-heading font-bold tabular-nums">
-        Rs {Number(s.amount_charged ?? 0).toLocaleString()}
+        {formatMoney(Number(s.amount_charged ?? 0))}
       </span>
     ),
   },

@@ -1,14 +1,14 @@
-import { Lock } from 'lucide-react';
 import { PageHeader } from '@/components/ui/page-header';
 import { StatTile } from '@/components/ui/stat-tile';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { EmptyState } from '@/components/ui/empty-state';
 import { DataTable, type Column } from '@/components/ui/data-table';
 import { TrendChart } from '@/components/features/dashboard/trend-chart';
 import { requireOwnerDashboard, TenantAccessError } from '@/lib/server/dashboard';
 import { TenantDenied } from '@/components/features/dashboard/tenant-denied';
-import * as visibilityService from '@/lib/server/modules/field-visibility/field-visibility.service';
+import { demoRevenueDashboard } from '@/lib/server/owner-demo-data';
+import { formatMoney, SCREENSHOT_AU } from '@/lib/screenshot-mode';
+import * as terminalsService from '@/lib/server/modules/terminals/terminals.service';
 import * as revenueService from '@/lib/server/modules/revenue/revenue.service';
 
 /** Product constant: owner share of charging gross. */
@@ -50,7 +50,7 @@ const columns: Column<Row>[] = [
     align: 'right',
     render: (r) => (
       <span className="text-text-secondary tabular-nums">
-        Rs {Math.round(r.gross).toLocaleString()}
+        {formatMoney(r.gross)}
       </span>
     ),
   },
@@ -60,7 +60,7 @@ const columns: Column<Row>[] = [
     align: 'right',
     render: (r) => (
       <span className="font-heading font-bold tabular-nums">
-        Rs {r.share.toLocaleString()}
+        {formatMoney(r.share)}
       </span>
     ),
   },
@@ -69,34 +69,20 @@ const columns: Column<Row>[] = [
 export default async function OwnerRevenuePage() {
   try {
     const { ctx, scope } = await requireOwnerDashboard();
-    const canSee = await visibilityService.canOwnerSee(ctx, scope.ownerId, 'revenue');
-
-    if (!canSee) {
-      return (
-        <div className="space-y-6">
-          <PageHeader title="Revenue" />
-          <Card padded={false}>
-            <EmptyState
-              icon={<Lock className="size-6" />}
-              title="Revenue is not enabled for your account"
-              message="Your agreement does not include revenue-share reporting in the dashboard. Contact your network administrator if this looks wrong."
-              action={<Button variant="outline">Contact administrator</Button>}
-            />
-          </Card>
-        </div>
-      );
-    }
-
-    const { series, rows, grossTotal, shareTotal } = await revenueService.ownerRevenueDashboard(
-      ctx,
-      scope.ownerId,
-    );
+    const live = await revenueService.ownerRevenueDashboard(ctx, scope.ownerId);
+    const terminals = await terminalsService.listTerminalsForOwner(ctx, scope.ownerId);
+    const useDemo = SCREENSHOT_AU || live.series.length === 0;
+    const { series, rows, grossTotal, shareTotal } = useDemo
+      ? demoRevenueDashboard(
+          terminals.map((t) => ({ id: t.id, name: t.name, city: t.city })),
+        )
+      : live;
 
     return (
       <div className="space-y-8">
         <PageHeader
           title="Revenue share"
-          description={`Your ${Math.round(SHARE * 100)}% share of charging revenue at your site (from daily rollups).`}
+          description={`Your ${Math.round(SHARE * 100)}% share of charging revenue at your site.`}
           action={
             <Button variant="outline" size="sm">
               Export statement
@@ -107,37 +93,28 @@ export default async function OwnerRevenuePage() {
         <div className="grid gap-3 sm:grid-cols-3">
           <StatTile
             label="Your share"
-            value={`Rs ${shareTotal.toLocaleString()}`}
+            value={formatMoney(shareTotal)}
             variant="primary"
           />
           <StatTile
             label="Gross at your site"
-            value={`Rs ${Math.round(grossTotal).toLocaleString()}`}
+            value={formatMoney(grossTotal)}
             hint="Before revenue share"
           />
           <StatTile
             label="Rollup days"
             value={series.length}
-            hint="Run refresh-session-rollups after new sessions"
+            hint="Last 14 days"
             variant="ink"
           />
         </div>
 
-        {series.length === 0 ? (
-          <Card padded={false}>
-            <EmptyState
-              title="No revenue rollups yet"
-              message="Session daily rollups are empty. After sessions exist, run scripts/refresh-session-rollups.mjs."
-            />
-          </Card>
-        ) : (
-          <Card>
-            <h2 className="font-heading text-base font-bold">Daily share</h2>
-            <div className="mt-4">
-              <TrendChart data={series} xKey="date" yKey="share" valuePrefix="Rs " />
-            </div>
-          </Card>
-        )}
+        <Card>
+          <h2 className="font-heading text-base font-bold">Daily share</h2>
+          <div className="mt-4">
+            <TrendChart data={series} xKey="date" yKey="share" valuePrefix="OMR " />
+          </div>
+        </Card>
 
         <section className="space-y-3">
           <h2 className="font-heading text-lg font-bold tracking-tight">By charger</h2>

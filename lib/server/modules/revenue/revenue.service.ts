@@ -1,5 +1,8 @@
 import type { ServerContext } from '@/lib/server/context';
 import { AppError } from '@/lib/server/errors';
+import { SCREENSHOT_AU } from '@/lib/screenshot-mode';
+import { demoRevenueDashboard } from '@/lib/server/owner-demo-data';
+import { screenshotOwnerTerminals } from '@/lib/server/screenshot-terminals';
 import * as revenueRepo from '@/lib/server/modules/revenue/revenue.repository';
 import * as terminalsRepo from '@/lib/server/modules/terminals/terminals.repository';
 
@@ -7,6 +10,11 @@ import * as terminalsRepo from '@/lib/server/modules/terminals/terminals.reposit
 export const OWNER_REVENUE_SHARE = 0.35;
 
 export async function ownerRevenueDashboard(ctx: ServerContext, ownerId: string, days = 14) {
+  if (SCREENSHOT_AU) {
+    const terminals = screenshotOwnerTerminals(ownerId);
+    return { ...demoRevenueDashboard(terminals), rollups: [] };
+  }
+
   try {
     const from = new Date();
     from.setUTCDate(from.getUTCDate() - days);

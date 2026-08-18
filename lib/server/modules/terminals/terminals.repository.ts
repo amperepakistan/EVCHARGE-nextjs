@@ -5,6 +5,14 @@ import type {
 } from '@/lib/server/modules/terminals/terminals.schema';
 import type { Tables, TerminalStatus } from '@/types/database.types';
 import { toTerminalInsert, toTerminalUpdate } from '@/lib/utils/terminal-mapper';
+import { SCREENSHOT_AU } from '@/lib/screenshot-mode';
+import {
+  screenshotOwnerTerminals,
+  screenshotPublicTerminals,
+  screenshotStatusSnapshots,
+  screenshotTerminalById,
+  screenshotVendorTerminals,
+} from '@/lib/server/screenshot-terminals';
 
 const DASHBOARD_LIST_COLUMNS =
   'id, name, latitude, longitude, city, address, connector_type, charger_class, power_kw, price_per_kwh, operating_hours, phone_number, amenities, connectivity_tier, verification_status, google_place_id, google_maps_url, google_rating, google_rating_count, google_photo_urls, is_public, current_vendor_id, current_owner_id, created_at, updated_at';
@@ -21,6 +29,8 @@ export type TerminalStatusSnapshot = {
 };
 
 export async function listPublicTerminals(ctx: ServerContext, city?: string | null) {
+  if (SCREENSHOT_AU) return screenshotPublicTerminals(city);
+
   let query = ctx.db
     .from('terminals')
     .select(PUBLIC_LIST_COLUMNS)
@@ -39,6 +49,8 @@ export async function listPublicTerminals(ctx: ServerContext, city?: string | nu
 }
 
 export async function listTerminalsForOwner(ctx: ServerContext, ownerId: string) {
+  if (SCREENSHOT_AU) return screenshotOwnerTerminals(ownerId);
+
   const { data, error } = await ctx.db
     .from('terminals')
     .select(DASHBOARD_LIST_COLUMNS)
@@ -52,6 +64,8 @@ export async function listTerminalsForOwner(ctx: ServerContext, ownerId: string)
 }
 
 export async function listTerminalsForVendor(ctx: ServerContext, vendorId: string) {
+  if (SCREENSHOT_AU) return screenshotVendorTerminals(vendorId);
+
   const { data, error } = await ctx.db
     .from('terminals')
     .select(DASHBOARD_LIST_COLUMNS)
@@ -69,6 +83,8 @@ export async function getTerminalForVendor(
   vendorId: string,
   terminalId: string,
 ) {
+  if (SCREENSHOT_AU) return screenshotTerminalById(terminalId);
+
   const { data, error } = await ctx.db
     .from('terminals')
     .select(DASHBOARD_LIST_COLUMNS)
@@ -86,6 +102,8 @@ export async function getLatestStatusSnapshots(
   ctx: ServerContext,
   terminalIds: string[],
 ): Promise<Map<string, TerminalStatusSnapshot>> {
+  if (SCREENSHOT_AU) return screenshotStatusSnapshots(terminalIds);
+
   const map = new Map<string, TerminalStatusSnapshot>();
   if (terminalIds.length === 0) return map;
 
@@ -108,6 +126,8 @@ export async function getLatestStatusSnapshots(
 }
 
 export async function getTerminalById(ctx: ServerContext, id: string) {
+  if (SCREENSHOT_AU) return screenshotTerminalById(id);
+
   const { data, error } = await ctx.db.from('terminals').select('*').eq('id', id).maybeSingle();
   if (error) {
     throw new Error(error.message);
