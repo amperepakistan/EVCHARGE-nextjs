@@ -26,8 +26,11 @@ export type Database = {
       users: {
         Row: {
           id: string;
-          email: string;
-          password_hash: string;
+          // Dashboard accounts sign in with email + password; driver accounts
+          // created via phone OTP have both columns null.
+          email: string | null;
+          password_hash: string | null;
+          phone_number: string | null;
           role: UserRole;
           full_name: string | null;
           is_active: boolean;
@@ -36,8 +39,9 @@ export type Database = {
         };
         Insert: {
           id?: string;
-          email: string;
-          password_hash: string;
+          email?: string | null;
+          password_hash?: string | null;
+          phone_number?: string | null;
           role: UserRole;
           full_name?: string | null;
           is_active?: boolean;
@@ -45,6 +49,28 @@ export type Database = {
           updated_at?: string;
         };
         Update: Partial<Database['public']['Tables']['users']['Insert']>;
+        Relationships: NeverRelationships;
+      };
+      phone_otp_challenges: {
+        Row: {
+          phone_number: string;
+          code_hash: string;
+          expires_at: string;
+          attempts: number;
+          last_sent_at: string;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          phone_number: string;
+          code_hash: string;
+          expires_at: string;
+          attempts?: number;
+          last_sent_at?: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['phone_otp_challenges']['Insert']>;
         Relationships: NeverRelationships;
       };
       vendors: {

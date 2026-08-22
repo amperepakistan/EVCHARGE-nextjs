@@ -11,7 +11,10 @@ import {
 
 export type PublicAuthUser = {
   id: string;
-  email: string;
+  /** Null for driver accounts created through phone OTP. */
+  email: string | null;
+  /** Null for dashboard accounts created with email + password. */
+  phoneNumber: string | null;
   role: string;
   fullName: string;
 };
@@ -48,6 +51,7 @@ export async function loginWithInput(input: LoginInput): Promise<LoginResult> {
     user: {
       id: user.id,
       email: user.email,
+      phoneNumber: user.phoneNumber,
       role: user.role,
       fullName: user.fullName,
     },
@@ -84,6 +88,7 @@ export async function signupWithInput(input: SignupInput): Promise<LoginResult> 
     user: {
       id: user.id,
       email: user.email,
+      phoneNumber: user.phoneNumber,
       role: user.role,
       fullName: user.fullName,
     },
@@ -104,6 +109,7 @@ export async function getMe(ctx: ServerContext): Promise<PublicAuthUser> {
     return {
       id: user.id,
       email: user.email,
+      phoneNumber: user.phoneNumber,
       role: user.role,
       fullName: user.fullName,
     };

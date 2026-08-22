@@ -4,10 +4,22 @@ import { supabaseServer } from '@/lib/supabase/server';
 
 export type AuthUserRecord = {
   id: string;
-  email: string;
+  /** Null for driver accounts created through phone OTP. */
+  email: string | null;
+  /** Null for dashboard accounts created with email + password. */
+  phoneNumber: string | null;
   role: UserRole;
   fullName: string;
 };
+
+/** Best available human label: chosen name, else whichever identifier exists. */
+function displayName(input: {
+  full_name: string | null;
+  email: string | null;
+  phone_number: string | null;
+}): string {
+  return input.full_name ?? input.email ?? input.phone_number ?? '';
+}
 
 /**
  * Lookup active user by email and verify password hash.
@@ -19,7 +31,7 @@ export async function findUserByCredentials(
   const normalized = email.trim().toLowerCase();
   const { data, error } = await supabaseServer()
     .from('users')
-    .select('id, email, password_hash, role, full_name, is_active')
+    .select('id, email, phone_number, password_hash, role, full_name, is_active')
     .eq('email', normalized)
     .maybeSingle();
 
@@ -27,6 +39,11 @@ export async function findUserByCredentials(
     throw new Error(error.message);
   }
   if (!data || !data.is_active) {
+    return null;
+  }
+
+  // Phone-OTP accounts carry no password hash and can never log in this way.
+  if (!data.password_hash) {
     return null;
   }
 
@@ -38,15 +55,16 @@ export async function findUserByCredentials(
   return {
     id: data.id,
     email: data.email,
+    phoneNumber: data.phone_number,
     role: data.role,
-    fullName: data.full_name ?? data.email,
+    fullName: displayName(data),
   };
 }
 
 export async function findUserById(userId: string): Promise<AuthUserRecord | null> {
   const { data, error } = await supabaseServer()
     .from('users')
-    .select('id, email, role, full_name, is_active')
+    .select('id, email, phone_number, role, full_name, is_active')
     .eq('id', userId)
     .maybeSingle();
 
@@ -56,8 +74,9 @@ export async function findUserById(userId: string): Promise<AuthUserRecord | nul
   return {
     id: data.id,
     email: data.email,
+    phoneNumber: data.phone_number,
     role: data.role,
-    fullName: data.full_name ?? data.email,
+    fullName: displayName(data),
   };
 }
 
@@ -89,7 +108,7 @@ export async function createDriverUser(input: {
       full_name: input.fullName,
       is_active: true,
     })
-    .select('id, email, role, full_name')
+    .select('id, email, phone_number, role, full_name')
     .single();
 
   if (userError || !user) {
@@ -111,8 +130,9 @@ export async function createDriverUser(input: {
   return {
     id: user.id,
     email: user.email,
+    phoneNumber: user.phone_number,
     role: user.role,
-    fullName: user.full_name ?? user.email,
+    fullName: displayName(user),
   };
 }
 

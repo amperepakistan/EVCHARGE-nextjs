@@ -33,6 +33,7 @@ describe('auth.service login', () => {
     vi.mocked(findUserByCredentials).mockResolvedValue({
       id: 'usr-admin-1',
       email: 'admin@evcharge.pk',
+      phoneNumber: null,
       role: 'super_admin',
       fullName: 'Platform Admin',
     });
@@ -43,6 +44,7 @@ describe('auth.service login', () => {
     expect(result.user).toEqual({
       id: 'usr-admin-1',
       email: 'admin@evcharge.pk',
+      phoneNumber: null,
       role: 'super_admin',
       fullName: 'Platform Admin',
     });

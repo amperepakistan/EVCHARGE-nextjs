@@ -73,8 +73,18 @@ node --env-file=.env.local scripts/create-admin.mjs admin@evcharge.pk 'YourPassw
 | Dashboard | `httpOnly` cookie `evcharge_session` | Cookie (middleware + layout) |
 | Flutter | `flutter_secure_storage` | `Authorization: Bearer <token>` |
 
-Both use `POST /api/v1/auth/login` → `{ data: { token, user }, error }`.
-Dashboard also receives an `httpOnly` cookie; Flutter uses `data.token` as `Authorization: Bearer`.
+Two ways in, one session shape (`{ data: { token, user }, error }`):
+
+- **Dashboard (vendor / owner / admin)** — `POST /api/v1/auth/login` with email + password. Also receives the `httpOnly` cookie.
+- **Driver app (Flutter)** — `POST /api/v1/auth/otp/request` then `POST /api/v1/auth/otp/verify` with a `+92` mobile number and a 4-digit code. Drivers never set an email or password; the first successful verification creates the account. Flutter uses `data.token` as `Authorization: Bearer`.
+
+`POST /api/v1/auth/login` and `/signup` stay live for dashboard sign-in and for driver-app builds older than 2.0.0 (see the Flutter repo's API compatibility rules) — do not delete them.
+
+### OTP delivery
+
+Not wired up yet. `lib/server/modules/auth/otp.sender.ts` issues a fixed code of **`1234`** and echoes it back as `data.devCode` so the app can be exercised end to end. Replacing that one file with a WhatsApp Business template send is the whole integration: `isDevOtpMode()` returns false, `generateCode()` goes random, `sendCode()` calls the provider, and `devCode` drops out of the response. Codes live 5 minutes, allow 5 wrong guesses, and are rate-limited to one send per 30s per number.
+
+Requires migration `20260822120000_phone_otp_auth.sql` (nullable `users.email` / `users.password_hash`, `users.phone_number`, `phone_otp_challenges`).
 
 Demo logins (after `npm run seed:users`): `vendor@evcharge.pk` / `Vendor123!`, `owner@evcharge.pk` / `Owner123!`, `admin@evcharge.pk` / `Admin123!`.
 
