@@ -66,7 +66,7 @@ export function SiteFooter({
       <footer className={cn('bg-footer px-6 py-6 md:px-10', className)}>
         <div
           className={cn(
-            'text-text-secondary mx-auto flex flex-col items-center gap-3 text-xs md:flex-row md:justify-center md:gap-6',
+            'text-text-primary mx-auto flex flex-col items-center gap-3 text-xs md:flex-row md:justify-center md:gap-6',
             maxWidth,
           )}
         >
@@ -88,7 +88,7 @@ export function SiteFooter({
               <Link href="/" aria-label={`${OPERATOR.name} home`}>
                 <BrandLogo size="md" />
               </Link>
-              <p className="text-text-secondary mt-4 max-w-xs text-sm leading-relaxed">
+              <p className="text-text-primary mt-4 max-w-xs text-sm leading-relaxed">
                 Every EV charger in Pakistan, on one map.
               </p>
             </div>
@@ -104,7 +104,7 @@ export function SiteFooter({
                   <li key={label}>
                     <Link
                       href={href}
-                      className="text-text-secondary hover:text-text-primary text-sm transition-colors"
+                      className="text-text-primary hover:text-primary-700 text-sm transition-colors"
                     >
                       {label}
                     </Link>
@@ -119,7 +119,7 @@ export function SiteFooter({
           {/* The app grades every station by how much live data we actually
               have (Connected / Sensor-assisted / Listed). Saying so here keeps
               the marketing site from over-promising what the map guarantees. */}
-          <p className="text-text-secondary max-w-md text-xs leading-relaxed">
+          <p className="text-text-primary max-w-md text-xs leading-relaxed">
             Ampere is a directory of EV charging stations. Live availability is only
             guaranteed for stations connected to us — everything else is listed
             information that may be out of date.
@@ -137,7 +137,7 @@ export function SiteFooter({
           </div>
         </div>
 
-        <div className="border-text-secondary/20 text-text-secondary mt-8 flex flex-col gap-3 border-t pt-6 text-xs md:flex-row md:items-center md:justify-between">
+        <div className="border-text-secondary/20 text-text-primary mt-8 flex flex-col gap-3 border-t pt-6 text-xs md:flex-row md:items-center md:justify-between">
           <p>
             &copy; {year} {OPERATOR.name}. All rights reserved.
           </p>
@@ -151,10 +151,10 @@ export function SiteFooter({
 function LegalNav() {
   return (
     <nav aria-label="Legal" className="flex items-center gap-4">
-      <Link href="/privacy" className="hover:text-text-primary transition-colors">
+      <Link href="/privacy" className="hover:text-primary-700 transition-colors">
         Privacy Policy
       </Link>
-      <Link href="/terms" className="hover:text-text-primary transition-colors">
+      <Link href="/terms" className="hover:text-primary-700 transition-colors">
         Terms of Service
       </Link>
     </nav>
