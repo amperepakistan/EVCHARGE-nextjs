@@ -141,16 +141,18 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
             <button
               type="button"
               onClick={openAppModal}
-              className="rounded-button bg-primary text-on-primary hover:bg-primary-dark hidden h-12 items-center px-6 text-sm font-bold transition-colors sm:inline-flex"
+              className="rounded-button bg-primary text-on-primary hover:bg-primary-dark inline-flex h-12 shrink-0 items-center px-4 text-sm font-bold transition-colors sm:px-6"
             >
               Get the app
             </button>
 
             {/* Region indicator, not a control — Ampere ships one locale, so a
-                language switcher here would be a button that does nothing. */}
+                language switcher here would be a button that does nothing.
+                Dropped on phones: a decorative indicator is not worth the width
+                when the app CTA has to fit alongside it. */}
             <div
               className={cn(
-                'rounded-button flex h-12 items-center gap-2 border px-3 text-sm font-bold transition-colors',
+                'rounded-button hidden h-12 items-center gap-2 border px-3 text-sm font-bold transition-colors sm:flex',
                 transparent
                   ? 'border-white/40 bg-white/10 text-white backdrop-blur-sm'
                   : 'border-border text-text-primary',
@@ -166,15 +168,18 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
               onClick={() => setMenuOpen((open) => !open)}
               aria-expanded={menuOpen}
               aria-controls="site-menu"
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               className={cn(
-                'rounded-button flex h-12 items-center gap-2 px-3 text-sm font-bold transition-colors',
+                'rounded-button flex h-12 shrink-0 items-center gap-2 px-3 text-sm font-bold transition-colors',
                 transparent
                   ? 'text-white hover:bg-white/15'
                   : 'text-text-primary hover:bg-surface-muted',
               )}
             >
               {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-              <span>{menuOpen ? 'Close' : 'Menu'}</span>
+              {/* Icon alone on phones — the label is what the app CTA needs the
+                  room for. aria-label on the button keeps it announced. */}
+              <span className="hidden sm:inline">{menuOpen ? 'Close' : 'Menu'}</span>
             </button>
           </div>
         </div>
@@ -283,18 +288,6 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* On phones the header CTA is hidden for space, so the menu is the
-                only place Get the app exists. */}
-            <div className="mx-auto mt-8 max-w-7xl sm:hidden">
-              <button
-                type="button"
-                onClick={openAppModal}
-                className="rounded-button bg-primary text-on-primary hover:bg-primary-dark flex h-12 w-full items-center justify-center px-6 text-sm font-bold transition-colors"
-              >
-                Get the app
-              </button>
             </div>
           </div>
         )}

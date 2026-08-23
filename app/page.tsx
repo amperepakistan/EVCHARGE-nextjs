@@ -76,21 +76,26 @@ export default function HomePage() {
       <main className="flex-1">
         {/* ---- Hero ---------------------------------------------------- */}
         <section className="relative flex min-h-[600px] w-full items-center overflow-hidden md:aspect-[16/9] md:min-h-0">
+          {/* A 16:9 photo in a tall phone frame loses most of its width to the
+              crop, and centred it lands on empty tarmac. Anchoring right keeps
+              the charging terminal — the thing the photo is actually of — in
+              frame. Desktop is wide enough to centre normally. */}
           <Image
             src="/hero-image.png"
             alt=""
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-right md:object-center"
           />
 
-          {/* Two scrims, not one. The horizontal pass buys contrast for the
-              copy column against a bright daylight photo; the vertical pass
-              darkens the top strip so the transparent header's white logo and
-              menu stay legible before any scroll happens. */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/30" />
+          {/* The vertical scrim runs everywhere: it darkens the top strip so
+              the transparent header's white logo and menu stay legible before
+              any scroll. The horizontal one is desktop-only — it exists to back
+              the left-hand copy column, and on a phone it would just shade the
+              charger the crop above works to keep visible. */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/30 to-black/45" />
+          <div className="absolute inset-0 hidden bg-gradient-to-r from-black/80 via-black/45 to-black/10 md:block" />
 
           <div className="relative mx-auto w-full max-w-7xl px-6 pt-28 pb-16 md:px-10 md:pt-24 md:pb-0">
             <div className="max-w-3xl">
@@ -179,19 +184,25 @@ export default function HomePage() {
               <h2 className="font-heading text-text-primary text-3xl font-bold tracking-tight sm:text-4xl">
                 Have a charger at home?
               </h2>
+              {/* Deliberately promises nothing about listing a home charger to
+                  drivers: these are AC units, which may not be advertised as
+                  public charging. The offer here is integration and monitoring
+                  of your own unit, nothing outward-facing. A model-support
+                  questionnaire is meant to replace this mailto later. */}
               <p className="text-text-secondary mt-4 text-lg leading-relaxed">
-                If you own a charger at home or at a small site, connect it to Ampere. You
-                choose whether it appears to drivers, when it is available, and what it
-                costs — and you get live status and fault alerts for your own unit.
+                If you own a charger at home or at a small site, get in touch. Support
+                depends on the hardware — send us your model and we will tell you whether
+                it can be integrated, and what live status and fault alerts you would get
+                for your own unit.
               </p>
             </div>
 
             <div className="md:justify-self-end">
               <a
-                href={mailto('Connecting my home charger')}
+                href={mailto('Home charger integration enquiry')}
                 className="rounded-button bg-primary text-on-primary hover:bg-primary-dark inline-flex h-12 items-center gap-2 px-6 text-sm font-semibold transition-colors"
               >
-                Get your charger connected
+                Check if your model is supported
                 <ArrowRight className="size-4" />
               </a>
             </div>
