@@ -79,7 +79,10 @@ export function GetAppModal({ open, onClose }: { open: boolean; onClose: () => v
           Point your phone&apos;s camera at the code to open Ampere on your device.
         </p>
 
-        <div className="rounded-image bg-surface-muted mt-6 flex items-center justify-center p-5">
+        {/* White, matching the QR bitmap's own quiet zone — a tinted panel here
+            frames the code in a visible box instead of letting it sit flat on
+            the sheet. */}
+        <div className="rounded-image bg-surface mt-6 flex items-center justify-center p-5">
           <Image
             src={GET_APP_QR}
             alt={`QR code linking to ${SITE_URL}`}
