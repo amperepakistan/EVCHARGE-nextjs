@@ -50,6 +50,9 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [appModalOpen, setAppModalOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // Which category's links the panel is showing. Reset on close so the menu
+  // always reopens on "For drivers" rather than wherever it was left.
+  const [activeGroup, setActiveGroup] = useState(0);
 
   const closeModal = useCallback(() => setAppModalOpen(false), []);
 
@@ -79,6 +82,12 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [menuOpen]);
 
+  // Handled here rather than in the toggle so every close path — Esc, a link,
+  // the app modal — lands back on the first category.
+  useEffect(() => {
+    if (!menuOpen) setActiveGroup(0);
+  }, [menuOpen]);
+
   function openAppModal() {
     setMenuOpen(false);
     setAppModalOpen(true);
@@ -88,17 +97,32 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     <>
       <header
         className={cn(
-          'z-50 border-b transition-colors duration-300',
+          'z-50',
           // Overlay mode leaves the flow entirely so the hero photo starts at
           // y=0 and the header floats on top of it; `fixed` reads identically
           // to `sticky` once scrolling, without reserving a band above the hero.
           overlay ? 'fixed inset-x-0 top-0' : 'sticky top-0',
-          transparent
-            ? 'border-transparent bg-transparent'
-            : 'border-border bg-surface',
         )}
       >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:h-24 md:px-10">
+        {/* The solid bar is its own layer so it can drop in from above while the
+            logo and controls stay put — sliding the <header> itself would throw
+            the whole lockup off-screen and back. Sized to the bar row rather
+            than `inset-0` so an open menu (which makes the header much taller)
+            doesn't turn the slide into a long sweep; the panel below paints its
+            own surface. */}
+        <div
+          aria-hidden
+          className={cn(
+            'border-border bg-surface absolute inset-x-0 top-0 h-20 border-b',
+            'transition-transform duration-300 ease-out will-change-transform',
+            'motion-reduce:transition-none md:h-24',
+            // Shadow only once seated — parked above the viewport it would
+            // still cast a faint line across the top of the hero.
+            transparent ? '-translate-y-full' : 'translate-y-0 shadow-sm',
+          )}
+        />
+
+        <div className="relative mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:h-24 md:px-10">
           <Link href="/" aria-label="Ampere home">
             <BrandLogo size="md" tone={transparent ? 'inverse' : 'default'} />
           </Link>
@@ -148,29 +172,52 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
         {menuOpen && (
           <div
             id="site-menu"
-            className="border-border bg-surface border-t px-6 py-8 md:px-10 md:py-10"
+            /* border-b, not border-t: the bar's own backdrop already draws the
+               line between bar and panel, so a top border here would double it. */
+            className="border-border bg-surface relative border-b px-6 py-8 md:px-10 md:py-10"
           >
-            <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3">
-              {MENU_GROUPS.map(({ heading, links }) => (
-                <div key={heading}>
-                  <h2 className="text-text-secondary text-xs font-bold tracking-wider uppercase">
+            <div className="mx-auto max-w-7xl">
+              {/* Categories read as one row of chips, links as large headings
+                  below a rule — two clearly different jobs, rather than three
+                  columns where a faint uppercase label was the only thing
+                  distinguishing a section from the links under it. */}
+              <div className="-mx-6 flex gap-1 overflow-x-auto px-6 md:mx-0 md:gap-2 md:px-0">
+                {MENU_GROUPS.map(({ heading }, index) => (
+                  <button
+                    key={heading}
+                    type="button"
+                    // A toggle-button group, not APG tabs: one is always on, and
+                    // plain buttons keep normal Tab order without the roving
+                    // tabindex a real tablist would owe the user.
+                    aria-pressed={index === activeGroup}
+                    onClick={() => setActiveGroup(index)}
+                    className={cn(
+                      'rounded-tag font-heading shrink-0 px-3 py-2 text-base font-bold tracking-tight transition-colors md:text-lg',
+                      index === activeGroup
+                        ? 'bg-primary text-on-primary'
+                        : 'text-text-secondary hover:bg-surface-muted hover:text-text-primary',
+                    )}
+                  >
                     {heading}
-                  </h2>
-                  <ul className="mt-4 space-y-3">
-                    {links.map(({ label, href }) => (
-                      <li key={label}>
-                        <Link
-                          href={href}
-                          onClick={() => setMenuOpen(false)}
-                          className="font-heading text-text-primary hover:text-primary-700 text-lg font-bold tracking-tight transition-colors"
-                        >
-                          {label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+                  </button>
+                ))}
+              </div>
+
+              <hr className="border-border my-6 md:my-8" />
+
+              <ul className="space-y-4 md:space-y-5">
+                {MENU_GROUPS[activeGroup].links.map(({ label, href }) => (
+                  <li key={label}>
+                    <Link
+                      href={href}
+                      onClick={() => setMenuOpen(false)}
+                      className="font-heading text-text-primary hover:text-primary-700 inline-block text-2xl font-bold tracking-tight transition-colors sm:text-3xl md:text-4xl"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* On phones the header CTA is hidden for space, so the menu is the
