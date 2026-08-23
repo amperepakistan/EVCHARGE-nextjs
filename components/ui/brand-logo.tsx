@@ -13,7 +13,14 @@ import Image from 'next/image';
  * out.
  */
 
-export function BrandLogo({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
+export function BrandLogo({
+  size = 'md',
+  tone = 'default',
+}: {
+  size?: 'sm' | 'md' | 'lg';
+  /** `inverse` renders the wordmark white, for use over a dark photo. */
+  tone?: 'default' | 'inverse';
+}) {
   const iconClass = {
     sm: 'size-6 rounded-md',
     md: 'size-8 rounded-xl',
@@ -39,7 +46,9 @@ export function BrandLogo({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
       />
 
       <span
-        className={`font-heading text-text-primary font-bold tracking-tight ${textClass}`}
+        className={`font-heading font-bold tracking-tight ${textClass} ${
+          tone === 'inverse' ? 'text-white' : 'text-text-primary'
+        }`}
         style={{ lineHeight: 1 }}
       >
         Ampere

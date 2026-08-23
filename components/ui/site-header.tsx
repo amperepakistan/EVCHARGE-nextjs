@@ -7,6 +7,7 @@ import { BrandLogo } from '@/components/ui/brand-logo';
 import { GetAppModal } from '@/components/ui/get-app-modal';
 import { PkFlag } from '@/components/ui/pk-flag';
 import { CONTACT } from '@/lib/legal/config';
+import { cn } from '@/lib/utils/cn';
 
 /**
  * The one header for every public page.
@@ -45,11 +46,27 @@ const MENU_GROUPS: { heading: string; links: MenuLink[] }[] = [
   },
 ];
 
-export function SiteHeader() {
+export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [appModalOpen, setAppModalOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const closeModal = useCallback(() => setAppModalOpen(false), []);
+
+  // Overlay mode only: the header floats transparently over the hero photo and
+  // takes on its solid surface once the page moves. An open menu forces the
+  // solid treatment too — the panel's links are unreadable over a photo.
+  useEffect(() => {
+    if (!overlay) return;
+    function onScroll() {
+      setScrolled(window.scrollY > 24);
+    }
+    onScroll(); // A reload can restore a mid-page scroll position.
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [overlay]);
+
+  const transparent = overlay && !scrolled && !menuOpen;
 
   // Esc closes the menu. The modal handles its own Esc, and because it renders
   // above the header the two never both react to one keypress.
@@ -69,10 +86,21 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="border-border bg-surface sticky top-0 z-50 border-b">
+      <header
+        className={cn(
+          'z-50 border-b transition-colors duration-300',
+          // Overlay mode leaves the flow entirely so the hero photo starts at
+          // y=0 and the header floats on top of it; `fixed` reads identically
+          // to `sticky` once scrolling, without reserving a band above the hero.
+          overlay ? 'fixed inset-x-0 top-0' : 'sticky top-0',
+          transparent
+            ? 'border-transparent bg-transparent'
+            : 'border-border bg-surface',
+        )}
+      >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:h-24 md:px-10">
           <Link href="/" aria-label="Ampere home">
-            <BrandLogo size="md" />
+            <BrandLogo size="md" tone={transparent ? 'inverse' : 'default'} />
           </Link>
 
           <div className="flex items-center gap-2 md:gap-4">
@@ -87,7 +115,12 @@ export function SiteHeader() {
             {/* Region indicator, not a control — Ampere ships one locale, so a
                 language switcher here would be a button that does nothing. */}
             <div
-              className="rounded-button border-border text-text-primary flex h-12 items-center gap-2 border px-3 text-sm font-bold"
+              className={cn(
+                'rounded-button flex h-12 items-center gap-2 border px-3 text-sm font-bold transition-colors',
+                transparent
+                  ? 'border-white/40 bg-white/10 text-white backdrop-blur-sm'
+                  : 'border-border text-text-primary',
+              )}
               title="Pakistan — English"
             >
               <PkFlag className="size-5 shrink-0" />
@@ -99,7 +132,12 @@ export function SiteHeader() {
               onClick={() => setMenuOpen((open) => !open)}
               aria-expanded={menuOpen}
               aria-controls="site-menu"
-              className="rounded-button text-text-primary hover:bg-surface-muted flex h-12 items-center gap-2 px-3 text-sm font-bold transition-colors"
+              className={cn(
+                'rounded-button flex h-12 items-center gap-2 px-3 text-sm font-bold transition-colors',
+                transparent
+                  ? 'text-white hover:bg-white/15'
+                  : 'text-text-primary hover:bg-surface-muted',
+              )}
             >
               {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
               <span>{menuOpen ? 'Close' : 'Menu'}</span>
