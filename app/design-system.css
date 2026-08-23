@@ -75,6 +75,14 @@
   /* ---- Neutrals ----------------------------------------------------- */
   --color-background: #ffffff;
   --color-surface: #ffffff;
+
+  /* Marketing-site surfaces. Web-only — the Flutter app has no equivalent,
+   * so these deliberately have no counterpart in app_theme.dart. `canvas` is
+   * the pale cream band that alternates with white down the landing page;
+   * `footer` is the warm sage the footer sits on.
+   */
+  --color-canvas: #fbfbe8;
+  --color-footer: #d8d9c9;
   --color-surface-muted: #f4f6f0; /* Inset fills, table headers, inputs */
   --color-border: #e7eae1;
   --color-text-primary: #14180f;

@@ -57,7 +57,12 @@ export default function LoginPage() {
         </div>
       </div>
 
-      <SiteFooter showLogo={false} className="w-full border-t-0" />
+      {/* Negative margins cancel <main>'s padding so the footer's background
+          bleeds edge to edge rather than floating in a white gutter. */}
+      <SiteFooter
+        variant="minimal"
+        className="-mx-6 -mb-6 md:-mx-12 md:-mb-12"
+      />
     </main>
   );
 }

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import {
   ArrowRight,
   BatteryCharging,
@@ -10,12 +9,10 @@ import {
   Wrench,
   Zap,
 } from 'lucide-react';
-import { BrandLogo } from '@/components/ui/brand-logo';
 import { SiteFooter } from '@/components/ui/site-footer';
+import { SiteHeader } from '@/components/ui/site-header';
+import { StoreBadges } from '@/components/ui/store-badges';
 import { CONTACT } from '@/lib/legal/config';
-
-const APP_STORE_URL = 'https://apps.apple.com/app/id6799933790';
-const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=pk.ampere.app';
 
 const SCREENSHOTS = [
   '01-find-chargers.png',
@@ -73,21 +70,14 @@ function mailto(subject: string) {
 export default function HomePage() {
   return (
     <div className="bg-background flex min-h-screen flex-col">
-      <nav className="border-border border-b px-6 py-4 md:px-10">
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <BrandLogo size="md" />
-          <Link
-            href="/login"
-            className="text-text-secondary hover:text-text-primary text-sm font-semibold transition-colors"
-          >
-            Partner sign in
-          </Link>
-        </div>
-      </nav>
+      <SiteHeader />
 
       <main className="flex-1">
         {/* ---- Drivers ------------------------------------------------- */}
-        <section className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-24">
+        <section
+          id="drivers"
+          className="mx-auto w-full max-w-6xl scroll-mt-28 px-6 py-16 md:px-10 md:py-24"
+        >
           <div className="max-w-3xl">
             <span className="rounded-tag bg-primary-light text-primary-800 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold tracking-wide uppercase">
               <Zap className="size-3.5" />
@@ -105,24 +95,7 @@ export default function HomePage() {
               and the price before you set off, and see which plugs are free right now.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a href={APP_STORE_URL} target="_blank" rel="noreferrer" aria-label="Download on the App Store">
-                {/* eslint-disable-next-line @next/next/no-img-element -- next/image's optimizer 400s on SVG; this is already a pre-optimized vector */}
-                <img
-                  src="/app-download-badges/app-store-badge.svg"
-                  alt="Download on the App Store"
-                  className="h-11 w-auto"
-                />
-              </a>
-              <a href={PLAY_STORE_URL} target="_blank" rel="noreferrer" aria-label="Get it on Google Play">
-                {/* eslint-disable-next-line @next/next/no-img-element -- next/image's optimizer 400s on SVG; this is already a pre-optimized vector */}
-                <img
-                  src="/app-download-badges/google-play-badge.svg"
-                  alt="Get it on Google Play"
-                  className="h-14 w-auto"
-                />
-              </a>
-            </div>
+            <StoreBadges className="mt-9" />
           </div>
 
           <div className="mt-16 grid gap-3 md:grid-cols-3">
@@ -143,7 +116,10 @@ export default function HomePage() {
         </section>
 
         {/* ---- Screenshots ----------------------------------------------- */}
-        <section className="border-border border-t px-6 py-16 md:px-10 md:py-20">
+        <section
+          id="screenshots"
+          className="bg-canvas scroll-mt-24 px-6 py-16 md:px-10 md:py-20"
+        >
           <div className="mx-auto max-w-6xl">
             <h2 className="font-heading text-text-primary text-2xl font-bold tracking-tight sm:text-3xl">
               See it in action
@@ -170,7 +146,7 @@ export default function HomePage() {
         </section>
 
         {/* ---- Home charger owners ------------------------------------- */}
-        <section className="border-border border-t px-6 py-16 md:px-10 md:py-20">
+        <section id="home-charger" className="scroll-mt-24 px-6 py-16 md:px-10 md:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="rounded-card bg-ink text-on-ink grid gap-8 p-8 md:grid-cols-2 md:items-center md:p-10">
               <div>
@@ -201,7 +177,10 @@ export default function HomePage() {
         </section>
 
         {/* ---- Businesses ---------------------------------------------- */}
-        <section className="border-border border-t px-6 py-16 md:px-10 md:py-20">
+        <section
+          id="business"
+          className="bg-canvas scroll-mt-24 px-6 py-16 md:px-10 md:py-20"
+        >
           <div className="mx-auto max-w-6xl">
             <h2 className="font-heading text-text-primary text-2xl font-bold tracking-tight sm:text-3xl">
               For businesses
