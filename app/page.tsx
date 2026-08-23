@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -12,6 +13,18 @@ import {
 import { BrandLogo } from '@/components/ui/brand-logo';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { CONTACT } from '@/lib/legal/config';
+
+const APP_STORE_URL = 'https://apps.apple.com/app/id6799933790';
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=pk.ampere.app';
+
+const SCREENSHOTS = [
+  '01-find-chargers.png',
+  '02-live-charging.png',
+  '03-map-directions.png',
+  '04-charger-details.png',
+  '05-smart-filters.png',
+  '06-report-a-charger.png',
+];
 
 const DRIVER_FEATURES = [
   {
@@ -93,12 +106,22 @@ export default function HomePage() {
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <span className="rounded-button border-border text-text-secondary flex h-12 items-center border px-5 text-sm font-semibold">
-                iOS — coming soon
-              </span>
-              <span className="rounded-button border-border text-text-secondary flex h-12 items-center border px-5 text-sm font-semibold">
-                Android — coming soon
-              </span>
+              <a href={APP_STORE_URL} target="_blank" rel="noreferrer" aria-label="Download on the App Store">
+                {/* eslint-disable-next-line @next/next/no-img-element -- next/image's optimizer 400s on SVG; this is already a pre-optimized vector */}
+                <img
+                  src="/app-download-badges/app-store-badge.svg"
+                  alt="Download on the App Store"
+                  className="h-11 w-auto"
+                />
+              </a>
+              <a href={PLAY_STORE_URL} target="_blank" rel="noreferrer" aria-label="Get it on Google Play">
+                {/* eslint-disable-next-line @next/next/no-img-element -- next/image's optimizer 400s on SVG; this is already a pre-optimized vector */}
+                <img
+                  src="/app-download-badges/google-play-badge.svg"
+                  alt="Get it on Google Play"
+                  className="h-14 w-auto"
+                />
+              </a>
             </div>
           </div>
 
@@ -116,6 +139,33 @@ export default function HomePage() {
                 </p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ---- Screenshots ----------------------------------------------- */}
+        <section className="border-border border-t px-6 py-16 md:px-10 md:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="font-heading text-text-primary text-2xl font-bold tracking-tight sm:text-3xl">
+              See it in action
+            </h2>
+            <p className="text-text-secondary mt-3 max-w-2xl leading-relaxed">
+              From finding a station to watching your charge finish — a look at Ampere on
+              your phone.
+            </p>
+
+            <div className="-mx-6 mt-8 flex gap-4 overflow-x-auto px-6 md:-mx-10 md:px-10">
+              {SCREENSHOTS.map((file) => (
+                <Image
+                  key={file}
+                  src={`/screenshots/${file}`}
+                  alt=""
+                  width={1080}
+                  height={1920}
+                  sizes="(min-width: 640px) 270px, 236px"
+                  className="h-[420px] w-auto shrink-0 rounded-2xl sm:h-[480px]"
+                />
+              ))}
+            </div>
           </div>
         </section>
 
