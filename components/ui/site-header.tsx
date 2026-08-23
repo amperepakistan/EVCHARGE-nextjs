@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu, X } from 'lucide-react';
 import { BrandLogo } from '@/components/ui/brand-logo';
 import { GetAppModal } from '@/components/ui/get-app-modal';
 import { PkFlag } from '@/components/ui/pk-flag';
@@ -50,9 +50,12 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [appModalOpen, setAppModalOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  // Which category's links the panel is showing. Reset on close so the menu
-  // always reopens on "For drivers" rather than wherever it was left.
+  // Which category's links the panel is showing, from md up.
   const [activeGroup, setActiveGroup] = useState(0);
+  // Phone drill-down: null is the category list, a number is that category's
+  // links. Separate from activeGroup because the two levels are only a
+  // drill-down on phones — above md both are on screen at once.
+  const [mobileGroup, setMobileGroup] = useState<number | null>(null);
 
   const closeModal = useCallback(() => setAppModalOpen(false), []);
 
@@ -76,16 +79,23 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
   useEffect(() => {
     if (!menuOpen) return;
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') setMenuOpen(false);
+      if (event.key !== 'Escape') return;
+      // Drilled into a category, Esc backs out a level before it closes —
+      // otherwise it discards two steps of navigation in one press.
+      if (mobileGroup !== null) setMobileGroup(null);
+      else setMenuOpen(false);
     }
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
-  }, [menuOpen]);
+  }, [menuOpen, mobileGroup]);
 
   // Handled here rather than in the toggle so every close path — Esc, a link,
-  // the app modal — lands back on the first category.
+  // the app modal — reopens at the top of the menu rather than mid-drill-down.
   useEffect(() => {
-    if (!menuOpen) setActiveGroup(0);
+    if (!menuOpen) {
+      setActiveGroup(0);
+      setMobileGroup(null);
+    }
   }, [menuOpen]);
 
   function openAppModal() {
@@ -174,14 +184,69 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
             id="site-menu"
             /* border-b, not border-t: the bar's own backdrop already draws the
                line between bar and panel, so a top border here would double it. */
-            className="border-border bg-surface relative border-b px-6 py-8 md:px-10 md:py-10"
+            className={cn(
+              'border-border bg-surface relative border-b px-6 py-8 md:px-10 md:py-10',
+              // Phones get the full screen below the bar, so the menu reads as
+              // a place you navigate rather than a dropdown over the page.
+              'max-md:h-[calc(100dvh-5rem)] max-md:overflow-y-auto',
+            )}
           >
-            <div className="mx-auto max-w-7xl">
-              {/* Categories read as one row of chips, links as large headings
-                  below a rule — two clearly different jobs, rather than three
-                  columns where a faint uppercase label was the only thing
-                  distinguishing a section from the links under it. */}
-              <div className="-mx-6 flex gap-1 overflow-x-auto px-6 md:mx-0 md:gap-2 md:px-0">
+            {/* Two genuinely different patterns, not one restyled. A phone has
+                no room for categories and links at once, so it drills down:
+                category list first, then that category's links. From md up
+                both levels fit at once — chips on top, links below a rule. */}
+
+            {/* ---- Phone: level 1, the categories --------------------- */}
+            {mobileGroup === null && (
+              <ul className="md:hidden">
+                {MENU_GROUPS.map(({ heading }, index) => (
+                  <li key={heading}>
+                    <button
+                      type="button"
+                      onClick={() => setMobileGroup(index)}
+                      className="text-text-primary active:text-primary-700 flex w-full items-center justify-between gap-4 py-3 text-left transition-colors"
+                    >
+                      <span className="font-heading text-3xl font-bold tracking-tight">
+                        {heading}
+                      </span>
+                      <ChevronRight className="size-6 shrink-0" />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {/* ---- Phone: level 2, one category's links --------------- */}
+            {mobileGroup !== null && (
+              <div className="md:hidden">
+                <button
+                  type="button"
+                  onClick={() => setMobileGroup(null)}
+                  className="text-text-secondary hover:text-text-primary -ml-1 flex items-center gap-1.5 text-sm font-bold tracking-wide uppercase transition-colors"
+                >
+                  <ChevronLeft className="size-4" />
+                  {MENU_GROUPS[mobileGroup].heading}
+                </button>
+
+                <ul className="mt-6 space-y-4">
+                  {MENU_GROUPS[mobileGroup].links.map(({ label, href }) => (
+                    <li key={label}>
+                      <Link
+                        href={href}
+                        onClick={() => setMenuOpen(false)}
+                        className="font-heading text-text-primary active:text-primary-700 inline-block text-2xl font-bold tracking-tight transition-colors"
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* ---- md and up: chips + links, both visible ------------- */}
+            <div className="mx-auto hidden max-w-7xl md:block">
+              <div className="flex gap-2">
                 {MENU_GROUPS.map(({ heading }, index) => (
                   <button
                     key={heading}
@@ -192,7 +257,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
                     aria-pressed={index === activeGroup}
                     onClick={() => setActiveGroup(index)}
                     className={cn(
-                      'rounded-tag font-heading shrink-0 px-3 py-2 text-base font-bold tracking-tight transition-colors md:text-lg',
+                      'rounded-tag font-heading shrink-0 px-3 py-2 text-lg font-bold tracking-tight transition-colors',
                       index === activeGroup
                         ? 'bg-primary text-on-primary'
                         : 'text-text-secondary hover:bg-surface-muted hover:text-text-primary',
@@ -203,15 +268,15 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
                 ))}
               </div>
 
-              <hr className="border-border my-6 md:my-8" />
+              <hr className="border-border my-8" />
 
-              <ul className="space-y-4 md:space-y-5">
+              <ul className="space-y-5">
                 {MENU_GROUPS[activeGroup].links.map(({ label, href }) => (
                   <li key={label}>
                     <Link
                       href={href}
                       onClick={() => setMenuOpen(false)}
-                      className="font-heading text-text-primary hover:text-primary-700 inline-block text-2xl font-bold tracking-tight transition-colors sm:text-3xl md:text-4xl"
+                      className="font-heading text-text-primary hover:text-primary-700 inline-block text-4xl font-bold tracking-tight transition-colors"
                     >
                       {label}
                     </Link>
