@@ -148,15 +148,15 @@ export default function HomePage() {
         {/* ---- Home charger owners ------------------------------------- */}
         <section id="home-charger" className="scroll-mt-24 px-6 py-16 md:px-10 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <div className="rounded-card bg-ink text-on-ink grid gap-8 p-8 md:grid-cols-2 md:items-center md:p-10">
+            <div className="rounded-card border-border grid gap-8 border p-8 md:grid-cols-2 md:items-center md:p-10">
               <div>
-                <span className="bg-on-ink/10 rounded-image mb-5 flex size-11 items-center justify-center">
+                <span className="rounded-image bg-surface-muted text-primary-800 mb-5 flex size-11 items-center justify-center">
                   <House className="size-5" />
                 </span>
-                <h2 className="font-heading text-2xl font-bold tracking-tight sm:text-3xl">
+                <h2 className="font-heading text-text-primary text-2xl font-bold tracking-tight sm:text-3xl">
                   Have a charger at home?
                 </h2>
-                <p className="text-on-ink/70 mt-4 leading-relaxed">
+                <p className="text-text-secondary mt-4 leading-relaxed">
                   If you own a charger at home or at a small site, connect it to Ampere.
                   You choose whether it appears to drivers, when it is available, and what
                   it costs — and you get live status and fault alerts for your own unit.
