@@ -159,7 +159,8 @@ export default function HomePage() {
             your phone.
           </p>
 
-          <div className="-mx-6 mt-10 flex gap-4 overflow-x-auto px-6 md:-mx-10 md:px-10">
+          {/* Phone: scrollable row. Desktop: grid that fits 16:9 aspect. */}
+          <div className="mt-10 flex gap-4 overflow-x-auto md:overflow-visible md:justify-center md:gap-6">
             {SCREENSHOTS.map((file) => (
               <Image
                 key={file}
@@ -167,8 +168,8 @@ export default function HomePage() {
                 alt=""
                 width={1080}
                 height={1920}
-                sizes="(min-width: 640px) 270px, 236px"
-                className="h-[420px] w-auto shrink-0 rounded-2xl sm:h-[440px]"
+                sizes="(min-width: 768px) 160px, 236px"
+                className="h-[420px] w-auto shrink-0 rounded-2xl sm:h-[440px] md:h-[280px]"
               />
             ))}
           </div>
