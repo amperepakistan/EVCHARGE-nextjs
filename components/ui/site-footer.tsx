@@ -138,9 +138,14 @@ export function SiteFooter({
         </div>
 
         <div className="border-text-secondary/20 text-text-primary mt-8 flex flex-col gap-3 border-t pt-6 text-xs md:flex-row md:items-center md:justify-between">
-          <p>
-            &copy; {year} {OPERATOR.name}. All rights reserved.
-          </p>
+          <div>
+            <p>
+              &copy; {year} {OPERATOR.name}. All rights reserved.
+            </p>
+            <p className="text-text-secondary mt-1">
+              Ampere is a product of {OPERATOR.legalName}.
+            </p>
+          </div>
           <LegalNav />
         </div>
       </div>

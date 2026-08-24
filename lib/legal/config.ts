@@ -21,10 +21,9 @@ export const OPERATOR = {
   /** Trading name shown to users. */
   name: 'Ampere',
   /**
-   * The legal person that controls user data. A sole proprietorship is not a
-   * separate legal entity, so this stays the proprietor until incorporation.
+   * The legal person that controls user data and operates the app.
    */
-  legalName: 'Ampere (sole proprietorship)',
+  legalName: 'PALTUU PVT LTD',
   jurisdiction: 'Pakistan',
   /** Courts named in the governing-law clause. */
   forum: 'Karachi, Sindh',
