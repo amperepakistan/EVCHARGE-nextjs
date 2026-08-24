@@ -1,11 +1,11 @@
 /**
  * Where the "get the app" surfaces point.
  *
- * Both store URLs are correct but will 404 until each listing is approved —
- * iOS is in "Prepare for Submission" and Android has no released track yet.
- * The QR in the header modal deliberately points at the site rather than a
- * store, so it keeps working through review and can be re-pointed later
- * without reprinting anything that embeds it.
+ * Both store URLs are correct. Android is live on Google Play; iOS still
+ * 404s until its App Store listing is approved (currently "Prepare for
+ * Submission"). The QR in the header modal deliberately points at the site
+ * rather than a store, so it keeps working through review and can be
+ * re-pointed later without reprinting anything that embeds it.
  *
  * The QR image itself is generated, not hand-drawn:
  *   npx qrcode -t svg -o public/brand/get-app-qr.svg "https://www.amperepakistan.com"
