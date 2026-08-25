@@ -167,8 +167,11 @@ export default function HomePage() {
             your phone.
           </p>
 
-          {/* Phone: scrollable row. Desktop: grid that fits 16:9 aspect. */}
-          <div className="mt-10 flex gap-4 overflow-x-auto md:overflow-visible md:justify-center md:gap-6">
+          {/* A horizontally-scrolling filmstrip at every width — the images
+              grow with the viewport instead of shrinking to fit, so there's
+              always more row than there is space and scrolling is how you
+              see the rest, never wrapping into a second line. */}
+          <div className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:gap-6">
             {SCREENSHOTS.map((file) => (
               <Image
                 key={file}
@@ -176,8 +179,8 @@ export default function HomePage() {
                 alt=""
                 width={1080}
                 height={1920}
-                sizes="(min-width: 768px) 160px, 236px"
-                className="h-[420px] w-auto shrink-0 rounded-2xl sm:h-[440px] md:h-[280px]"
+                sizes="(min-width: 768px) 300px, 236px"
+                className="h-[420px] w-auto shrink-0 snap-start rounded-2xl sm:h-[480px] md:h-[560px]"
               />
             ))}
           </div>
