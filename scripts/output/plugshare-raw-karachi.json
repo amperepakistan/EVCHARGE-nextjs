@@ -1,0 +1,1050 @@
+[
+  {
+    "access": 1,
+    "address": "Dolmen City, HC-3, Marine Promenade, Block 4 Clifton, Karachi, Pakistan",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "Type 2"
+    ],
+    "icon": "https://assets.plugshare.com/icons/G.png",
+    "icon_type": "G",
+    "id": 114162,
+    "in_use_station_count": null,
+    "is_fast_charger": false,
+    "latitude": 24.802669,
+    "longitude": 67.030514,
+    "name": "Dolmen Mall Clifton Parking",
+    "station_count": 1,
+    "stations": [
+      {
+        "id": 196086,
+        "outlets": [
+          {
+            "connector": 7,
+            "id": 427725,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/114162"
+  },
+  {
+    "access": 1,
+    "address": "Ocean Mall, Clifton, Karachi",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "CCS2",
+      "CHAdeMO"
+    ],
+    "icon": "https://assets.plugshare.com/icons/Y.png",
+    "icon_type": "Y",
+    "id": 1025904,
+    "in_use_station_count": null,
+    "is_fast_charger": true,
+    "latitude": 24.823889,
+    "longitude": 67.035556,
+    "name": "GoGreen Charger Ocean Mall",
+    "station_count": 1,
+    "stations": [
+      {
+        "id": 2409116,
+        "outlets": [
+          {
+            "connector": 3,
+            "id": 4742945,
+            "is_dc": true,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "DC",
+            "status": null
+          },
+          {
+            "connector": 20,
+            "id": 4742946,
+            "is_dc": true,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "DC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/1025904"
+  },
+  {
+    "access": 1,
+    "address": "Shell Askari 4, Rashid Minhas Rd. (in front of McDonalds), Gulistan e Johar, Karachi, Pakistan",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "CCS2",
+      "CHAdeMO"
+    ],
+    "icon": "https://assets.plugshare.com/icons/Y.png",
+    "icon_type": "Y",
+    "id": 348068,
+    "in_use_station_count": null,
+    "is_fast_charger": true,
+    "latitude": 24.900367,
+    "longitude": 67.116774,
+    "name": "Shell Recharge (Askari-4)",
+    "station_count": 1,
+    "stations": [
+      {
+        "id": 826820,
+        "network_id": 1536,
+        "outlets": [
+          {
+            "connector": 3,
+            "id": 2334317,
+            "is_dc": true,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "DC",
+            "status": null
+          },
+          {
+            "connector": 20,
+            "id": 2334318,
+            "is_dc": true,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "DC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/348068"
+  },
+  {
+    "access": 1,
+    "address": "V258+56G, Robson Rd, Aram Bagh Karachi, Karachi City, Sindh, Pakistan",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "Type 3"
+    ],
+    "icon": "https://assets.plugshare.com/icons/G.png",
+    "icon_type": "G",
+    "id": 633968,
+    "in_use_station_count": null,
+    "is_fast_charger": false,
+    "latitude": 24.85800735024819,
+    "longitude": 67.01574124395847,
+    "name": "Aram Bagh",
+    "station_count": 1,
+    "stations": [
+      {
+        "id": 1691655,
+        "outlets": [
+          {
+            "connector": 8,
+            "id": 3734616,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/633968"
+  },
+  {
+    "access": 1,
+    "address": "WX2X+H7P, Metroville Sindh Industrial Trading Estate, Karachi, Pakistan",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "Wall (BS1363)"
+    ],
+    "icon": "https://assets.plugshare.com/icons/G.png",
+    "icon_type": "G",
+    "id": 856120,
+    "in_use_station_count": null,
+    "is_fast_charger": false,
+    "latitude": 24.902117747993515,
+    "longitude": 66.99829515069723,
+    "name": "Crown Warehouse",
+    "station_count": 3,
+    "stations": [
+      {
+        "id": 2244041,
+        "outlets": [
+          {
+            "connector": 9,
+            "id": 4567986,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2244668,
+        "outlets": [
+          {
+            "connector": 9,
+            "id": 4568563,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2244669,
+        "outlets": [
+          {
+            "connector": 9,
+            "id": 4568564,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/856120"
+  },
+  {
+    "access": 1,
+    "address": "Darwaish Colony, Shahrah-e-Faisal, Karachi",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "Type 2",
+      "Wall (Euro)"
+    ],
+    "icon": "https://assets.plugshare.com/icons/G.png",
+    "icon_type": "G",
+    "id": 1523281,
+    "in_use_station_count": null,
+    "is_fast_charger": false,
+    "latitude": 24.8715436,
+    "longitude": 67.0906386,
+    "name": "Karachi Water and Sewerage Corporation",
+    "station_count": 11,
+    "stations": [
+      {
+        "id": 2935329,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5299620,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2935430,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5299653,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2935431,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5299654,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2935432,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5299655,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2935433,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5299656,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2935434,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5299657,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2935435,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5299658,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2935436,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5299659,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2935437,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5299660,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2935438,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5299661,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2935439,
+        "outlets": [
+          {
+            "connector": 7,
+            "id": 5299662,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/1523281"
+  },
+  {
+    "access": 3,
+    "address": "11-C Sehar Lane No. 1, Phase VII Seher Commercial Area Phase 7 Defence Housing Authority, Karachi, 75500, Pakistan",
+    "coming_soon": false,
+    "connector_types": [
+      "Type 2"
+    ],
+    "icon": "https://assets.plugshare.com/icons/H.png",
+    "icon_type": "H",
+    "id": 1239377,
+    "is_fast_charger": false,
+    "latitude": 24.815607924934223,
+    "longitude": 67.07202974706888,
+    "name": "",
+    "owner": {
+      "display_name": "Altaf Hussain",
+      "first_name": "Altaf Hussain",
+      "id": 7525844
+    },
+    "stations": [
+      {
+        "id": 2624450,
+        "outlets": [
+          {
+            "connector": 7,
+            "id": 4968803,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/1239377"
+  },
+  {
+    "access": 1,
+    "address": "Go Petroleum, Near Karachi Press Club, Saddar. ",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "CCS2",
+      "CHAdeMO"
+    ],
+    "icon": "https://assets.plugshare.com/icons/Y.png",
+    "icon_type": "Y",
+    "id": 1025912,
+    "in_use_station_count": null,
+    "is_fast_charger": true,
+    "latitude": 24.853880259638938,
+    "longitude": 67.02682129769745,
+    "name": "Go Petroleum- Libra Auto",
+    "station_count": 1,
+    "stations": [
+      {
+        "id": 2409132,
+        "outlets": [
+          {
+            "connector": 3,
+            "id": 4742965,
+            "is_dc": true,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "DC",
+            "status": null
+          },
+          {
+            "connector": 20,
+            "id": 4742966,
+            "is_dc": true,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "DC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/1025912"
+  },
+  {
+    "access": 1,
+    "address": "Shell Pump , 39 Khayaban-e-Bahria, DHA Phase 5 Defence V Defence Housing Authority, Karachi, 75500, Pakistan",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "CCS2",
+      "Type 2"
+    ],
+    "icon": "https://assets.plugshare.com/icons/Y.png",
+    "icon_type": "Y",
+    "id": 1239410,
+    "in_use_station_count": null,
+    "is_fast_charger": true,
+    "latitude": 24.81760605947274,
+    "longitude": 67.06536445766687,
+    "name": "Shell Charging Station",
+    "station_count": 3,
+    "stations": [
+      {
+        "id": 2624451,
+        "network_id": 1536,
+        "outlets": [
+          {
+            "connector": 20,
+            "id": 4968808,
+            "is_dc": true,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "DC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2624452,
+        "network_id": 1536,
+        "outlets": [
+          {
+            "connector": 7,
+            "id": 4968809,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 2624453,
+        "outlets": [
+          {
+            "connector": 20,
+            "id": 4968811,
+            "is_dc": true,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "DC",
+            "status": null
+          },
+          {
+            "connector": 20,
+            "id": 4992571,
+            "is_dc": true,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "DC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/1239410"
+  },
+  {
+    "access": 1,
+    "address": "V333+85Q, Karachi Cantonment Karachi, Pakistan",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "CCS2"
+    ],
+    "icon": "https://assets.plugshare.com/icons/Y.png",
+    "icon_type": "Y",
+    "id": 1291616,
+    "in_use_station_count": null,
+    "is_fast_charger": true,
+    "latitude": 24.852860191997685,
+    "longitude": 67.05301276824792,
+    "name": "CSD Petrol Pump",
+    "station_count": 1,
+    "stations": [
+      {
+        "id": 2681261,
+        "outlets": [
+          {
+            "connector": 20,
+            "id": 5029927,
+            "is_dc": true,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "DC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/1291616"
+  },
+  {
+    "access": 1,
+    "address": "36F, Street 36, Block 6, P.E.C.H.S., Karachi",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "Wall"
+    ],
+    "icon": "https://assets.plugshare.com/icons/G.png",
+    "icon_type": "G",
+    "id": 1672442,
+    "in_use_station_count": null,
+    "is_fast_charger": false,
+    "latitude": 24.86472840174726,
+    "longitude": 67.0710499964455,
+    "name": "Zvolta Charging Station",
+    "station_count": 1,
+    "stations": [
+      {
+        "id": 3094222,
+        "outlets": [
+          {
+            "connector": 1,
+            "id": 5465043,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/1672442"
+  },
+  {
+    "access": 1,
+    "address": "Plot ST 13, Block 3 Clifton, Karachi, 75600, Pakistan",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "Wall"
+    ],
+    "icon": "https://assets.plugshare.com/icons/G.png",
+    "icon_type": "G",
+    "id": 1672543,
+    "in_use_station_count": null,
+    "is_fast_charger": false,
+    "latitude": 24.813393429846943,
+    "longitude": 67.02391760973758,
+    "name": "Zvolta Charging Station - Ignite",
+    "station_count": 1,
+    "stations": [
+      {
+        "id": 3094293,
+        "outlets": [
+          {
+            "connector": 1,
+            "id": 5465114,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/1672543"
+  },
+  {
+    "access": 1,
+    "address": "Plot No-3A, Main Shahra-e-Faisal, near Delhi Sweets, PECHS Extension Block 6 PECHS",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "Wall (Euro)"
+    ],
+    "icon": "https://assets.plugshare.com/icons/G.png",
+    "icon_type": "G",
+    "id": 1766005,
+    "in_use_station_count": null,
+    "is_fast_charger": false,
+    "latitude": 24.85971734442729,
+    "longitude": 67.06130941532943,
+    "name": "Crown CEM Flagship Showroom",
+    "station_count": 20,
+    "stations": [
+      {
+        "id": 3191131,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564875,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191138,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564856,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191139,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564857,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191140,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564858,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191141,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564859,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191142,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564860,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191143,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564861,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191144,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564862,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191145,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564863,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191146,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564864,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191147,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564865,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191148,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564866,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191149,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564867,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191150,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564868,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191151,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564869,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191152,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564870,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191153,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564871,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191154,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564872,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191155,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564873,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      },
+      {
+        "id": 3191156,
+        "outlets": [
+          {
+            "connector": 10,
+            "id": 5564874,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/1766005"
+  },
+  {
+    "access": 1,
+    "address": "Plot No.32/75, Tipu Sultan, Shabbirabad Dawdi, Bohra, CHS, Karachi, 74200, Pakistan",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "Wall"
+    ],
+    "icon": "https://assets.plugshare.com/icons/G.png",
+    "icon_type": "G",
+    "id": 1672508,
+    "in_use_station_count": null,
+    "is_fast_charger": false,
+    "latitude": 24.872885930584083,
+    "longitude": 67.08236565273894,
+    "name": "Zvolta Charging Station -Tipu Sultan",
+    "station_count": 1,
+    "stations": [
+      {
+        "id": 3094288,
+        "outlets": [
+          {
+            "connector": 1,
+            "id": 5465109,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/1672508"
+  },
+  {
+    "access": 1,
+    "address": "Muhammad Ali Jinnah Rd, Adhumal Oodharam Quarter, Karachi, Pakistan",
+    "available_station_count": null,
+    "coming_soon": false,
+    "connector_types": [
+      "Wall (BS1363)"
+    ],
+    "icon": "https://assets.plugshare.com/icons/G.png",
+    "icon_type": "G",
+    "id": 1587889,
+    "in_use_station_count": null,
+    "is_fast_charger": false,
+    "latitude": 24.8554036,
+    "longitude": 67.008441,
+    "name": "Karachi Municipal Corporation",
+    "station_count": 1,
+    "stations": [
+      {
+        "id": 3002943,
+        "outlets": [
+          {
+            "connector": 9,
+            "id": 5368931,
+            "is_dc": false,
+            "kilowatts": null,
+            "power": 0,
+            "power_type": "AC",
+            "status": null
+          }
+        ]
+      }
+    ],
+    "under_repair": false,
+    "url": "http://api.plugshare.com/view/location/1587889"
+  }
+]

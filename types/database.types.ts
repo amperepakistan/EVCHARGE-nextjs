@@ -12,6 +12,8 @@ export type ConnectivityTier =
   | 'connected_demo'
   | 'connected_live';
 
+export type TargetVehicleCategory = 'car' | 'bike' | 'both';
+
 export type ChargerClass = 'AC' | 'DC';
 
 export type TerminalStatus = 'available' | 'occupied' | 'offline' | 'fault';
@@ -262,6 +264,7 @@ export type Database = {
           address: string | null;
           connector_type: string | null;
           charger_class: ChargerClass | null;
+          target_vehicle_category: TargetVehicleCategory | null;
           power_kw: number | null;
           price_per_kwh: number | null;
           operating_hours: string | null;
@@ -304,6 +307,7 @@ export type Database = {
           address?: string | null;
           connector_type?: string | null;
           charger_class?: ChargerClass | null;
+          target_vehicle_category?: TargetVehicleCategory | null;
           power_kw?: number | null;
           price_per_kwh?: number | null;
           operating_hours?: string | null;

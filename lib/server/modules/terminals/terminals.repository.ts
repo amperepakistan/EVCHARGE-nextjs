@@ -7,10 +7,10 @@ import type { Tables, TerminalStatus } from '@/types/database.types';
 import { toTerminalInsert, toTerminalUpdate } from '@/lib/utils/terminal-mapper';
 
 const DASHBOARD_LIST_COLUMNS =
-  'id, name, latitude, longitude, city, address, connector_type, charger_class, power_kw, price_per_kwh, operating_hours, phone_number, amenities, connectivity_tier, verification_status, google_place_id, google_maps_url, google_rating, google_rating_count, google_photo_urls, is_public, current_vendor_id, current_owner_id, created_at, updated_at';
+  'id, name, latitude, longitude, city, address, connector_type, charger_class, target_vehicle_category, power_kw, price_per_kwh, operating_hours, phone_number, amenities, connectivity_tier, verification_status, google_place_id, google_maps_url, google_rating, google_rating_count, google_photo_urls, is_public, current_vendor_id, current_owner_id, created_at, updated_at';
 
 const PUBLIC_LIST_COLUMNS =
-  'id, name, latitude, longitude, city, address, connector_type, charger_class, power_kw, price_per_kwh, operating_hours, phone_number, connectivity_tier, verification_status, google_place_id, google_maps_url, google_rating, google_rating_count, google_photo_urls, is_public';
+  'id, name, latitude, longitude, city, address, connector_type, charger_class, target_vehicle_category, power_kw, price_per_kwh, operating_hours, phone_number, connectivity_tier, verification_status, google_place_id, google_maps_url, google_rating, google_rating_count, google_photo_urls, is_public';
 
 export type TerminalRow = Tables<'terminals'>;
 

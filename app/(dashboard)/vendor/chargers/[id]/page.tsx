@@ -136,6 +136,16 @@ export default async function ChargerDetailPage({
               <Card>
                 <dl className="space-y-3 text-sm">
                   <Row label="Charger ID" value={terminal.id} />
+                  <Row
+                    label="Vehicle compatibility"
+                    value={
+                      terminal.target_vehicle_category === 'both'
+                        ? '🚗 Electric Cars & 🏍️ E-Bikes'
+                        : terminal.target_vehicle_category === 'bike'
+                          ? '🏍️ E-Bikes & 2-Wheelers Only'
+                          : '🚗 Electric Cars & SUVs'
+                    }
+                  />
                   <Row label="Connector" value={terminal.connector_type ?? '—'} />
                   <Row
                     label="Rated power"
