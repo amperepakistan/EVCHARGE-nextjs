@@ -151,17 +151,17 @@ export default function HomeChargerPage() {
           </p>
         </Section>
 
-        <Section id="apply">
-          <div className="max-w-2xl">
+        <Section id="apply" className="py-12 md:py-16">
+          <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-heading text-text-primary text-3xl font-bold tracking-tight sm:text-4xl">
               Claim your Founding 50 spot
             </h2>
-            <p className="text-text-secondary mt-3 text-lg leading-relaxed">
+            <p className="text-text-secondary mt-3 text-base sm:text-lg leading-relaxed">
               Tell us about your charger. We&apos;ll confirm it can be integrated, then reach out
               to schedule your connection.
             </p>
           </div>
-          <div className="rounded-card border-border bg-surface mt-8 max-w-2xl border p-6 sm:p-8">
+          <div className="rounded-2xl border border-border/80 bg-surface shadow-xl mt-8 mx-auto max-w-3xl p-6 sm:p-10">
             <Founding50Form />
           </div>
         </Section>

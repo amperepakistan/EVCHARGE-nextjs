@@ -1,7 +1,7 @@
 'use client';
 
 import { useId, useState, type ChangeEvent, type FormEvent } from 'react';
-import { Loader2, Upload } from 'lucide-react';
+import { Check, Loader2, Upload } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { TextField } from '@/components/ui/text-field';
 import { CONTACT } from '@/lib/legal/config';
@@ -16,12 +16,6 @@ const PACKAGE_OPTIONS = [
   { value: 'plus', label: 'Home Plus', price: 'Rs. 1,500/mo' },
 ] as const;
 
-/**
- * Posts to an endpoint that doesn't exist yet — see FOUNDING_50_FORM.md at
- * the repo root. Until it's built this always lands on `status === 'error'`,
- * which is deliberate: it surfaces the email fallback instead of pretending
- * the submission was saved anywhere.
- */
 export function Founding50Form() {
   const [packageChoice, setPackageChoice] = useState<(typeof PACKAGE_OPTIONS)[number]['value']>(
     'standard',
@@ -66,7 +60,7 @@ export function Founding50Form() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <TextField label="Full name" name="fullName" required autoComplete="name" />
         <TextField
           label="Phone number"
@@ -95,11 +89,11 @@ export function Founding50Form() {
           required
           rows={2}
           placeholder="Where the charger is installed"
-          className="rounded-button border-border bg-surface text-text-primary placeholder:text-text-secondary/70 focus:border-primary-dark focus:ring-primary-light w-full resize-none border px-4 py-3.5 text-sm outline-none transition-colors duration-150 focus:ring-2"
+          className="rounded-xl border-border bg-surface text-text-primary placeholder:text-text-secondary/60 focus:border-primary-600 focus:ring-primary-500/20 w-full resize-none border px-4 py-3 text-sm outline-none transition-all duration-150 focus:ring-2"
         />
       </label>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <TextField label="Charger brand" name="chargerBrand" required placeholder="e.g. ABB" />
         <TextField
           label="Charger model"
@@ -116,7 +110,7 @@ export function Founding50Form() {
       />
 
       <fieldset>
-        <legend className="text-text-secondary mb-2 block text-xs font-semibold tracking-wider uppercase">
+        <legend className="text-text-secondary mb-2.5 block text-xs font-semibold tracking-wider uppercase">
           Which plan do you want?
         </legend>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -124,10 +118,10 @@ export function Founding50Form() {
             <label
               key={option.value}
               className={cn(
-                'rounded-button cursor-pointer border px-4 py-3.5 text-sm font-semibold transition-colors',
+                'relative flex cursor-pointer items-center justify-between rounded-xl border p-4 transition-all',
                 packageChoice === option.value
-                  ? 'border-primary-dark bg-primary-light text-on-primary'
-                  : 'border-border bg-surface text-text-primary hover:bg-surface-muted',
+                  ? 'border-primary-600 bg-primary-500/10 font-bold ring-2 ring-primary-500/30'
+                  : 'border-border bg-surface hover:bg-surface-muted',
               )}
             >
               <input
@@ -138,7 +132,17 @@ export function Founding50Form() {
                 onChange={() => setPackageChoice(option.value)}
                 className="sr-only"
               />
-              {option.label} — {option.price}
+              <div className="flex flex-col">
+                <span className="text-text-primary text-sm font-semibold">{option.label}</span>
+                <span className="text-text-secondary text-xs">{option.price}</span>
+              </div>
+              {packageChoice === option.value ? (
+                <div className="bg-primary-600 flex size-5 items-center justify-center rounded-full text-white">
+                  <Check className="size-3.5 stroke-[3]" />
+                </div>
+              ) : (
+                <div className="border-border size-5 rounded-full border" />
+              )}
             </label>
           ))}
         </div>
@@ -150,7 +154,7 @@ export function Founding50Form() {
         </span>
         <label
           htmlFor={photosInputId}
-          className="rounded-button border-border bg-surface text-text-secondary hover:bg-surface-muted flex cursor-pointer items-center gap-2 border border-dashed px-4 py-3.5 text-sm transition-colors"
+          className="rounded-xl border-2 border-dashed border-border bg-surface-muted/40 text-text-secondary hover:border-primary-500 hover:bg-surface-muted flex cursor-pointer items-center justify-center gap-2 p-5 text-sm font-medium transition-all"
         >
           <Upload className="size-4" />
           {photos.length > 0
@@ -172,18 +176,23 @@ export function Founding50Form() {
         </p>
       </div>
 
-      <label className="border-border rounded-button flex items-start gap-3 border p-4 text-sm">
+      <label
+        className={cn(
+          'rounded-xl border p-4 flex items-start gap-3 text-sm cursor-pointer transition-all',
+          wifiReaches ? 'border-primary-600/50 bg-primary-500/5' : 'border-border bg-surface',
+        )}
+      >
         <input
           type="checkbox"
           checked={wifiReaches}
           onChange={(event) => setWifiReaches(event.target.checked)}
-          className="border-border mt-0.5 size-4 rounded"
+          className="border-border mt-0.5 size-4 rounded accent-primary-600"
         />
         <span>
-          <span className="text-text-primary font-semibold">
+          <span className="text-text-primary font-semibold block">
             My home WiFi reaches the charger.
           </span>
-          <span className="text-text-secondary block">
+          <span className="text-text-secondary text-xs mt-0.5 block">
             Not sure? Leave this unchecked — we&apos;ll check signal strength during the site
             visit.
           </span>
@@ -198,7 +207,7 @@ export function Founding50Form() {
           name="notes"
           rows={3}
           placeholder="Preferred visit times, access instructions, anything we should know"
-          className="rounded-button border-border bg-surface text-text-primary placeholder:text-text-secondary/70 focus:border-primary-dark focus:ring-primary-light w-full resize-none border px-4 py-3.5 text-sm outline-none transition-colors duration-150 focus:ring-2"
+          className="rounded-xl border-border bg-surface text-text-primary placeholder:text-text-secondary/60 focus:border-primary-600 focus:ring-primary-500/20 w-full resize-none border px-4 py-3 text-sm outline-none transition-all duration-150 focus:ring-2"
         />
       </label>
 
@@ -218,21 +227,23 @@ export function Founding50Form() {
         </p>
       ) : null}
 
-      <Button
-        type="submit"
-        size="lg"
-        disabled={status === 'submitting'}
-        className="w-full sm:w-auto"
-      >
-        {status === 'submitting' ? (
-          <>
-            <Loader2 className="size-4 animate-spin" />
-            Submitting...
-          </>
-        ) : (
-          'Claim your Founding 50 spot'
-        )}
-      </Button>
+      <div className="pt-2">
+        <Button
+          type="submit"
+          size="lg"
+          disabled={status === 'submitting'}
+          className="w-full sm:w-auto px-8 py-3.5 font-bold shadow-md"
+        >
+          {status === 'submitting' ? (
+            <>
+              <Loader2 className="size-4 animate-spin" />
+              Submitting...
+            </>
+          ) : (
+            'Claim your Founding 50 spot'
+          )}
+        </Button>
+      </div>
     </form>
   );
 }

@@ -17,11 +17,13 @@ import { cn } from '@/lib/utils/cn';
 export function Section({
   id,
   tone = 'surface',
+  aspect = false,
   className,
   children,
 }: {
   id?: string;
   tone?: 'surface' | 'canvas';
+  aspect?: boolean;
   className?: string;
   children: ReactNode;
 }) {
@@ -34,7 +36,12 @@ export function Section({
         className,
       )}
     >
-      <div className="mx-auto flex w-full max-w-7xl flex-col justify-center py-16 md:aspect-[16/9] md:py-20">
+      <div
+        className={cn(
+          'mx-auto flex w-full max-w-7xl flex-col justify-center py-12 md:py-20',
+          aspect && 'md:aspect-[16/9]',
+        )}
+      >
         {children}
       </div>
     </section>
