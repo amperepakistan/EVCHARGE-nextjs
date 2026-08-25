@@ -33,7 +33,7 @@ export const OPERATOR = {
 export const CONTACT = {
   privacy: `privacy@${DOMAIN}`,
   legal: `legal@${DOMAIN}`,
-  support: `support@${DOMAIN}`,
+  support: 'amperepakistan@gmail.com',
   partners: `partners@${DOMAIN}`,
 } as const;
 

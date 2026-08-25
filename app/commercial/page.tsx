@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { BarChart3, Building2, CheckCircle2, ClipboardCheck, Radio, Sliders } from 'lucide-react';
 import { Section } from '@/components/ui/section';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SiteHeader } from '@/components/ui/site-header';
+import { CONTACT } from '@/lib/legal/config';
 
 export const metadata: Metadata = {
   title: 'Commercial packages — Ampere',
@@ -10,10 +12,8 @@ export const metadata: Metadata = {
     'Connect your mall, hotel, fuel station or housing society charger to Ampere — live status, remote control and analytics, with WiFi connectivity included.',
 };
 
-const CONTACT_EMAIL = 'amperepakistan@gmail.com';
-
 function mailto(subject: string) {
-  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`;
+  return `mailto:${CONTACT.support}?subject=${encodeURIComponent(subject)}`;
 }
 
 const TIERS = [
@@ -73,25 +73,41 @@ export default function CommercialPage() {
 
       <main className="flex-1">
         <Section id="overview">
-          <span className="rounded-image bg-surface-muted text-primary-800 mb-5 flex size-11 items-center justify-center">
-            <Building2 className="size-5" />
-          </span>
-          <h1 className="font-heading text-text-primary text-4xl font-bold tracking-tight sm:text-5xl">
-            Commercial packages
-          </h1>
-          <p className="text-text-secondary mt-4 max-w-2xl text-lg leading-relaxed">
-            For malls, hotels, fuel stations and housing societies. Every package puts your
-            terminal live on the Ampere map, backed by our own WiFi connectivity so your status
-            stays accurate — even if your site&apos;s own internet isn&apos;t.
-          </p>
+          <div className="grid items-center gap-10 md:grid-cols-2">
+            <div>
+              <span className="rounded-image bg-surface-muted text-primary-800 mb-5 flex size-11 items-center justify-center">
+                <Building2 className="size-5" />
+              </span>
+              <h1 className="font-heading text-text-primary text-4xl font-bold tracking-tight sm:text-5xl">
+                Commercial packages
+              </h1>
+              <p className="text-text-secondary mt-4 text-lg leading-relaxed">
+                For malls, hotels, fuel stations and housing societies. Every package puts your
+                terminal live on the Ampere map, backed by our own WiFi connectivity so your
+                status stays accurate — even if your site&apos;s own internet isn&apos;t.
+              </p>
 
-          <div className="rounded-card border-border bg-surface-muted mt-8 flex max-w-2xl items-start gap-4 border p-5">
-            <ClipboardCheck className="text-primary-800 mt-0.5 size-5 shrink-0" />
-            <p className="text-text-primary text-sm leading-relaxed">
-              <span className="font-semibold">An on-site audit always comes first.</span>{' '}
-              Integration depends on your terminal&apos;s make, model and specs — we confirm
-              compatibility on a free visit before quoting a package or installing anything.
-            </p>
+              <div className="rounded-card border-border bg-surface-muted mt-8 flex items-start gap-4 border p-5">
+                <ClipboardCheck className="text-primary-800 mt-0.5 size-5 shrink-0" />
+                <p className="text-text-primary text-sm leading-relaxed">
+                  <span className="font-semibold">An on-site audit always comes first.</span>{' '}
+                  Integration depends on your terminal&apos;s make, model and specs — we confirm
+                  compatibility on a free visit before quoting a package or installing anything.
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-image aspect-[3/2] overflow-hidden">
+              <Image
+                src="/commercial-charger.jpeg"
+                alt="Commercial EV charging bay with multiple terminals under a covered carport"
+                width={701}
+                height={438}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="size-full object-cover"
+                priority
+              />
+            </div>
           </div>
         </Section>
 
@@ -164,7 +180,7 @@ export default function CommercialPage() {
               href={mailto('Commercial terminal enquiry')}
               className="rounded-button bg-primary text-on-primary hover:bg-primary-dark inline-flex h-12 shrink-0 items-center gap-2 px-6 text-sm font-semibold transition-colors"
             >
-              {CONTACT_EMAIL}
+              {CONTACT.support}
             </a>
           </div>
         </Section>

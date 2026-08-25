@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { CalendarClock, CheckCircle2, ClipboardCheck, House, Users, Wifi } from 'lucide-react';
 import { Founding50Form } from '@/components/features/marketing/founding-50-form';
 import { Section } from '@/components/ui/section';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SiteHeader } from '@/components/ui/site-header';
+import { CONTACT } from '@/lib/legal/config';
 
 export const metadata: Metadata = {
   title: 'Home charger packages — Ampere',
   description:
     'Connect your home EV charger to Ampere. Live status and remote control from your phone, using your own WiFi. Founding 50 launch offer: 50% off your first 3 months.',
 };
-
-const CONTACT_EMAIL = 'amperepakistan@gmail.com';
 
 const TIERS = [
   {
@@ -44,24 +44,40 @@ export default function HomeChargerPage() {
 
       <main className="flex-1">
         <Section id="overview">
-          <span className="rounded-image bg-surface-muted text-primary-800 mb-5 flex size-11 items-center justify-center">
-            <House className="size-5" />
-          </span>
-          <h1 className="font-heading text-text-primary text-4xl font-bold tracking-tight sm:text-5xl">
-            Home charger packages
-          </h1>
-          <p className="text-text-secondary mt-4 max-w-2xl text-lg leading-relaxed">
-            See your charger&apos;s live status and control it from your phone, using the WiFi you
-            already have at home. No extra hardware, no installation hassle.
-          </p>
+          <div className="grid items-center gap-10 md:grid-cols-2">
+            <div>
+              <span className="rounded-image bg-surface-muted text-primary-800 mb-5 flex size-11 items-center justify-center">
+                <House className="size-5" />
+              </span>
+              <h1 className="font-heading text-text-primary text-4xl font-bold tracking-tight sm:text-5xl">
+                Home charger packages
+              </h1>
+              <p className="text-text-secondary mt-4 text-lg leading-relaxed">
+                See your charger&apos;s live status and control it from your phone, using the WiFi
+                you already have at home. No extra hardware, no installation hassle.
+              </p>
 
-          <div className="rounded-card border-border bg-surface-muted mt-8 flex max-w-2xl items-start gap-4 border p-5">
-            <ClipboardCheck className="text-primary-800 mt-0.5 size-5 shrink-0" />
-            <p className="text-text-primary text-sm leading-relaxed">
-              <span className="font-semibold">Not every charger can be integrated.</span> Support
-              depends on your specific make and model — send us your details and photos below and
-              we&apos;ll confirm compatibility before scheduling anything.
-            </p>
+              <div className="rounded-card border-border bg-surface-muted mt-8 flex items-start gap-4 border p-5">
+                <ClipboardCheck className="text-primary-800 mt-0.5 size-5 shrink-0" />
+                <p className="text-text-primary text-sm leading-relaxed">
+                  <span className="font-semibold">Not every charger can be integrated.</span>{' '}
+                  Support depends on your specific make and model — send us your details and
+                  photos below and we&apos;ll confirm compatibility before scheduling anything.
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-image aspect-[3/2] overflow-hidden">
+              <Image
+                src="/home-charger.webp"
+                alt="A home EV charger mounted on a garage wall, charging a car at 90%"
+                width={2500}
+                height={1667}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="size-full object-cover"
+                priority
+              />
+            </div>
           </div>
         </Section>
 
@@ -126,10 +142,10 @@ export default function HomeChargerPage() {
           <p className="text-text-secondary mt-6 text-sm">
             Prefer email? Write to{' '}
             <a
-              href={`mailto:${CONTACT_EMAIL}`}
+              href={`mailto:${CONTACT.support}`}
               className="text-primary-800 hover:text-primary-900 font-semibold"
             >
-              {CONTACT_EMAIL}
+              {CONTACT.support}
             </a>
             .
           </p>

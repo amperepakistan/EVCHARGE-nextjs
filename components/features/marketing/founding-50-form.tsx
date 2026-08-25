@@ -4,10 +4,10 @@ import { useId, useState, type ChangeEvent, type FormEvent } from 'react';
 import { Loader2, Upload } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { TextField } from '@/components/ui/text-field';
+import { CONTACT } from '@/lib/legal/config';
 import { cn } from '@/lib/utils/cn';
 
 const MAX_PHOTOS = 5;
-const CONTACT_EMAIL = 'amperepakistan@gmail.com';
 
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -211,8 +211,8 @@ export function Founding50Form() {
       {status === 'error' ? (
         <p className="text-error text-sm">
           Something went wrong submitting this. Email us directly at{' '}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold underline">
-            {CONTACT_EMAIL}
+          <a href={`mailto:${CONTACT.support}`} className="font-semibold underline">
+            {CONTACT.support}
           </a>{' '}
           with the same details and we&apos;ll take it from there.
         </p>
