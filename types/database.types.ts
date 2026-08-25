@@ -18,6 +18,15 @@ export type TerminalStatus = 'available' | 'occupied' | 'offline' | 'fault';
 
 export type AppPlatform = 'ios' | 'android';
 
+export type Founding50PackageChoice = 'standard' | 'plus';
+
+export type Founding50Status =
+  | 'new'
+  | 'contacted'
+  | 'scheduled'
+  | 'converted'
+  | 'rejected';
+
 type NeverRelationships = [];
 
 export type Database = {
@@ -527,6 +536,46 @@ export type Database = {
           updated_by?: string | null;
         };
         Update: Partial<Database['public']['Tables']['app_maintenance']['Insert']>;
+        Relationships: NeverRelationships;
+      };
+      founding_50_submissions: {
+        Row: {
+          id: string;
+          full_name: string;
+          phone: string;
+          email: string | null;
+          city: string;
+          address: string;
+          charger_brand: string;
+          charger_model: string;
+          connector_power: string | null;
+          package_choice: Founding50PackageChoice;
+          wifi_reaches_charger: boolean;
+          notes: string | null;
+          photo_paths: string[];
+          status: Founding50Status;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          full_name: string;
+          phone: string;
+          email?: string | null;
+          city: string;
+          address: string;
+          charger_brand: string;
+          charger_model: string;
+          connector_power?: string | null;
+          package_choice: Founding50PackageChoice;
+          wifi_reaches_charger?: boolean;
+          notes?: string | null;
+          photo_paths?: string[];
+          status?: Founding50Status;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['founding_50_submissions']['Insert']>;
         Relationships: NeverRelationships;
       };
     };
