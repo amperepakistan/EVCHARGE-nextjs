@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   ArrowRight,
   BatteryCharging,
@@ -45,14 +46,21 @@ const DRIVER_FEATURES = [
   },
 ];
 
-const BUSINESS_PATHS = [
+const BUSINESS_PATHS: {
+  icon: typeof Building2;
+  title: string;
+  description: string;
+  cta: string;
+  href?: string;
+  subject?: string;
+}[] = [
   {
     icon: Building2,
     title: 'Put a charger at your location',
     description:
       'Malls, hotels, housing societies and fuel stations. We help you get a terminal installed, listed for every driver in the country, and reporting into a dashboard that shows sessions, revenue and busy hours.',
-    cta: 'Talk to us about your site',
-    subject: 'Installing a charger at our location',
+    cta: 'See commercial packages',
+    href: '/commercial',
   },
   {
     icon: Wrench,
@@ -188,24 +196,22 @@ export default function HomePage() {
               {/* Deliberately promises nothing about listing a home charger to
                   drivers: these are AC units, which may not be advertised as
                   public charging. The offer here is integration and monitoring
-                  of your own unit, nothing outward-facing. A model-support
-                  questionnaire is meant to replace this mailto later. */}
+                  of your own unit, nothing outward-facing. */}
               <p className="text-text-secondary mt-4 text-lg leading-relaxed">
-                If you own a charger at home or at a small site, get in touch. Support
-                depends on the hardware — send us your model and we will tell you whether
-                it can be integrated, and what live status and fault alerts you would get
-                for your own unit.
+                If you own a charger at home, connect it to Ampere — see its live status and
+                control it from your phone, using your own WiFi. The first 50 sign-ups get
+                50% off their first 3 months.
               </p>
             </div>
 
             <div className="md:justify-self-end">
-              <a
-                href={mailto('Home charger integration enquiry')}
+              <Link
+                href="/home-charger"
                 className="rounded-button bg-primary text-on-primary hover:bg-primary-dark inline-flex h-12 items-center gap-2 px-6 text-sm font-semibold transition-colors"
               >
-                Check if your model is supported
+                See pricing & claim your spot
                 <ArrowRight className="size-4" />
-              </a>
+              </Link>
             </div>
           </div>
         </Section>
@@ -221,7 +227,7 @@ export default function HomePage() {
           </p>
 
           <div className="mt-10 grid gap-3 md:grid-cols-2">
-            {BUSINESS_PATHS.map(({ icon: Icon, title, description, cta, subject }) => (
+            {BUSINESS_PATHS.map(({ icon: Icon, title, description, cta, href, subject }) => (
               <div
                 key={title}
                 className="rounded-card border-border bg-surface flex flex-col border p-6"
@@ -235,13 +241,23 @@ export default function HomePage() {
                 <p className="text-text-secondary mt-2 flex-1 text-sm leading-relaxed">
                   {description}
                 </p>
-                <a
-                  href={mailto(subject)}
-                  className="text-primary-800 hover:text-primary-900 mt-5 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors"
-                >
-                  {cta}
-                  <ArrowRight className="size-4" />
-                </a>
+                {href ? (
+                  <Link
+                    href={href}
+                    className="text-primary-800 hover:text-primary-900 mt-5 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors"
+                  >
+                    {cta}
+                    <ArrowRight className="size-4" />
+                  </Link>
+                ) : (
+                  <a
+                    href={mailto(subject ?? '')}
+                    className="text-primary-800 hover:text-primary-900 mt-5 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors"
+                  >
+                    {cta}
+                    <ArrowRight className="size-4" />
+                  </a>
+                )}
               </div>
             ))}
           </div>

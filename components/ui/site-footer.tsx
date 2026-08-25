@@ -32,13 +32,13 @@ const FOOTER_GROUPS: { heading: string; links: { label: string; href: string }[]
     links: [
       { label: 'Every charger, one map', href: '/#drivers' },
       { label: 'See it in action', href: '/#screenshots' },
-      { label: 'Connect a home charger', href: '/#home-charger' },
+      { label: 'Connect a home charger', href: '/home-charger' },
     ],
   },
   {
     heading: 'For businesses',
     links: [
-      { label: 'Host a charger at your site', href: '/#business' },
+      { label: 'Host a charger at your site', href: '/commercial' },
       { label: 'Become a terminal vendor', href: '/#business' },
       { label: 'Partner sign in', href: '/login' },
     ],
