@@ -63,7 +63,7 @@ export function SiteFooter({
 
   if (variant === 'minimal') {
     return (
-      <footer className={cn('bg-canvas px-6 py-6 md:px-10', className)}>
+      <footer className={cn('bg-footer px-6 py-6 md:px-10', className)}>
         <div
           className={cn(
             'text-text-primary mx-auto flex flex-col items-center gap-3 text-xs md:flex-row md:justify-center md:gap-6',
@@ -80,7 +80,7 @@ export function SiteFooter({
   }
 
   return (
-    <footer className={cn('bg-canvas px-6 pt-14 pb-8 md:px-10', className)}>
+    <footer className={cn('bg-footer px-6 pt-14 pb-8 md:px-10', className)}>
       <div className={cn('mx-auto', maxWidth)}>
         <div className="grid gap-10 md:grid-cols-4">
           {showLogo && (
