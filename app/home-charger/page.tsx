@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import {
-  CalendarClock,
   Check,
   CheckCircle2,
   ChevronRight,
   ClipboardCheck,
-  House,
   ShieldCheck,
   Smartphone,
   Sparkles,
@@ -19,7 +17,6 @@ import { FAQAccordion } from '@/components/ui/faq-accordion';
 import { Section } from '@/components/ui/section';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SiteHeader } from '@/components/ui/site-header';
-import { CONTACT } from '@/lib/legal/config';
 
 export const metadata: Metadata = {
   title: 'Home Charger Packages & Smart Controls — Ampere',
