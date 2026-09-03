@@ -29,6 +29,12 @@ export type Founding50Status =
   | 'converted'
   | 'rejected';
 
+export type AccountDeletionStatus =
+  | 'pending'
+  | 'approved'
+  | 'rejected'
+  | 'cancelled';
+
 type NeverRelationships = [];
 
 export type Database = {
@@ -580,6 +586,32 @@ export type Database = {
           updated_at?: string;
         };
         Update: Partial<Database['public']['Tables']['founding_50_submissions']['Insert']>;
+        Relationships: NeverRelationships;
+      };
+      account_deletion_requests: {
+        Row: {
+          id: string;
+          user_id: string;
+          reason: string | null;
+          status: AccountDeletionStatus;
+          admin_note: string | null;
+          reviewed_by: string | null;
+          reviewed_at: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          reason?: string | null;
+          status?: AccountDeletionStatus;
+          admin_note?: string | null;
+          reviewed_by?: string | null;
+          reviewed_at?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: Partial<Database['public']['Tables']['account_deletion_requests']['Insert']>;
         Relationships: NeverRelationships;
       };
     };

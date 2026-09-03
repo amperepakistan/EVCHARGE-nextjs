@@ -19,6 +19,7 @@ import {
   ShieldAlert,
   Store,
   Users,
+  UserX,
   Wrench,
   Zap,
 } from 'lucide-react';
@@ -57,6 +58,7 @@ const OWNER_LINKS: NavLink[] = [
 const ADMIN_LINKS: NavLink[] = [
   { href: '/admin', label: 'Console', icon: Activity },
   { href: '/admin/drivers', label: 'Drivers', icon: Users },
+  { href: '/admin/deletion-requests', label: 'Deletions', icon: UserX },
   { href: '/admin/vendors', label: 'Vendors', icon: Store },
   { href: '/admin/owners', label: 'Owners', icon: Building2 },
   { href: '/admin/chargers', label: 'Chargers & scouts', icon: Zap },

@@ -163,3 +163,42 @@ export async function dismissSuggestedTerminalAction(terminalId: string) {
   });
   revalidatePath('/admin/chargers');
 }
+
+export type DeletionActionState = {
+  ok: boolean;
+  message: string;
+};
+
+export async function approveAccountDeletionAction(requestId: string) {
+  const ctx = await requirePlatformAdmin();
+  const { approveRequest } = await import(
+    '@/lib/server/modules/account-deletion/account-deletion.service'
+  );
+  await approveRequest(ctx, requestId);
+  revalidatePath('/admin/deletion-requests');
+  revalidatePath('/admin/drivers');
+}
+
+export async function rejectAccountDeletionAction(
+  _prev: DeletionActionState,
+  formData: FormData,
+): Promise<DeletionActionState> {
+  try {
+    const ctx = await requirePlatformAdmin();
+    const requestId = String(formData.get('requestId') ?? '');
+    const adminNote = String(formData.get('adminNote') ?? '');
+    const { rejectRequest } = await import(
+      '@/lib/server/modules/account-deletion/account-deletion.service'
+    );
+    await rejectRequest(ctx, requestId, { adminNote });
+    revalidatePath('/admin/deletion-requests');
+    return { ok: true, message: 'Request rejected.' };
+  } catch (err) {
+    const message = isAppError(err)
+      ? err.message
+      : err instanceof Error
+        ? err.message
+        : 'Failed to reject deletion request';
+    return { ok: false, message };
+  }
+}

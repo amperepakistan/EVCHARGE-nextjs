@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { DataTable, type Column } from '@/components/ui/data-table';
 import { requireAdminDashboard } from '@/lib/server/dashboard';
 import * as driversAdmin from '@/lib/server/modules/admin/drivers-admin.service';
+import * as accountDeletionRepo from '@/lib/server/modules/account-deletion/account-deletion.repository';
 import { DriverAccountForms } from '@/components/features/admin/driver-account-forms';
 import { isAppError } from '@/lib/server/errors';
 
@@ -86,6 +87,10 @@ export default async function AdminDriverDetailPage({
     throw err;
   }
 
+  const pendingDeletion = driver.userId
+    ? await accountDeletionRepo.findPendingByUserId(ctx, driver.userId)
+    : null;
+
   return (
     <div className="space-y-8">
       <div>
@@ -100,11 +105,18 @@ export default async function AdminDriverDetailPage({
           title={driver.fullName ?? 'Driver'}
           description={driver.email ?? 'No email on file'}
           action={
-            driver.isActive === false ? (
-              <Badge tone="danger">Inactive</Badge>
-            ) : (
-              <Badge tone="success">Active</Badge>
-            )
+            <div className="flex flex-wrap items-center gap-2">
+              {pendingDeletion ? (
+                <Link href="/admin/deletion-requests">
+                  <Badge tone="warning">Deletion pending</Badge>
+                </Link>
+              ) : null}
+              {driver.isActive === false ? (
+                <Badge tone="danger">Inactive</Badge>
+              ) : (
+                <Badge tone="success">Active</Badge>
+              )}
+            </div>
           }
         />
       </div>

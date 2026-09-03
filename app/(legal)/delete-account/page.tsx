@@ -39,8 +39,14 @@ export default function DeleteAccountPage() {
               <ol className="list-decimal list-inside mt-2 text-sm text-neutral-300 space-y-1">
                 <li>Open the <strong>{APP_NAME}</strong> mobile application.</li>
                 <li>Go to <strong>Profile</strong> from the bottom menu.</li>
-                <li>Tap <strong>Delete Account</strong> and confirm your request.</li>
+                <li>Open <strong>Settings</strong>.</li>
+                <li>Tap <strong>Delete account</strong> and confirm your request.</li>
               </ol>
+              <p className="mt-2 text-xs text-neutral-400">
+                Your request is reviewed by Ampere. You can keep using the app until an admin
+                approves the deletion. After approval, your personal data is removed and the
+                account can no longer sign in.
+              </p>
             </div>
 
             <div className="bg-neutral-800/60 p-4 rounded-lg border border-neutral-700/50">
@@ -73,7 +79,10 @@ export default function DeleteAccountPage() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold text-white">Data Retention & Timeline</h2>
           <p className="text-neutral-300 leading-relaxed text-sm">
-            Upon submitting a deletion request, your account and associated personal data are permanently deleted within <strong>30 days</strong>. Anonymised, aggregated statistics (which cannot identify you) and records legally required for tax/compliance may be retained as permitted by law.
+            Upon submitting a deletion request, Ampere reviews and processes it. Your account and
+            associated personal data are permanently deleted within <strong>30 days</strong> of
+            approval. Anonymised, aggregated statistics (which cannot identify you) and records
+            legally required for tax/compliance may be retained as permitted by law.
           </p>
         </section>
 
